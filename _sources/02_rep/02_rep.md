@@ -1,8 +1,8 @@
 # repetition / basic knowledge
 
-## generalized HOOK's law
+## generalized HOOKE's law
 
-The "generalized HOOK's law" is an [isotropic](https://en.wikipedia.org/wiki/Isotropy) linear-elastic material model for 3D continuum or with loads in any direction (see "Derivation of Hooke's law in three dimensions" in [Linear elasticity theory for continuous media](https://en.wikipedia.org/wiki/Hooke's_law#Isotropic_materials).
+The "generalized HOOKE's law" is an [isotropic](https://en.wikipedia.org/wiki/Isotropy) linear-elastic material model for 3D continuum or with loads in any direction (see "Derivation of Hooke's law in three dimensions" in [Linear elasticity theory for continuous media](https://en.wikipedia.org/wiki/Hooke's_law#Isotropic_materials).
 
 The law is typically derived (like in the previous link) "inductive", which means drawing conclusions "from the particular to the general". The opposite is "deductive, which means drawing conclusions "from the general to the particular".
 
@@ -58,7 +58,7 @@ $\epsilon_C=4,3\cdot10^{-4}$
 
 ![StrainGauge1](StrainGauge2.png)
 
-The Material is homogenous and isotropic with an YOUNGth modulus of  aprox. $E=200 \text{GPa}$ and a POISSON ratio of $\nu=0,2$.
+The Material is homogenous and isotropic with an YOUNGs modulus of  aprox. $E=200 \text{GPa}$ and a POISSON ratio of $\nu=0,2$.
 **Calculate the stresses (normal and shear stresses) according to the strain gauge directions A/B, and the principal stresses/ max shear stress!**  
 
 You can find an example in [this video](https://youtu.be/7ul8ST6RRUA?si=y-b_LYSKZI4dZjJc)
