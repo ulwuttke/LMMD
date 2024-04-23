@@ -6,3 +6,4 @@ root: intro
 chapters:
 - file: 01_linear/01_linear
 - file: 02_rep/02_rep
+- file: 03_vecten/03_vecten
