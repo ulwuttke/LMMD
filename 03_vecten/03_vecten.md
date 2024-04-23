@@ -62,7 +62,7 @@ $\boldsymbol{e}^i \boldsymbol{e}_j=
 0 & 1
 \end{bmatrix} = \delta_i^j$
 
-$c_i b^j \boldsymbol{e}^i \boldsymbol{e}_j=c^i_j = c_i b^i =c_j b^j$
+$c_i b^j \boldsymbol{e}^i \boldsymbol{e}_j= c_i b^j \delta^i_j = c_i b^i $
 
 
 *EXAMPLES*
