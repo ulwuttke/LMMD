@@ -120,9 +120,13 @@ Each row is a list of the components of each vector of the new basis referred to
 
 
 ---
-** NOTE **
+**NOTE**
+
 In the following we will use only orthonormal coordinate systems. Here is: $\boldsymbol{e}_i=\boldsymbol{e}^i$. For that reason there is no need to distinguish between co- and contravariant basis. So all indices will be written as al lower index.
+
+
 ---
+
 
 *EXAMPLE"
 Define $\boldsymbol{\alpha}} for a rotaion of a orthonormal basis 
