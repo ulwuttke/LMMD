@@ -3,11 +3,14 @@
 ## stress in one dimension, engineering stress definition
 
 The mechanical stress is defined as a force related to the surface $\sigma=F/A$ (or a small part of a force $dF$ related to a small part of the surface $dA$). 
-Two types of stress can thus be defined: the real stress (which refer to the real actual geometry $dA$) and the technical stress (which refers to the initial or referenz geometry $dA_0$). For small deformations (or strains; and this is what we are looking at here), the engineering stress is almost equal to the real stress. 
+Two types of stress can thus be defined: the real stress (which refer to the real actual geometry $dA$) and the technical stress (which refers to the initial or referenz geometry $dA_0$).  
+For small deformations (or strains; and this is what we are looking at here), the engineering stress is almost equal to the real stress. 
 
 ![OneDimStress](OneDimStress.png)
 
-engineering stress: $\sigma=F/A_0$; $\sigma=dF/dA_0$
+
+
+engineering stress: $\sigma=F/A\approx F/A_0; \;\; \sigma= dF/dA\approx F/dA_0$
 
 
 
