@@ -1,0 +1,58 @@
+$$
+SUBCASE       1
+  LABEL Belastung                                                                       
+$$ ========== calculatoin step =========
+ANALYSIS STATICS
+  SPC = 2
+  LOAD = 11
+$$
+$$ ============ output data =======
+  DISPLACEMENT = ALL
+  SPCFORCE = ALL
+  STRAIN = ALL
+  STRESS = YES
+$$ ======================================  
+$$
+$$ =====================================
+BEGIN BULK
+$$
+$$=============== general parameters =============
+$$
+DTI,UNITS,1,kg,N,mm,s
+$$
+$$================ properties ==================
+$$  PSHELL Data
+$$
+$$ /1/ ESZ: 
+PSHELL,1,1,1.0,,,,,0.0
+$$ /1/ EDZ: PSHELL,1,1,1.0,-1,,,,0.0
+$$ 
+$$=============== materinal data =============
+$$==== linear elastic
+MAT1,1,70000.,,0.33,7.85-9
+$$==== orthotropic
+$$= coordinate system -> material orientatoin
+CORD2R,44,0,0.0,0.0,0.0,0.0,0.0,1.0
+,1.0,1.0,0.0
+MAT8,2,120000.,8000.,0.32,3200.
+$$=========================
+$$
+$$============ load and boundary conditions ========
+$$
+$$=== boundary: fix constraints 
+INCLUDE 210503_Kerbscheibe_SPC.inp
+$$=== load: constraint
+SPCD,21,9999,2,1.0
+$$=== load: force
+FORCE,11,9999,0,1.0,0.0,10000.,0.0
+$$=== constraint at the node for load application
+SPC,2,9999,1345,0.0
+$$=================================
+$$
+$$ ============ nodes and element definition ============
+$$
+INCLUDE 210503_Kerbscheibe_GridElement.inp
+$$
+$$
+ENDDATA
+$$

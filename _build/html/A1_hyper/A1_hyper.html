@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>vector/tensor rotation and transformation &#8212; LMMD Skript</title>
+    <title>Using hyperworks imput file &#8212; LMMD Skript</title>
   
   
   
@@ -63,11 +63,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '03_vecten/03_vecten';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'A1_hyper/A1_hyper';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="stress tensor, traction" href="../04_spten/04_spten.html" />
-    <link rel="prev" title="repetition / basic knowledge" href="../02_rep/02_rep.html" />
+    <link rel="prev" title="stress tensor, traction" href="../04_spten/04_spten.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,9 +160,9 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01_linear/01_linear.html">linear / non-ninear behaviour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02_rep/02_rep.html">repetition / basic knowledge</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">vector/tensor rotation and transformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03_vecten/03_vecten.html">vector/tensor rotation and transformation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_spten/04_spten.html">stress tensor, traction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../A1_hyper/A1_hyper.html">Using hyperworks imput file</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Using hyperworks imput file</a></li>
 </ul>
 
     </div>
@@ -235,7 +234,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F03_vecten/03_vecten.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FA1_hyper/A1_hyper.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -265,7 +264,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/03_vecten/03_vecten.md" target="_blank"
+      <li><a href="../_sources/A1_hyper/A1_hyper.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -347,7 +346,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>vector/tensor rotation and transformation</h1>
+    <h1>Using hyperworks imput file</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -357,9 +356,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">definitions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-inner-dot-product">scalar- /inner- / dot- product</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-vector-transformation">tensor/vector transformation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-files-and-starting-the-calculation">input files and starting the calculation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-file-structure">input file structure</a></li>
 </ul>
             </nav>
         </div>
@@ -371,126 +369,70 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="vector-tensor-rotation-and-transformation">
-<h1>vector/tensor rotation and transformation<a class="headerlink" href="#vector-tensor-rotation-and-transformation" title="Permalink to this heading">#</a></h1>
-<section id="definitions">
-<h2>definitions<a class="headerlink" href="#definitions" title="Permalink to this heading">#</a></h2>
-<table class="table">
-<thead>
-<tr class="row-odd"><th class="head"><p>physical quantity</p></th>
-<th class="head"><p>descr.</p></th>
-<th class="head"><p>example</p></th>
-<th class="head text-center"><p>tensor order</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>scalar:</p></td>
-<td><p>one informatoin (magnitude)</p></td>
-<td><p>temperature, energy</p></td>
-<td class="text-center"><p>0</p></td>
-</tr>
-<tr class="row-odd"><td><p>vector:</p></td>
-<td><p>two informatoin (magnitude and direction)</p></td>
-<td><p>velocity, force</p></td>
-<td class="text-center"><p>1</p></td>
-</tr>
-<tr class="row-even"><td><p>tensor:</p></td>
-<td><p>more than two informatoin</p></td>
-<td><p></p></td>
-<td class="text-center"><p></p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p></p></td>
-<td><p>stress tensor</p></td>
-<td class="text-center"><p>2</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p></p></td>
-<td><p>elastic tensor</p></td>
-<td class="text-center"><p>4</p></td>
-</tr>
-</tbody>
-</table>
+  <section class="tex2jax_ignore mathjax_ignore" id="using-hyperworks-imput-file">
+<h1>Using hyperworks imput file<a class="headerlink" href="#using-hyperworks-imput-file" title="Permalink to this heading">#</a></h1>
+<section id="input-files-and-starting-the-calculation">
+<h2>input files and starting the calculation<a class="headerlink" href="#input-files-and-starting-the-calculation" title="Permalink to this heading">#</a></h2>
+<p>The FEM-model is here defined with tree text files:</p>
+<ul class="simple">
+<li><p>.fem: main file, in which the type of calculatoin, the geometry, the load and the boundary cnditions are definied</p></li>
+<li><p>two .inp: files, in which the node, the node constrains and the element information are externalized (files were read in the .fem-file); these files were used to get  morcompact and readable .fem-file</p></li>
+</ul>
+<p>All files must be in the same folder. The example files in the MOOLDE course are</p>
+<ul class="simple">
+<li><p>210610_KerbscheibeKomplett_lin.fem</p></li>
+<li><p>210503_Kerbscheibe_GridElement.inp</p></li>
+<li><p>210503_Kerbscheibe_SPC.inp</p></li>
+</ul>
+<p>Classically, three different processes are defined in the FEM calculation process:</p>
+<ol class="arabic simple">
+<li><p>preprocessor (generating the .fem model): here, only the material and the Load has to be defined; this can be done with hymermesh or direct by editing the .fem-file</p></li>
+<li><p>solver (calculation process): here, hte solver optistruct is used. The calculation can be startet in two different ways:</p>
+<ul class="simple">
+<li><p>by clicking the analyse-button after the import of the .fem file in hyperworcs via <em>import, import solver deck</em></p></li>
+<li><p>By starting the calculation with the <a class="reference external" href="https://2021.help.altair.com/2021/hwsolvers/os/topics/solvers/os/run_optistruct_intro_r.htm">command line</a>, for ex. <em>C:”Program Files”\Altair\2021.2\hwsolvers\scripts\optistruct 210610_KerbscheibeKomplett_lin.fem</em></p></li>
+</ul>
+</li>
+<li><p>postprocessor: here, the result files are loded in hyperview and funny pictures can be created</p></li>
+</ol>
+<p>Altair Hyperworks Online Help (<a class="reference external" href="https://2021.help.altair.com/2021/hwsolvers/os/topics/solvers/os/analysis_sub_r.htm">here the link to the 2021 version</a> ), especially the reference guide <span class="math notranslate nohighlight">\(\rightarrow\)</span> input data <span class="math notranslate nohighlight">\(\rightarrow\)</span> bulk data seciont</p>
 </section>
-<section id="scalar-inner-dot-product">
-<h2>scalar- /inner- / dot- product<a class="headerlink" href="#scalar-inner-dot-product" title="Permalink to this heading">#</a></h2>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Dot_product">see</a></p>
-<p>vector definition (here only in 2 dim.):<br />
-<span class="math notranslate nohighlight">\(\vec{c} = \boldsymbol{c} = c_1 \boldsymbol{e}^1 + c_2 \boldsymbol{e}^2 = \sum_{i=1}^{i=2} c_i \boldsymbol{e}^i = c_i \boldsymbol{e}^i \)</span><br />
-The simplification <span class="math notranslate nohighlight">\(\sum_{i=1}^{i=2} c_i \boldsymbol{e}^i = c_i \boldsymbol{e}^i \)</span> is called EINSTEIN-notation.</p>
-<hr class="docutils" />
-<p><strong>NOTE</strong></p>
-<p>It is not importent, wich letter is used for the index, but it is very important wich index has the same letter (<a class="reference external" href="https://en.wikipedia.org/wiki/Einstein_notation">EINSTEIN Summation</a> )! So, equal indices were used as summation indeces - and they dissapear after the summation.<br />
-for. ex.: <span class="math notranslate nohighlight">\(c_i \cdot d^k = M_i^{ k}\)</span> (result is a tensor 2nd grade); <span class="math notranslate nohighlight">\(c_n \cdot d^n = n\)</span> (result a scalar)</p>
-<hr class="docutils" />
-<p><span class="math notranslate nohighlight">\(c_i \boldsymbol{e}^i \)</span> are the covariant components of the vector <span class="math notranslate nohighlight">\(\vec{c} = \boldsymbol{c}\)</span><br />
-<span class="math notranslate nohighlight">\(c^i \boldsymbol{e}_i \)</span> are the contravariant components of the vector <span class="math notranslate nohighlight">\(\vec{c} = \boldsymbol{c}\)</span><br />
-the two basis systems <span class="math notranslate nohighlight">\(\boldsymbol{e}^i\)</span> and the  so called dual basis <span class="math notranslate nohighlight">\(\boldsymbol{e}_i\)</span> are linked by the following condition:</p>
-<p><span class="math notranslate nohighlight">\(\boldsymbol{e}^1 \cdot \)</span>\boldsymbol{e}_1 =1<span class="math notranslate nohighlight">\(, \)</span>\boldsymbol{e}^2 \cdot <span class="math notranslate nohighlight">\(\boldsymbol{e}_2 =1\)</span>, <span class="math notranslate nohighlight">\(\boldsymbol{e}^1 \cdot \)</span>\boldsymbol{e}_2 =0<span class="math notranslate nohighlight">\(, \)</span>\boldsymbol{e}^2 \cdot <span class="math notranslate nohighlight">\(\boldsymbol{e}_1 =0\)</span></p>
-<p><img alt="DualBasis" src="../_images/DualBAsis.png" /></p>
-<p>Using the dual basis the scala product of two vectors (in two dim.) can be written:</p>
-<p><span class="math notranslate nohighlight">\(\boldsymbol{c}\cdot\boldsymbol{d}= [c_1 \boldsymbol{e}^1 + c_2 \boldsymbol{e}^2] \cdot [b_1 \boldsymbol{e}^1 + b_2 \boldsymbol{e}^2] = c_1 b^1 \boldsymbol{e}^1 \boldsymbol{e}_1 + c_1 b^2 \boldsymbol{e}^1 \boldsymbol{e}_2 + c_2 b^1 \boldsymbol{e}^2 \boldsymbol{e}_1 + c_2 b^2 \boldsymbol{e}^2 \boldsymbol{e}_2 = c_1 b^1+c_2 b^2=c_i b^i\)</span>.<br />
-The length of a vector <span class="math notranslate nohighlight">\(\boldsymbol{c}\)</span> can be calculeted by using the co- and contravariant components of that same vector:<br />
-<span class="math notranslate nohighlight">\(|\boldsymbol{c}|=(c_i\cdot c^i)^{1/2}\)</span></p>
-<p>One can see, that using the dual basis by using one vector with the co- and the other vector with the contravariant components, the basis vectors are “disappearing” and a scalar ramains. This is important, if the basis vectors are not orthonormal.</p>
-<p><img alt="WikiCoContra" src="https://upload.wikimedia.org/wikipedia/commons/7/72/Covariantcomponents.gif" /></p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_of_vectors">co- contravariant basis</a></p>
-<p>Using the EINSTEIN-notation the scalar product can be writen like</p>
-<p><span class="math notranslate nohighlight">\(\boldsymbol{c}\cdot\boldsymbol{d}= c_{i} \boldsymbol{e}^i \cdot b_j \boldsymbol{e}^j = c_i b^j \boldsymbol{e}^i \boldsymbol{e}_j\)</span></p>
-<p>The product <span class="math notranslate nohighlight">\( \boldsymbol{e}^i \boldsymbol{e}_j\)</span> results in the Identity matrix <span class="math notranslate nohighlight">\(\delta_i^j\)</span>:</p>
-<p><span class="math notranslate nohighlight">\(\boldsymbol{e}^i \boldsymbol{e}_j=
-\begin{bmatrix}
-1 &amp; 0\\
-0 &amp; 1
-\end{bmatrix} = \delta_i^j\)</span></p>
-<p><span class="math notranslate nohighlight">\(c_i b^j \boldsymbol{e}^i \boldsymbol{e}_j= c_i b^j \delta^i_j = c_i b^i \)</span></p>
-<p><em>EXAMPLES</em></p>
-<p><span class="math notranslate nohighlight">\(c_i\cdot b^i = \)</span><br />
-<span class="math notranslate nohighlight">\(c_j\cdot b^i = \)</span><br />
-<span class="math notranslate nohighlight">\(A_{ji}\cdot B_{ck} = \)</span><br />
-<span class="math notranslate nohighlight">\(A_{ji}\cdot B_{ik} = \)</span><br />
-<span class="math notranslate nohighlight">\(A_{ji}\cdot B_{ij} = \)</span></p>
-</section>
-<section id="tensor-vector-transformation">
-<h2>tensor/vector transformation<a class="headerlink" href="#tensor-vector-transformation" title="Permalink to this heading">#</a></h2>
-<p>The vector <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span> is given in the “old” basis system <span class="math notranslate nohighlight">\(\boldsymbol{e}^i\)</span> (old basis indes lower case). The components should betransformed in the new basis system <span class="math notranslate nohighlight">\(\hat{\boldsymbol{e}}^J\)</span> (new basis indes upper case).
-<img alt="vectordiffbase" src="03_vecten/VecDiffBase.png" /></p>
-<p><span class="math notranslate nohighlight">\(\boldsymbol{b}=b_i\cdot \boldsymbol{e}^i = \hat{b}_i\cdot \hat{\boldsymbol{e}}^J\)</span></p>
-<p><span class="math notranslate nohighlight">\(b_i\cdot \boldsymbol{e}^i = \hat{b}_i\cdot \hat{\boldsymbol{e}}^J \,| \cdot \hat{\boldsymbol{e}}_K\)</span><br />
-<span class="math notranslate nohighlight">\(b_i\cdot \hat{\boldsymbol{e}}_K \cdot \boldsymbol{e}^i = \hat{b}_i\cdot \hat{\boldsymbol{e}}^J  \cdot \hat{\boldsymbol{e}}_K\)</span></p>
-<p><span class="math notranslate nohighlight">\(\hat{\boldsymbol{e}}^J  \cdot \hat{\boldsymbol{e}}_K = \delta_K^J\)</span>
-<span class="math notranslate nohighlight">\(\hat{\boldsymbol{e}}_K \cdot \boldsymbol{e}^i = \alpha_K^i\)</span></p>
-<p>so</p>
-<p><span class="math notranslate nohighlight">\(\alpha_K^i \cdot b_i=\hat{b}_K\)</span></p>
-<p>with</p>
-<p><span class="math notranslate nohighlight">\(\alpha_K^i=
-\begin{bmatrix}
-\hat{\boldsymbol{e}}_1 \cdot \boldsymbol{e}^1 &amp; \hat{\boldsymbol{e}}_1 \cdot \boldsymbol{e}^2 &amp; ...\\
-\hat{\boldsymbol{e}}_2 \cdot \boldsymbol{e}^1 &amp; \hat{\boldsymbol{e}}_2 \cdot \boldsymbol{e}^2 &amp; ...\\
-... &amp; &amp;\\
-\end{bmatrix}\)</span></p>
-<p>If the new basis can be described with the old basis, the components of <span class="math notranslate nohighlight">\(\boldsymbol{\alpha}\)</span> can be calculated:</p>
-<p><span class="math notranslate nohighlight">\(\hat{\boldsymbol{e}}_1=\hat{e}_1^{\,1}\cdot \boldsymbol{e}_1 + \hat{e}_2^{\,1}\cdot \boldsymbol{e}_2 + ...\)</span></p>
-<p>or in index-notation</p>
-<p><span class="math notranslate nohighlight">\(\hat{\boldsymbol{e}}_K=\hat{e}_K^{\,j}\cdot \boldsymbol{e}_j\)</span><br />
-<span class="math notranslate nohighlight">\( \Rightarrow \hat{\boldsymbol{e}}_K \cdot \boldsymbol{e}^i = \hat{e}_K^{\,j}\cdot \boldsymbol{e}_j \cdot \boldsymbol{e}^i = \hat{e}_K^{\,j} \cdot \delta_j^{\,i}= \hat{e}_K^{\,j} = \alpha_K^{\,j}\)</span></p>
-<p><span class="math notranslate nohighlight">\(\alpha_K^{\;i}=
-\begin{bmatrix}
-\hat{\hat{e}}_1^{\,1} &amp; \hat{\hat{e}}_1^{\,2}  &amp; ...\\
-\hat{\hat{e}}_2^{\,1}  &amp; \hat{\hat{e}}_2^{\,2}  &amp; ...\\
-... &amp; &amp;\\
-\end{bmatrix}\)</span></p>
-<p>Each row is a list of the components of each vector of the new basis referred to the old basis. This works even for non orthonormal basis systems.</p>
-<p>*EXAMPLE”
-Define <span class="math notranslate nohighlight">\(\boldsymbol{\alpha}\)</span> for a rotaion of a orthonormal basis</p>
-<p>The transformation of a tensor of higher grade works by “transforming each index”:</p>
-<p><span class="math notranslate nohighlight">\(\hat{\sigma}_{IK}=\alpha_I^{\;i}\;\alpha_K^{\;k}\;\sigma_{ik}\)</span><br />
-<span class="math notranslate nohighlight">\(\hat{E}_{IKLM}=\alpha_I^{\;i}\;\alpha_K^{\;k}\alpha_L^{\;l}\;\alpha_M^{\;m}\;E_{iklm}\)</span></p>
-<hr class="docutils" />
-<p><strong>NOTE</strong></p>
-<p>In the following we will use only orthonormal coordinate systems. Here is: <span class="math notranslate nohighlight">\(\boldsymbol{e}_i=\boldsymbol{e}^i\)</span>. For that reason there is no need to distinguish between co- and contravariant basis, and the upper index can be unsed for something else. So all tensor-indices will be written as al lower index:</p>
-<p><span class="math notranslate nohighlight">\(\hat{\sigma}_{IK}=\alpha_I^{\;i}\;\alpha_K^{\;k}\;\sigma_{ik}\;\Rightarrow\;\hat{\sigma}_{IK}=\alpha_{Ii}\;\alpha_{Kk}\;\sigma_{ik}\)</span></p>
-<hr class="docutils" />
+<section id="input-file-structure">
+<h2>input file structure<a class="headerlink" href="#input-file-structure" title="Permalink to this heading">#</a></h2>
+<p>The description is only given here for the parts of the input file which need to be edited.</p>
+<p>The first section in the input file is the subcase information section. The calculatoin type and the Load and boundary conditions are definied here.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ANALYSIS</span> <span class="n">STATICS</span>
+  <span class="n">SPC</span> <span class="o">=</span> <span class="mi">2</span>
+  <span class="n">LOAD</span> <span class="o">=</span> <span class="mi">11</span>
+</pre></div>
+</div>
+<p>In this case a linear calculation (<em>ANALYSIS STATICS</em>) is defined, using the boundaries with the id <em>2</em> (Single Poit Constraint) and the Load with the id <em>11</em>.</p>
+<p>In the bulk data section the elemet properties are definied.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PSHELL</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,,,,,</span><span class="mf">0.0</span>
+
+</pre></div>
+</div>
+<p>In the example the properties for shell elements are given. The meaning of the numbers after the Keyword <em>PSHELL</em> are described <a class="reference external" href="https://2021.help.altair.com/2021/hwsolvers/os/topics/solvers/os/pshell_bulk_r.htm">here</a>.</p>
+<p>A linear elastic material is defined using the keyword <em>MAT1</em>, a orthotropic linear elastic material is defined using <em>MAT8</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">MAT1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">70000.</span><span class="p">,,</span><span class="mf">0.33</span><span class="p">,</span><span class="mf">7.85</span><span class="o">-</span><span class="mi">9</span>
+<span class="n">MAT8</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">120000.</span><span class="p">,</span><span class="mf">8000.</span><span class="p">,</span><span class="mf">0.32</span><span class="p">,</span><span class="mf">3200.</span>
+</pre></div>
+</div>
+<p>The direction of the orthotropic mterial is defined with a special coordinat system. The coordinate system is assigned to the elements in the element definition (see <em>.210503_Kerbscheibe_GridElement.inp</em>)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CORD2R</span><span class="p">,</span><span class="mi">44</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span>
+<span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span>
+</pre></div>
+</div>
+<p>In the example fem-file the load can be applied as a constraint by <em>SPCD</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SPCD</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">9999</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">1.0</span>
+</pre></div>
+</div>
+<p>or as a force by <em>FORCE</em></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>FORCE,11,9999,0,1.0,0.0,10000.,0.0
+$$=== constraint at the node for load application
+SPC,2,9999,1345,0.0
+</pre></div>
+</div>
 </section>
 </section>
 
@@ -507,7 +449,7 @@ Define <span class="math notranslate nohighlight">\(\boldsymbol{\alpha}\)</span>
         },
         kernelOptions: {
             name: "python3",
-            path: "./03_vecten"
+            path: "./A1_hyper"
         },
         predefinedOutput: true
     }
@@ -526,22 +468,13 @@ Define <span class="math notranslate nohighlight">\(\boldsymbol{\alpha}\)</span>
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../02_rep/02_rep.html"
+       href="../04_spten/04_spten.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">repetition / basic knowledge</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../04_spten/04_spten.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">stress tensor, traction</p>
       </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -561,9 +494,8 @@ Define <span class="math notranslate nohighlight">\(\boldsymbol{\alpha}\)</span>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definitions">definitions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scalar-inner-dot-product">scalar- /inner- / dot- product</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tensor-vector-transformation">tensor/vector transformation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-files-and-starting-the-calculation">input files and starting the calculation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#input-file-structure">input file structure</a></li>
 </ul>
   </nav></div>
 

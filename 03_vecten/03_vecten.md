@@ -24,16 +24,13 @@ The simplification $\sum_{i=1}^{i=2} c_i \boldsymbol{e}^i = c_i \boldsymbol{e}^i
 **NOTE**
 
 It is not importent, wich letter is used for the index, but it is very important wich index has the same letter ([EINSTEIN Summation](https://en.wikipedia.org/wiki/Einstein_notation) )! So, equal indices were used as summation indeces - and they dissapear after the summation.  
-for. ex.: $c_i \cdot d^k = M_i^{ k}$ (result is a tensor 2nd grade); $c_n \cdot d^n = n$ (result a scalar) 
-
+for. ex.: $c_i \cdot d^k = M_i^{ k}$ (result is a tensor 2nd grade); $c_n \cdot d^n = n$ (result a scalar)  
 
 ---
 
 
-$c_i \boldsymbol{e}^i $ are the covariant components of the vector $\vec{c} = \boldsymbol{c}$
-
-$c^i \boldsymbol{e}_i $ are the contravariant components of the vector $\vec{c} = \boldsymbol{c}$
-
+$c_i \boldsymbol{e}^i $ are the covariant components of the vector $\vec{c} = \boldsymbol{c}$  
+$c^i \boldsymbol{e}_i $ are the contravariant components of the vector $\vec{c} = \boldsymbol{c}$  
 the two basis systems $\boldsymbol{e}^i$ and the  so called dual basis $\boldsymbol{e}_i$ are linked by the following condition:
 
 $\boldsymbol{e}^1 \cdot $\boldsymbol{e}_1 =1$, $\boldsymbol{e}^2 \cdot $\boldsymbol{e}_2 =1$, $\boldsymbol{e}^1 \cdot $\boldsymbol{e}_2 =0$, $\boldsymbol{e}^2 \cdot $\boldsymbol{e}_1 =0$
@@ -42,7 +39,9 @@ $\boldsymbol{e}^1 \cdot $\boldsymbol{e}_1 =1$, $\boldsymbol{e}^2 \cdot $\boldsym
 
 Using the dual basis the scala product of two vectors (in two dim.) can be written:
 
-$\boldsymbol{c}\cdot\boldsymbol{d}= [c_1 \boldsymbol{e}^1 + c_2 \boldsymbol{e}^2] \cdot [b_1 \boldsymbol{e}^1 + b_2 \boldsymbol{e}^2] = c_1 b^1 \boldsymbol{e}^1 \boldsymbol{e}_1 + c_1 b^2 \boldsymbol{e}^1 \boldsymbol{e}_2 + c_2 b^1 \boldsymbol{e}^2 \boldsymbol{e}_1 + c_2 b^2 \boldsymbol{e}^2 \boldsymbol{e}_2$ = c_1 b^1+c_2 b^2$
+$\boldsymbol{c}\cdot\boldsymbol{d}= [c_1 \boldsymbol{e}^1 + c_2 \boldsymbol{e}^2] \cdot [b_1 \boldsymbol{e}^1 + b_2 \boldsymbol{e}^2] = c_1 b^1 \boldsymbol{e}^1 \boldsymbol{e}_1 + c_1 b^2 \boldsymbol{e}^1 \boldsymbol{e}_2 + c_2 b^1 \boldsymbol{e}^2 \boldsymbol{e}_1 + c_2 b^2 \boldsymbol{e}^2 \boldsymbol{e}_2 = c_1 b^1+c_2 b^2=c_i b^i$.   
+The length of a vector $\boldsymbol{c}$ can be calculeted by using the co- and contravariant components of that same vector:  
+$|\boldsymbol{c}|=(c_i\cdot c^i)^{1/2}$
 
 One can see, that using the dual basis by using one vector with the co- and the other vector with the contravariant components, the basis vectors are "disappearing" and a scalar ramains. This is important, if the basis vectors are not orthonormal.
 
@@ -109,24 +108,35 @@ or in index-notation
 $\hat{\boldsymbol{e}}_K=\hat{e}_K^{\,j}\cdot \boldsymbol{e}_j$  
 $ \Rightarrow \hat{\boldsymbol{e}}_K \cdot \boldsymbol{e}^i = \hat{e}_K^{\,j}\cdot \boldsymbol{e}_j \cdot \boldsymbol{e}^i = \hat{e}_K^{\,j} \cdot \delta_j^{\,i}= \hat{e}_K^{\,j} = \alpha_K^{\,j}$  
 
-$\alpha_K^i=
+$\alpha_K^{\;i}=
 \begin{bmatrix}
 \hat{\hat{e}}_1^{\,1} & \hat{\hat{e}}_1^{\,2}  & ...\\
 \hat{\hat{e}}_2^{\,1}  & \hat{\hat{e}}_2^{\,2}  & ...\\
 ... & &\\
 \end{bmatrix}$
 
-Each row is a list of the components of each vector of the new basis referred to the old basis. This works evan for non orthonormal basis systems.
+Each row is a list of the components of each vector of the new basis referred to the old basis. This works even for non orthonormal basis systems.
+
+*EXAMPLE"
+Define $\boldsymbol{\alpha}$ for a rotaion of a orthonormal basis 
+
+The transformation of a tensor of higher grade works by "transforming each index":
+
+$\hat{\sigma}_{IK}=\alpha_I^{\;i}\;\alpha_K^{\;k}\;\sigma_{ik}$  
+$\hat{E}_{IKLM}=\alpha_I^{\;i}\;\alpha_K^{\;k}\alpha_L^{\;l}\;\alpha_M^{\;m}\;E_{iklm}$  
+
+
 
 
 ---
 **NOTE**
 
-In the following we will use only orthonormal coordinate systems. Here is: $\boldsymbol{e}_i=\boldsymbol{e}^i$. For that reason there is no need to distinguish between co- and contravariant basis. So all indices will be written as al lower index.
+In the following we will use only orthonormal coordinate systems. Here is: $\boldsymbol{e}_i=\boldsymbol{e}^i$. For that reason there is no need to distinguish between co- and contravariant basis, and the upper index can be unsed for something else. So all tensor-indices will be written as al lower index:  
+
+$\hat{\sigma}_{IK}=\alpha_I^{\;i}\;\alpha_K^{\;k}\;\sigma_{ik}\;\Rightarrow\;\hat{\sigma}_{IK}=\alpha_{Ii}\;\alpha_{Kk}\;\sigma_{ik}$  
 
 
 ---
 
 
-*EXAMPLE"
-Define $\boldsymbol{\alpha}} for a rotaion of a orthonormal basis 
+
