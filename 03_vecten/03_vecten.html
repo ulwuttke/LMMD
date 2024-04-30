@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '03_vecten/03_vecten';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="stress tensor, traction" href="../04_spten/04_spten.html" />
     <link rel="prev" title="repetition / basic knowledge" href="../02_rep/02_rep.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -161,6 +162,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../01_linear/01_linear.html">linear / non-ninear behaviour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02_rep/02_rep.html">repetition / basic knowledge</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">vector/tensor rotation and transformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04_spten/04_spten.html">stress tensor, traction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../A1_hyper/A1_hyper.html">Using hyperworks imput file</a></li>
 </ul>
 
     </div>
@@ -420,13 +423,15 @@ The simplification <span class="math notranslate nohighlight">\(\sum_{i=1}^{i=2}
 <p>It is not importent, wich letter is used for the index, but it is very important wich index has the same letter (<a class="reference external" href="https://en.wikipedia.org/wiki/Einstein_notation">EINSTEIN Summation</a> )! So, equal indices were used as summation indeces - and they dissapear after the summation.<br />
 for. ex.: <span class="math notranslate nohighlight">\(c_i \cdot d^k = M_i^{ k}\)</span> (result is a tensor 2nd grade); <span class="math notranslate nohighlight">\(c_n \cdot d^n = n\)</span> (result a scalar)</p>
 <hr class="docutils" />
-<p><span class="math notranslate nohighlight">\(c_i \boldsymbol{e}^i \)</span> are the covariant components of the vector <span class="math notranslate nohighlight">\(\vec{c} = \boldsymbol{c}\)</span></p>
-<p><span class="math notranslate nohighlight">\(c^i \boldsymbol{e}_i \)</span> are the contravariant components of the vector <span class="math notranslate nohighlight">\(\vec{c} = \boldsymbol{c}\)</span></p>
-<p>the two basis systems <span class="math notranslate nohighlight">\(\boldsymbol{e}^i\)</span> and the  so called dual basis <span class="math notranslate nohighlight">\(\boldsymbol{e}_i\)</span> are linked by the following condition:</p>
+<p><span class="math notranslate nohighlight">\(c_i \boldsymbol{e}^i \)</span> are the covariant components of the vector <span class="math notranslate nohighlight">\(\vec{c} = \boldsymbol{c}\)</span><br />
+<span class="math notranslate nohighlight">\(c^i \boldsymbol{e}_i \)</span> are the contravariant components of the vector <span class="math notranslate nohighlight">\(\vec{c} = \boldsymbol{c}\)</span><br />
+the two basis systems <span class="math notranslate nohighlight">\(\boldsymbol{e}^i\)</span> and the  so called dual basis <span class="math notranslate nohighlight">\(\boldsymbol{e}_i\)</span> are linked by the following condition:</p>
 <p><span class="math notranslate nohighlight">\(\boldsymbol{e}^1 \cdot \)</span>\boldsymbol{e}_1 =1<span class="math notranslate nohighlight">\(, \)</span>\boldsymbol{e}^2 \cdot <span class="math notranslate nohighlight">\(\boldsymbol{e}_2 =1\)</span>, <span class="math notranslate nohighlight">\(\boldsymbol{e}^1 \cdot \)</span>\boldsymbol{e}_2 =0<span class="math notranslate nohighlight">\(, \)</span>\boldsymbol{e}^2 \cdot <span class="math notranslate nohighlight">\(\boldsymbol{e}_1 =0\)</span></p>
-<p><img alt="DualBasis" src="03_vecten/DualBAsis.png" /></p>
+<p><img alt="DualBasis" src="../_images/DualBAsis.png" /></p>
 <p>Using the dual basis the scala product of two vectors (in two dim.) can be written:</p>
-<p><span class="math notranslate nohighlight">\(\boldsymbol{c}\cdot\boldsymbol{d}= [c_1 \boldsymbol{e}^1 + c_2 \boldsymbol{e}^2] \cdot [b_1 \boldsymbol{e}^1 + b_2 \boldsymbol{e}^2] = c_1 b^1 \boldsymbol{e}^1 \boldsymbol{e}_1 + c_1 b^2 \boldsymbol{e}^1 \boldsymbol{e}_2 + c_2 b^1 \boldsymbol{e}^2 \boldsymbol{e}_1 + c_2 b^2 \boldsymbol{e}^2 \boldsymbol{e}_2\)</span> = c_1 b^1+c_2 b^2$</p>
+<p><span class="math notranslate nohighlight">\(\boldsymbol{c}\cdot\boldsymbol{d}= [c_1 \boldsymbol{e}^1 + c_2 \boldsymbol{e}^2] \cdot [b_1 \boldsymbol{e}^1 + b_2 \boldsymbol{e}^2] = c_1 b^1 \boldsymbol{e}^1 \boldsymbol{e}_1 + c_1 b^2 \boldsymbol{e}^1 \boldsymbol{e}_2 + c_2 b^1 \boldsymbol{e}^2 \boldsymbol{e}_1 + c_2 b^2 \boldsymbol{e}^2 \boldsymbol{e}_2 = c_1 b^1+c_2 b^2=c_i b^i\)</span>.<br />
+The length of a vector <span class="math notranslate nohighlight">\(\boldsymbol{c}\)</span> can be calculeted by using the co- and contravariant components of that same vector:<br />
+<span class="math notranslate nohighlight">\(|\boldsymbol{c}|=(c_i\cdot c^i)^{1/2}\)</span></p>
 <p>One can see, that using the dual basis by using one vector with the co- and the other vector with the contravariant components, the basis vectors are “disappearing” and a scalar ramains. This is important, if the basis vectors are not orthonormal.</p>
 <p><img alt="WikiCoContra" src="https://upload.wikimedia.org/wikipedia/commons/7/72/Covariantcomponents.gif" /></p>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_of_vectors">co- contravariant basis</a></p>
@@ -469,19 +474,23 @@ for. ex.: <span class="math notranslate nohighlight">\(c_i \cdot d^k = M_i^{ k}\
 <p>or in index-notation</p>
 <p><span class="math notranslate nohighlight">\(\hat{\boldsymbol{e}}_K=\hat{e}_K^{\,j}\cdot \boldsymbol{e}_j\)</span><br />
 <span class="math notranslate nohighlight">\( \Rightarrow \hat{\boldsymbol{e}}_K \cdot \boldsymbol{e}^i = \hat{e}_K^{\,j}\cdot \boldsymbol{e}_j \cdot \boldsymbol{e}^i = \hat{e}_K^{\,j} \cdot \delta_j^{\,i}= \hat{e}_K^{\,j} = \alpha_K^{\,j}\)</span></p>
-<p><span class="math notranslate nohighlight">\(\alpha_K^i=
+<p><span class="math notranslate nohighlight">\(\alpha_K^{\;i}=
 \begin{bmatrix}
 \hat{\hat{e}}_1^{\,1} &amp; \hat{\hat{e}}_1^{\,2}  &amp; ...\\
 \hat{\hat{e}}_2^{\,1}  &amp; \hat{\hat{e}}_2^{\,2}  &amp; ...\\
 ... &amp; &amp;\\
 \end{bmatrix}\)</span></p>
-<p>Each row is a list of the components of each vector of the new basis referred to the old basis. This works evan for non orthonormal basis systems.</p>
+<p>Each row is a list of the components of each vector of the new basis referred to the old basis. This works even for non orthonormal basis systems.</p>
+<p>*EXAMPLE”
+Define <span class="math notranslate nohighlight">\(\boldsymbol{\alpha}\)</span> for a rotaion of a orthonormal basis</p>
+<p>The transformation of a tensor of higher grade works by “transforming each index”:</p>
+<p><span class="math notranslate nohighlight">\(\hat{\sigma}_{IK}=\alpha_I^{\;i}\;\alpha_K^{\;k}\;\sigma_{ik}\)</span><br />
+<span class="math notranslate nohighlight">\(\hat{E}_{IKLM}=\alpha_I^{\;i}\;\alpha_K^{\;k}\alpha_L^{\;l}\;\alpha_M^{\;m}\;E_{iklm}\)</span></p>
 <hr class="docutils" />
 <p><strong>NOTE</strong></p>
-<p>In the following we will use only orthonormal coordinate systems. Here is: <span class="math notranslate nohighlight">\(\boldsymbol{e}_i=\boldsymbol{e}^i\)</span>. For that reason there is no need to distinguish between co- and contravariant basis. So all indices will be written as al lower index.</p>
+<p>In the following we will use only orthonormal coordinate systems. Here is: <span class="math notranslate nohighlight">\(\boldsymbol{e}_i=\boldsymbol{e}^i\)</span>. For that reason there is no need to distinguish between co- and contravariant basis, and the upper index can be unsed for something else. So all tensor-indices will be written as al lower index:</p>
+<p><span class="math notranslate nohighlight">\(\hat{\sigma}_{IK}=\alpha_I^{\;i}\;\alpha_K^{\;k}\;\sigma_{ik}\;\Rightarrow\;\hat{\sigma}_{IK}=\alpha_{Ii}\;\alpha_{Kk}\;\sigma_{ik}\)</span></p>
 <hr class="docutils" />
-<p>*EXAMPLE”
-Define $\boldsymbol{\alpha}} for a rotaion of a orthonormal basis</p>
 </section>
 </section>
 
@@ -524,6 +533,15 @@ Define $\boldsymbol{\alpha}} for a rotaion of a orthonormal basis</p>
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">repetition / basic knowledge</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="../04_spten/04_spten.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">stress tensor, traction</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   

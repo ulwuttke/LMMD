@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>linear / non-ninear behaviour &#8212; LMMD Skript</title>
+    <title>stress tensor, traction &#8212; LMMD Skript</title>
   
   
   
@@ -61,11 +61,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '01_linear/01_linear';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '04_spten/04_spten';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="repetition / basic knowledge" href="../02_rep/02_rep.html" />
-    <link rel="prev" title="Welcome the course Linear Material Modelling (LMMD)." href="../intro.html" />
+    <link rel="next" title="Using hyperworks imput file" href="../A1_hyper/A1_hyper.html" />
+    <link rel="prev" title="vector/tensor rotation and transformation" href="../03_vecten/03_vecten.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -157,10 +159,10 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">linear / non-ninear behaviour</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../01_linear/01_linear.html">linear / non-ninear behaviour</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02_rep/02_rep.html">repetition / basic knowledge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03_vecten/03_vecten.html">vector/tensor rotation and transformation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../04_spten/04_spten.html">stress tensor, traction</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">stress tensor, traction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../A1_hyper/A1_hyper.html">Using hyperworks imput file</a></li>
 </ul>
 
@@ -233,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F01_linear/01_linear.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F04_spten/04_spten.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -263,7 +265,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/01_linear/01_linear.md" target="_blank"
+      <li><a href="../_sources/04_spten/04_spten.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -332,7 +334,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -343,11 +347,22 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>linear / non-ninear behaviour</h1>
+    <h1>stress tensor, traction</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stress-in-one-dimension-engineering-stress-definition">stress in one dimension, engineering stress definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stress-tensor">stress tensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cauchy-formula">cauchy formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principal-stresses-and-invariants">principal stresses and invariants</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -357,17 +372,67 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="linear-non-ninear-behaviour">
-<h1>linear / non-ninear behaviour<a class="headerlink" href="#linear-non-ninear-behaviour" title="Permalink to this heading">#</a></h1>
-<p>In continuum mechanics, there are different types of nonlinear system behavior:</p>
-<ul class="simple">
-<li><p>nonlinear boundary conditions (e.g. changing contact conditions), A</p></li>
-<li><p>nonlinear deformation, B</p></li>
-<li><p>nonlinear material behavior, C</p></li>
-</ul>
-<p><img alt="linnonlin" src="../_images/LinNonlin.png" /></p>
-<p>The linearization is in many cases a very simplified assumption that only represents the real behaviour of a system with sufficient accuracy under certain boundary conditions.</p>
-<p>In engineering practice, the advantage of linearization lies in the reduction of the calculation effort. Due to the possibility of simply superimposing different load cases linearly, it is not necessary to calculate each load case individually (and fully transient). Even with increasing computing power this is still not possible with reasonable effort for complex systems. Linearization is therefore an essential and necessary simplification “to get things solved”. But special failure mechanisms such as buckling or the analysis of large strains cannot be assessed with a linear calculation alone. The application limits must therefore be carefully observed!</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="stress-tensor-traction">
+<h1>stress tensor, traction<a class="headerlink" href="#stress-tensor-traction" title="Permalink to this heading">#</a></h1>
+<section id="stress-in-one-dimension-engineering-stress-definition">
+<h2>stress in one dimension, engineering stress definition<a class="headerlink" href="#stress-in-one-dimension-engineering-stress-definition" title="Permalink to this heading">#</a></h2>
+<p>The mechanical stress is defined as a force related to the surface <span class="math notranslate nohighlight">\(\sigma=F/A\)</span> (or a small part of a force <span class="math notranslate nohighlight">\(dF\)</span> related to a small part of the surface <span class="math notranslate nohighlight">\(dA\)</span>).
+Two types of stress can thus be defined: the real stress (which refer to the real actual geometry <span class="math notranslate nohighlight">\(dA\)</span>) and the technical stress (which refers to the initial or referenz geometry <span class="math notranslate nohighlight">\(dA_0\)</span>). For small deformations (or strains; and this is what we are looking at here), the engineering stress is almost equal to the real stress.</p>
+<p><img alt="OneDimStress" src="04_spten/OneDimStress.png" /></p>
+<p>engineering stress: <span class="math notranslate nohighlight">\(\sigma=F/A_0\)</span>; <span class="math notranslate nohighlight">\(\sigma=dF/dA_0\)</span></p>
+</section>
+<section id="stress-tensor">
+<h2>stress tensor<a class="headerlink" href="#stress-tensor" title="Permalink to this heading">#</a></h2>
+<p>The following explanations are written down for 2-dimensional problems (plane stress state). All statements can be transferred analogously to 3 dimensions.</p>
+<p><img alt="traction" src="../_images/traction.png" /></p>
+<p>In the figure, <span class="math notranslate nohighlight">\(\vec{t}=\boldsymbol{t}=t_{i}\)</span> is the traction vector. The total stress state at one point is described by two (or in 3D three) traction vector for two (or in 3D three) perpendicular cuttting planes. The traction vectors occurring on each section plane can be written in components with respect to an orthonormal basis resulting from the normal vectors on each section plane. The components of each vector can be written in the rows of a tensor 2. grade: the stress tensor <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}=\sigma_{ik}\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\vec{t}^1=\boldsymbol{t}^1=t_{i}^1=
+\sigma^1 \cdot \boldsymbol{e}^1+\tau^1 \cdot \boldsymbol{e}^2=
+\sigma^{11} \cdot \boldsymbol{e}^1+\sigma{21} \cdot \boldsymbol{e}^2\)</span><br />
+<span class="math notranslate nohighlight">\(\vec{t}^2=\boldsymbol{t}^2=t_{i}^2=
+\tau^2 \cdot \boldsymbol{e}^1+\sigma^2 \cdot \boldsymbol{e}^2=
+\sigma^{21} \cdot \boldsymbol{e}^1+\sigma{22} \cdot \boldsymbol{e}^2\)</span></p>
+<p>stress tensor:
+<span class="math notranslate nohighlight">\(\boldsymbol{\sigma}=\sigma_{ik}=
+\begin{bmatrix}
+\sigma^{11} &amp; \sigma^{12} &amp; (\sigma^{13})\\
+\sigma^{21} &amp; \sigma^{22} &amp; (\sigma^{23})\\
+(\sigma^{31}) &amp; (\sigma^{31}) &amp; (\sigma^{33})\\
+\end{bmatrix}\)</span></p>
+<hr class="docutils" />
+<p><strong>NOTE</strong></p>
+<p>Due to the moment equilibrium, the assigned shear stresses must be equal.<br />
+The following therefore applies <span class="math notranslate nohighlight">\(\sigma_{ik}=\sigma_{ki}\)</span> The stress tensor is symmetric!</p>
+<hr class="docutils" />
+<p><em>EXAMPLE</em></p>
+<p><img alt="ex1" src="../_images/ex1.png" /></p>
+<p>A: Write down the stress tensor for the given stresses!<br />
+B: Calculate the traction <span class="math notranslate nohighlight">\(\boldsymbol{t}\)</span> (components in the <span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(2\)</span>-system)<br />
+C: Calculate the traction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{t}}\)</span> (components in the <span class="math notranslate nohighlight">\(\hat{1}\)</span>-<span class="math notranslate nohighlight">\(\hat{2}\)</span>-system)</p>
+</section>
+<section id="cauchy-formula">
+<h2>cauchy formula<a class="headerlink" href="#cauchy-formula" title="Permalink to this heading">#</a></h2>
+<p><img alt="cauchyform" src="04_spten/cauchyform.png" /></p>
+<p>Another way to calculate the traction: If a small surface or volume elemnet is cut under a certian direction, the cutting surface is <span class="math notranslate nohighlight">\(dA\)</span> and the direction of the cutting plane is given by its normal vector <span class="math notranslate nohighlight">\(\boldsymbol{n}\)</span>. The projection of the Surface <span class="math notranslate nohighlight">\(dA\)</span> on each plane of the basis system (<span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(2\)</span>-plane, <span class="math notranslate nohighlight">\(2\)</span>-<span class="math notranslate nohighlight">\(3\)</span>-plane, <span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(3\)</span>-plane) results by the scalar product of the oriented surface vector <span class="math notranslate nohighlight">\(dA \cdot \boldsymbol{n}\)</span> with the base-vector perpendicular on this plane (for ex.: <span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(2\)</span>-plane <span class="math notranslate nohighlight">\(A^{12}= (dA \cdot \boldsymbol{n})\cdot \boldsymbol{e}_1\)</span>. The equilibrium in <span class="math notranslate nohighlight">\(1\)</span>-direction of a small cuttex volume element is:</p>
+<p><span class="math notranslate nohighlight">\(\rightarrow \text{ : }0=t_1\cdot dA-
+\sigma_{11}(dA \cdot \boldsymbol{n})\cdot \boldsymbol{e}_1)-
+\sigma_{21}(dA \cdot \boldsymbol{n})\cdot \boldsymbol{e}_2)-
+\sigma_{31}(dA \cdot \boldsymbol{n})\cdot \boldsymbol{e}_3)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\boldsymbol{n} \cdot \boldsymbol{e}_1 = (n_1 \cdot \boldsymbol{e}_1+n_2 \cdot \boldsymbol{e}_2+n_3 \cdot \boldsymbol{e}_3) \boldsymbol{e}_1\)</span></p>
+<p>for a orthonomal basis <span class="math notranslate nohighlight">\(\boldsymbol{e}_i \cdot \boldsymbol{e}_k =1 \text{ for }i=k; =0 \text{ for }i\neq k\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\)</span><br />
+<span class="math notranslate nohighlight">\(0=t_1-\sigma_{11}\;n_1-\sigma_{21}\;n_2-\sigma_{31}\;n_3\)</span><br />
+<span class="math notranslate nohighlight">\(0=t_2-\sigma_{12}\;n_1-\sigma_{22}\;n_2-\sigma_{32}\;n_3\)</span><br />
+<span class="math notranslate nohighlight">\(0=t_3-\sigma_{13}\;n_1-\sigma_{23}\;n_2-\sigma_{33}\;n_3\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\;t_k=\sigma_{ik}\;n_i=\boldsymbol{t}=\boldsymbol{\sigma^T}\cdot \boldsymbol{n}\)</span></p>
+<p><em>EXAMPLE</em></p>
+<p>Calculate <span class="math notranslate nohighlight">\(\boldsymbol{t}\)</span> in the ex. above with the CAUCHY-formula</p>
+</section>
+<section id="principal-stresses-and-invariants">
+<h2>principal stresses and invariants<a class="headerlink" href="#principal-stresses-and-invariants" title="Permalink to this heading">#</a></h2>
+<p>work in progress</p>
+<p><a class="reference external" href="https://campuas.frankfurt-university.de/pluginfile.php/459922/mod_folder/content/0/SS23_LMMD_skrip.pdf?forcedownload=1">see the hand written script</a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -383,7 +448,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./01_linear"
+            path: "./04_spten"
         },
         predefinedOutput: true
     }
@@ -402,20 +467,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../intro.html"
+       href="../03_vecten/03_vecten.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome the course Linear Material Modelling (LMMD).</p>
+        <p class="prev-next-title">vector/tensor rotation and transformation</p>
       </div>
     </a>
     <a class="right-next"
-       href="../02_rep/02_rep.html"
+       href="../A1_hyper/A1_hyper.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">repetition / basic knowledge</p>
+        <p class="prev-next-title">Using hyperworks imput file</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -428,6 +493,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stress-in-one-dimension-engineering-stress-definition">stress in one dimension, engineering stress definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stress-tensor">stress tensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cauchy-formula">cauchy formula</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principal-stresses-and-invariants">principal stresses and invariants</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
