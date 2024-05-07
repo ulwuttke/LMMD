@@ -386,19 +386,25 @@ For small deformations (or strains; and this is what we are looking at here), th
 <h2>stress tensor<a class="headerlink" href="#stress-tensor" title="Permalink to this heading">#</a></h2>
 <p>The following explanations are written down for 2-dimensional problems (plane stress state). All statements can be transferred analogously to 3 dimensions.</p>
 <p><img alt="traction" src="../_images/traction.png" /></p>
-<p>In the figure, <span class="math notranslate nohighlight">\(\vec{t}=\boldsymbol{t}=t_{i}\)</span> is the traction vector. The total stress state at one point is described by two (or in 3D three) traction vector for two (or in 3D three) perpendicular cuttting planes. The traction vectors occurring on each section plane can be written in components with respect to an orthonormal basis resulting from the normal vectors on each section plane. The components of each vector can be written in the rows of a tensor 2. grade: the stress tensor <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}=\sigma_{ik}\)</span>:</p>
+<p>In the figure, <span class="math notranslate nohighlight">\(\vec{t}=\boldsymbol{t}=t_{i}\)</span> is the traction or stress vector. The total stress state at one point is described by two (or in 3D three) traction vector for two (or in 3D three) perpendicular cuttting planes. The traction vectors occurring on each section plane can be written in components with respect to an orthonormal basis resulting from the normal vectors on each section plane. The components of each vector can be written in the rows of a tensor 2. grade: the stress tensor <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}=\sigma_{ik}\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\vec{t}^1=\boldsymbol{t}^1=t_{i}^1=
 \sigma^1 \cdot \boldsymbol{e}^1+\tau^1 \cdot \boldsymbol{e}^2=
 \sigma^{11} \cdot \boldsymbol{e}^1+\sigma{21} \cdot \boldsymbol{e}^2\)</span><br />
 <span class="math notranslate nohighlight">\(\vec{t}^2=\boldsymbol{t}^2=t_{i}^2=
 \tau^2 \cdot \boldsymbol{e}^1+\sigma^2 \cdot \boldsymbol{e}^2=
 \sigma^{21} \cdot \boldsymbol{e}^1+\sigma{22} \cdot \boldsymbol{e}^2\)</span></p>
-<p>stress tensor:
+<p>stress tensor in two dimensions (plane stress):
 <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}=\sigma_{ik}=
 \begin{bmatrix}
-\sigma^{11} &amp; \sigma^{12} &amp; (\sigma^{13})\\
-\sigma^{21} &amp; \sigma^{22} &amp; (\sigma^{23})\\
-(\sigma^{31}) &amp; (\sigma^{31}) &amp; (\sigma^{33})\\
+\sigma^{11} &amp; \sigma^{12} \\
+\sigma^{21} &amp; \sigma^{22} \\
+\end{bmatrix}\)</span></p>
+<p>… or in three dimensions:</p>
+<p><span class="math notranslate nohighlight">\(\boldsymbol{\sigma}=\sigma_{ik}=
+\begin{bmatrix}
+\sigma^{11} &amp; \sigma^{12} &amp; \sigma^{13}\\
+\sigma^{21} &amp; \sigma^{22} &amp; \sigma^{23}\\
+\sigma^{31} &amp; \sigma^{31} &amp; \sigma^{33}\\
 \end{bmatrix}\)</span></p>
 <hr class="docutils" />
 <p><strong>NOTE</strong></p>
@@ -413,12 +419,12 @@ C: Calculate the traction <span class="math notranslate nohighlight">\(\hat{\bol
 </section>
 <section id="cauchy-formula">
 <h2>cauchy formula<a class="headerlink" href="#cauchy-formula" title="Permalink to this heading">#</a></h2>
-<p><img alt="cauchyform" src="04_spten/cauchyform.png" /></p>
-<p>Another way to calculate the traction: If a small surface or volume elemnet is cut under a certian direction, the cutting surface is <span class="math notranslate nohighlight">\(dA\)</span> and the direction of the cutting plane is given by its normal vector <span class="math notranslate nohighlight">\(\boldsymbol{n}\)</span>. The projection of the Surface <span class="math notranslate nohighlight">\(dA\)</span> on each plane of the basis system (<span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(2\)</span>-plane, <span class="math notranslate nohighlight">\(2\)</span>-<span class="math notranslate nohighlight">\(3\)</span>-plane, <span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(3\)</span>-plane) results by the scalar product of the oriented surface vector <span class="math notranslate nohighlight">\(dA \cdot \boldsymbol{n}\)</span> with the base-vector perpendicular on this plane (for ex.: <span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(2\)</span>-plane <span class="math notranslate nohighlight">\(A^{12}= (dA \cdot \boldsymbol{n})\cdot \boldsymbol{e}_1\)</span>. The equilibrium in <span class="math notranslate nohighlight">\(1\)</span>-direction of a small cuttex volume element is:</p>
+<p><img alt="cauchyform" src="../_images/cauchyform.png" /></p>
+<p>Another way to calculate the traction: If a small surface or volume elemnet is cut under a certian direction, the cutting surface is <span class="math notranslate nohighlight">\(dA\)</span> and the direction of the cutting plane is given by its normal vector <span class="math notranslate nohighlight">\(\boldsymbol{n}\)</span>. The projection of the Surface <span class="math notranslate nohighlight">\(dA\)</span> on each plane of the basis system (<span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(2\)</span>-plane, <span class="math notranslate nohighlight">\(2\)</span>-<span class="math notranslate nohighlight">\(3\)</span>-plane, <span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(3\)</span>-plane) results by the scalar product of the oriented surface vector <span class="math notranslate nohighlight">\(dA \cdot \boldsymbol{n}\)</span> with the base-vector perpendicular on this plane (for ex.: <span class="math notranslate nohighlight">\(2\)</span>-<span class="math notranslate nohighlight">\(3\)</span>-plane <span class="math notranslate nohighlight">\(dA^{1}= (dA \cdot \boldsymbol{n})\cdot \boldsymbol{e}_1\)</span>. The equilibrium in <span class="math notranslate nohighlight">\(1\)</span>-direction of a small cuttex volume element is:</p>
 <p><span class="math notranslate nohighlight">\(\rightarrow \text{ : }0=t_1\cdot dA-
-\sigma_{11}(dA \cdot \boldsymbol{n})\cdot \boldsymbol{e}_1)-
-\sigma_{21}(dA \cdot \boldsymbol{n})\cdot \boldsymbol{e}_2)-
-\sigma_{31}(dA \cdot \boldsymbol{n})\cdot \boldsymbol{e}_3)\)</span></p>
+\sigma_{11}(d A \cdot \boldsymbol{n})\cdot \boldsymbol{e}_1)-
+\sigma_{21}(d A \cdot \boldsymbol{n})\cdot \boldsymbol{e}_2)-
+\sigma_{31}(d A \cdot \boldsymbol{n})\cdot \boldsymbol{e}_3)\)</span></p>
 <p><span class="math notranslate nohighlight">\(\boldsymbol{n} \cdot \boldsymbol{e}_1 = (n_1 \cdot \boldsymbol{e}_1+n_2 \cdot \boldsymbol{e}_2+n_3 \cdot \boldsymbol{e}_3) \boldsymbol{e}_1\)</span></p>
 <p>for a orthonomal basis <span class="math notranslate nohighlight">\(\boldsymbol{e}_i \cdot \boldsymbol{e}_k =1 \text{ for }i=k; =0 \text{ for }i\neq k\)</span></p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\)</span><br />
@@ -431,8 +437,47 @@ C: Calculate the traction <span class="math notranslate nohighlight">\(\hat{\bol
 </section>
 <section id="principal-stresses-and-invariants">
 <h2>principal stresses and invariants<a class="headerlink" href="#principal-stresses-and-invariants" title="Permalink to this heading">#</a></h2>
-<p>work in progress</p>
-<p><a class="reference external" href="https://campuas.frankfurt-university.de/pluginfile.php/459922/mod_folder/content/0/SS23_LMMD_skrip.pdf?forcedownload=1">see the hand written script</a></p>
+<p>If the traction (or the stress vector) in one point is pointing exact in the normal direction of the plane, no shear stresses are existing for this cutting direction, and the only existing normal stress is one principal stress.<br />
+In two dimensions the principal stresses can be found using the MOHRs circle. In three directions the CAUCHY-formula can be used.</p>
+<p><img alt="PrinStress01" src="../_images/PrinStress01.png" /></p>
+<p>If the traction <span class="math notranslate nohighlight">\(\boldsymbol{t}\)</span> is pointing in the normal direction, the vector <span class="math notranslate nohighlight">\(\boldsymbol{t}\)</span> can be written separated in quantity <span class="math notranslate nohighlight">\(|\boldsymbol{t}|=\sigma^{1,2,3}=\lambda^i\)</span> and direction <span class="math notranslate nohighlight">\(\boldsymbol{n}\)</span>. So, if <span class="math notranslate nohighlight">\(\boldsymbol{t}\)</span> is a principal stress, the following equation is fullfilled:</p>
+<p><span class="math notranslate nohighlight">\(\boldsymbol{\sigma}^T\cdot\boldsymbol{n}=\boldsymbol{t}=\lambda\cdot\boldsymbol{n}\)</span> or<br />
+<span class="math notranslate nohighlight">\(\sigma_{ik}\cdot n_i=t_k=\lambda\cdot n_k\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow \lambda\;n_k-\sigma_{ik}\; n_i =0\)</span><br />
+because of: <span class="math notranslate nohighlight">\(n_k=\delta_{k_i} \; n_i\)</span> it is:<br />
+<span class="math notranslate nohighlight">\(\lambda\;n_k-\sigma_{ik}\;n_i = n_i(\delta_{ik}\; \lambda-\sigma{ik})=0 \)</span></p>
+<p>The equations has solutions (exept <span class="math notranslate nohighlight">\(\boldsymbol{n}=\boldsymbol{0}\)</span>), for:</p>
+<p><span class="math notranslate nohighlight">\(det\delta_{ik}\; \lambda-\sigma{ik})=0\)</span>  (<a class="reference external" href="https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors">“eigenvalue-problem”</a>)</p>
+<p><span class="math notranslate nohighlight">\(det
+\begin{bmatrix}
+\lambda-\sigma^{11} &amp; -\sigma^{12} &amp; -\sigma^{13}\\
+-\sigma^{21} &amp; \lambda-\sigma^{22} &amp; -\sigma^{23}\\
+-\sigma^{31} &amp; -\sigma^{31} &amp;  \lambda-\sigma^{33}\\
+\end{bmatrix}\)</span></p>
+<p>(…)</p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow\;\;\lambda^3+I_1\lambda^2-I_2\Lambda+I_3=0\)</span><br />
+<span class="math notranslate nohighlight">\(I_1=\sigma_{jj}=\sigma_{11}+\sigma_{22}+\sigma_{33}\)</span><br />
+<span class="math notranslate nohighlight">\(I_2=-1/2(\sigma_{ik}\;\sigma_{ik}-\sigma_{ll}\;\sigma_{nn})\)</span><br />
+<span class="math notranslate nohighlight">\(I_3=det(\sigma_{ik})\)</span></p>
+<p><span class="math notranslate nohighlight">\(I_i\)</span> are the three <strong>invariants</strong> of the stress tensor. The qubic equation leads to three results for <span class="math notranslate nohighlight">\(\lambda^{1,2,3}\)</span> the three main stresses. The values are the principal stresses and are sorted by magnitude:</p>
+<p><span class="math notranslate nohighlight">\(\sigma^1=max\{\lambda^1;\lambda^2;\lambda^3\}\)</span><br />
+<span class="math notranslate nohighlight">\(\sigma^2=mid\{\lambda^1;\lambda^2;\lambda^3\}\)</span><br />
+<span class="math notranslate nohighlight">\(\sigma^3=min\{\lambda^1;\lambda^2;\lambda^3\}\)</span></p>
+<p>The normal vectors on the the three perpendicular cutting planes, and so the direction of the principal stresses, are the “eigenvectors” <span class="math notranslate nohighlight">\(\boldsymbol{n}^i\)</span>:<br />
+<span class="math notranslate nohighlight">\(n^1_i(\delta_{ik}\; \sigma^1-\sigma_{ik})=0\)</span><br />
+<span class="math notranslate nohighlight">\(n^2_i(\delta_{ik}\; \sigma^2-\sigma_{ik})=0\)</span><br />
+To be sure, that the normal vectors are forming a right handed system, the third vector schold be calculeted with the vector product (and not via <span class="math notranslate nohighlight">\(n^3_i(\delta_{ik}\;\lambda^3-\sigma_{ik})=0\)</span>):<br />
+<span class="math notranslate nohighlight">\(\boldsymbol{n}^3=\boldsymbol{n}^1 \times \boldsymbol{n}^2\)</span></p>
+<p>With <span class="math notranslate nohighlight">\(|\boldsymbol{n}^i|=1\)</span> the three normal vectors are a orthonormal basis; the principal coordinate system.</p>
+<p><em>EXAMPLE:</em></p>
+<p>Calculate the principal stesses and the prioncipal basis for the stress tensor</p>
+<p><span class="math notranslate nohighlight">\(\sigma_{ik}=
+\begin{bmatrix}
+20 &amp; 0 &amp; 15\\
+0 &amp; 30 &amp; 0\\
+15 &amp; 0 &amp; 25\\
+\end{bmatrix} \text{MPa}\)</span></p>
+<p><a class="reference external" href="https://campuas.frankfurt-university.de/pluginfile.php/459922/mod_folder/content/0/SS23_LMMD_skrip.pdf?forcedownload=1">hand written script</a></p>
 </section>
 </section>
 
