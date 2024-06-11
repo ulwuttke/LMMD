@@ -1,4 +1,4 @@
-# Creat Results in Hyperworks
+# Creating Results in Hyperworks
 
 ## Using the expression builder  
 
