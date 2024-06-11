@@ -8,4 +8,6 @@ chapters:
 - file: 02_rep/02_rep
 - file: 03_vecten/03_vecten
 - file: 04_spten/04_spten
+- file: 05_defstr/05_defstr
 - file: A1_hyper/A1_hyper
+- file: A2_hyperDerRes/A2_hyperDerRes
