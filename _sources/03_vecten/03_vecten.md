@@ -39,7 +39,10 @@ $\boldsymbol{e}^1 \cdot $\boldsymbol{e}_1 =1$, $\boldsymbol{e}^2 \cdot $\boldsym
 
 Using the dual basis the scala product of two vectors (in two dim.) can be written:
 
-$\boldsymbol{c}\cdot\boldsymbol{d}= [c_1 \boldsymbol{e}^1 + c_2 \boldsymbol{e}^2] \cdot [b_1 \boldsymbol{e}^1 + b_2 \boldsymbol{e}^2] = c_1 b^1 \boldsymbol{e}^1 \boldsymbol{e}_1 + c_1 b^2 \boldsymbol{e}^1 \boldsymbol{e}_2 + c_2 b^1 \boldsymbol{e}^2 \boldsymbol{e}_1 + c_2 b^2 \boldsymbol{e}^2 \boldsymbol{e}_2 = c_1 b^1+c_2 b^2=c_i b^i$.   
+$\boldsymbol{c}\cdot\boldsymbol{b}$
+$=[c_1 \boldsymbol{e}^1 + c_2 \boldsymbol{e}^2] \cdot [b^1 \boldsymbol{e}_1 + b^2 \boldsymbol{e}_2]$
+$= c_1 b^1 \boldsymbol{e}^1 \boldsymbol{e}_1 + c_1 b^2 \boldsymbol{e}^1 \boldsymbol{e}_2 + c_2 b^1 \boldsymbol{e}^2 \boldsymbol{e}_1 + c_2 b^2 \boldsymbol{e}^2 \boldsymbol{e}_2$
+$= c_1 b^1+c_2 b^2=c_i b^i$.   
 The length of a vector $\boldsymbol{c}$ can be calculeted by using the co- and contravariant components of that same vector:  
 $|\boldsymbol{c}|=(c_i\cdot c^i)^{1/2}$
 
@@ -63,19 +66,21 @@ $\boldsymbol{e}^i \boldsymbol{e}_j=
 
 $c_i b^j \boldsymbol{e}^i \boldsymbol{e}_j= c_i b^j \delta^i_j = c_i b^i $
 
+---
+**EXERCISE**
 
-*EXAMPLES*
-
+Which index remains? What is the order of the resulting tensor and what is/are the remaining index character(s)?
 $c_i\cdot b^i = $  
 $c_j\cdot b^i = $  
 $A_{ji}\cdot B_{ck} = $  
 $A_{ji}\cdot B_{ik} = $  
 $A_{ji}\cdot B_{ij} = $  
 
+---
 
 ## tensor/vector transformation
 
-The vector $\boldsymbol{b}$ is given in the "old" basis system $\boldsymbol{e}^i$ (old basis indes lower case). The components should betransformed in the new basis system $\hat{\boldsymbol{e}}^J$ (new basis indes upper case).
+The vector $\boldsymbol{b}$ is given in the "old" basis system $\boldsymbol{e}^i$ (old basis index lower case). The components should betransformed in the new basis system $\hat{\boldsymbol{e}}^J$ (new basis indes upper case).
 ![vectordiffbase](VecDiffBase.png)
 
 $\boldsymbol{b}=b_i\cdot \boldsymbol{e}^i = \hat{b}_i\cdot \hat{\boldsymbol{e}}^J$  
@@ -117,15 +122,10 @@ $\alpha_K^{\;i}=
 
 Each row is a list of the components of each vector of the new basis referred to the old basis. This works even for non orthonormal basis systems.
 
-*EXAMPLE"
-Define $\boldsymbol{\alpha}$ for a rotaion of a orthonormal basis 
-
 The transformation of a tensor of higher grade works by "transforming each index":
 
 $\hat{\sigma}_{IK}=\alpha_I^{\;i}\;\alpha_K^{\;k}\;\sigma_{ik}$  
 $\hat{E}_{IKLM}=\alpha_I^{\;i}\;\alpha_K^{\;k}\alpha_L^{\;l}\;\alpha_M^{\;m}\;E_{iklm}$  
-
-
 
 
 ---
@@ -135,8 +135,26 @@ In the following we will use only orthonormal coordinate systems. Here is: $\bol
 
 $\hat{\sigma}_{IK}=\alpha_I^{\;i}\;\alpha_K^{\;k}\;\sigma_{ik}\;\Rightarrow\;\hat{\sigma}_{IK}=\alpha_{Ii}\;\alpha_{Kk}\;\sigma_{ik}$  
 
-
 ---
 
+---
+**EXERCISE**
 
+1. Define $\boldsymbol{\alpha}$ for a rotation around the z-axis (rotation angle $\phi$) of a orthonormal basis. 
 
+2. Use the transformation tensor $\boldsymbol{\alpha}$ to transform the force $\vec{F}=\boldsymbol{F}=F_i$ and the stress tensor $\boldsymbol{\sigma}=\sigma_{ik}$ for a rotation of $\phi=30°$. Carry out the transformation as a matrix product and using the EINSTEIN-summation rule.
+
+$F_{i}=
+\begin{bmatrix}
+10 \\
+5 \\
+8 \\
+\end{bmatrix} \text{kN}$   
+$\sigma_{ik}=
+\begin{bmatrix}
+50&20&0 \\
+20&30&0 \\
+0&0&0 \\
+\end{bmatrix} \text{MPa}$
+
+---

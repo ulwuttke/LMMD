@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '05_defstr/05_defstr';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -163,6 +165,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../04_spten/04_spten.html">stress tensor, traction</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">deformatoin / infinitesimal strain tensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../A1_hyper/A1_hyper.html">Using hyperworks imput file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../A2_hyperDerRes/A2_hyperDerRes.html">Creating Results in Hyperworks</a></li>
 </ul>
 
     </div>
@@ -358,7 +361,8 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strain-definition-in-one-dimension">strain definition in one dimension</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-dim-deformation-deformation-gradient">three dim. deformation / deformation gradient</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strain-tensor-infinitesimal-strein-tensor">strain tensor / infinitesimal strein tensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strain-tensor-finite-strain-theorie">strain tensor (finite strain theorie)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-strain-tensor-linear-theorie">infinitesimal strain tensor (linear theorie)</a></li>
 </ul>
             </nav>
         </div>
@@ -374,15 +378,144 @@ document.write(`
 <h1>deformatoin / infinitesimal strain tensor<a class="headerlink" href="#deformatoin-infinitesimal-strain-tensor" title="Permalink to this heading">#</a></h1>
 <section id="strain-definition-in-one-dimension">
 <h2>strain definition in one dimension<a class="headerlink" href="#strain-definition-in-one-dimension" title="Permalink to this heading">#</a></h2>
-<p>XXX</p>
+<p>In a one dimensional system the deformation of a infinitesimal line-element (endpoints <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span>) is defined by the quantities:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(X\)</span>, the material coordinate(s) (reference configuration; “names” of each material point</p></li>
+<li><p><span class="math notranslate nohighlight">\(u(X,t)\)</span>, the displacement/relative movement of each point “named” <span class="math notranslate nohighlight">\(X\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(x(u,t)=x(X,t)\)</span>, the current coordinate(s) of each point (current configuration)</p></li>
+<li><p><span class="math notranslate nohighlight">\(dX\)</span>, “undeformed” distance between <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(Q\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(dx\)</span>, “deformed” distance between the points at the new location <span class="math notranslate nohighlight">\(P'\)</span> and <span class="math notranslate nohighlight">\(Q'\)</span></p></li>
+</ul>
+<p><img alt="DefOneDim" src="../_images/DefOneDim.png" /></p>
+<p>The new locatoin of the material poins is decribed by:<br />
+<span class="math notranslate nohighlight">\(P'=x_P=x(X_P,t)=X(P)+u(P,t)\)</span> and<br />
+<span class="math notranslate nohighlight">\(Q'=x_Q=x(X_Q,t)=X(Q)+u(Q,t)=x(P,t)+dx(t)=X(P)+dX+u(P,t)+du(t)\)</span></p>
+<p>By the way, the time <span class="math notranslate nohighlight">\(t\)</span> only indicates, that there are different deformatoins possible. The time here is more a loadstep or load scale factor than a real time.</p>
+<p>The new length <span class="math notranslate nohighlight">\(dx\)</span> of the line-element <span class="math notranslate nohighlight">\(dX\)</span> is:<br />
+<span class="math notranslate nohighlight">\(dx=x(Q,t)-x(P,t)=[X(P)+dX+u(P,t)+du(t)]-[X(P)+u(P,t)]=dX+du\)</span><br />
+and the relative change or the deformation gradiet <span class="math notranslate nohighlight">\(F\)</span> of the line element is<br />
+<span class="math notranslate nohighlight">\(F=dx/dX=dX/dX+du/dX=1+du/dX\)</span><br />
+<span class="math notranslate nohighlight">\(F=dx/dX=\lambda\)</span> is the stretch (not the strain; the reason for all this different variables will be clear after the next chapter). For a undeformed structure <span class="math notranslate nohighlight">\(\lambda=1\)</span> (not <span class="math notranslate nohighlight">\(0\)</span>). A strain like deformation-quantity is</p>
+<p><span class="math notranslate nohighlight">\(G=1/2(F^2-1)=1/2[(1+du/dX)^2-1]=1/2[(1+2\cdot du/dX+d^2u/dX^2)-1]\)</span>
+<span class="math notranslate nohighlight">\(=du/dX+1/2 \cdot d^2u/dX^2 \)</span></p>
+<p>For small strains (small deformatoins) the line-element <span class="math notranslate nohighlight">\(dx\)</span> is nearly unchanged and <span class="math notranslate nohighlight">\(du/dX\approx du/dx\)</span> and <span class="math notranslate nohighlight">\(d^2u/dX^2\approx 0\)</span>. So the engineering strain <span class="math notranslate nohighlight">\(\epsilon\)</span> is defined by:<br />
+<span class="math notranslate nohighlight">\(G\approx \epsilon=du/dx=\lambda-1\)</span></p>
+<hr class="docutils" />
+<p><strong>Example</strong></p>
+<p>The deformation of a truss (Endpoints <span class="math notranslate nohighlight">\(X(P)=11\)</span>; <span class="math notranslate nohighlight">\(X(Q)=1\)</span>) is given by the following equation:
+<span class="math notranslate nohighlight">\(x=1/4\,(5\cdot X+19)\)</span></p>
+<ul class="simple">
+<li><p>draw a sketch of the undeformend end deformed truss</p></li>
+<li><p>calculate the displacement <span class="math notranslate nohighlight">\(u\)</span></p></li>
+<li><p>calculate the strain <span class="math notranslate nohighlight">\(\epsilon\)</span></p></li>
+<li><p>calculate the stretch <span class="math notranslate nohighlight">\(\lambda\)</span> (here equal to <span class="math notranslate nohighlight">\(F\)</span>, because of  one dim.)</p></li>
+</ul>
 </section>
+<hr class="docutils" />
 <section id="three-dim-deformation-deformation-gradient">
 <h2>three dim. deformation / deformation gradient<a class="headerlink" href="#three-dim-deformation-deformation-gradient" title="Permalink to this heading">#</a></h2>
-<p>XXX</p>
+<p>For three dimensions, it is nearly the same, but a little bit more complicated.<br />
+The vectors <span class="math notranslate nohighlight">\(\boldsymbol{X}=X_i\)</span> are the material coordinates (the “nemes” of each point)<br />
+The vectors <span class="math notranslate nohighlight">\(\boldsymbol{x}(X)=x_i\)</span> are the current coordinate(s) of each point and describe the deformed geometry.<br />
+The vectors <span class="math notranslate nohighlight">\(\boldsymbol{u}(X)=\boldsymbol{x}-\boldsymbol{X}=u_i\)</span> are the displacement of each point.</p>
+<p>The displacement is a vector field can change in every point. The variiation of <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> is decibed by the total derivate of eachvector componend:<br />
+<span class="math notranslate nohighlight">\(du_i=\frac{\partial u_i}{\partial X_j}dX_j=\left(\begin{array}
+{c} \frac{\partial u_1}{\partial X_1}dX_1+\frac{\partial u_1}{\partial X_2}dX_2+\frac{\partial u_1}{\partial X_3}dX_3 \\
+ \frac{\partial u_1}{\partial X_1}dX_1+\frac{\partial u_1}{\partial X_2}dX_2+\frac{\partial u_1}{\partial X_3}dX_3 \\ 
+ \frac{\partial u_1}{\partial X_1}dX_1+\frac{\partial u_1}{\partial X_2}dX_2+\frac{\partial u_1}{\partial X_3}dX_3  \end{array}\right)\)</span></p>
+<p>or</p>
+<p><span class="math notranslate nohighlight">\(du_i=\frac{\partial u_i}{\partial X_j}dX_j=
+\frac{\partial (x_i-X_i)}{\partial X_j}dX_j=
+\frac{\partial x_i-\partial X_i}{\partial X_j}dX_j=\)</span><br />
+<span class="math notranslate nohighlight">\(\frac{\partial x_i}{\partial X_j}dX_j-\frac{\partial X_i}{\partial X_j}dX_j=
+\frac{\partial x_i}{\partial X_j}dX_j-\delta_{ij}\,dX_j=
+\frac{\partial x_i}{\partial X_j}dX_j-dX_i\)</span></p>
+<p><img alt="DefThreeDim" src="../_images/DefThreeDim.png" /></p>
+<p><span class="math notranslate nohighlight">\(d\boldsymbol{u}=d\boldsymbol{x}-d\boldsymbol{X}=\frac{\partial \boldsymbol{x}}{\partial \boldsymbol{X}}d\boldsymbol{X}-d\boldsymbol{X}=\frac{\partial x_i}{\partial X_j}dX_j-dX_i\)</span></p>
+<p>so, the change of the infinitesimal line element <span class="math notranslate nohighlight">\(\boldsymbol{dX}\)</span> to <span class="math notranslate nohighlight">\(\boldsymbol{dx}\)</span> is described by <a class="reference external" href="https://www.continuummechanics.org/deformationgradient.html">deformation gradient <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span></a>:</p>
+<p><span class="math notranslate nohighlight">\(\boldsymbol{F}={\partial \boldsymbol{x}}/{\partial \boldsymbol{X}}=F_{ij}={\partial x_i}/{\partial X_j}\)</span></p>
+<p>The tensor <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> decribes the stretch of the line elemnet <span class="math notranslate nohighlight">\(d\boldsymbol{X}\)</span>. For an undeformed body <span class="math notranslate nohighlight">\(\boldsymbol{X}=\boldsymbol{x}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{F}=\boldsymbol{1}=F_{ik}=\delta_{ik}\)</span>.<br />
+For a constant displacemant <span class="math notranslate nohighlight">\(x_i=X_i+k\)</span> <span class="math notranslate nohighlight">\(F_{ik}=\delta_{ik}\)</span> too.<br />
+For a rigid body rotation, the line element <span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span> only changes the orientation, but not the length. But the componets of <span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span> are changing, and so <span class="math notranslate nohighlight">\(F_{ik}\neq \delta_{ik}\)</span>. This is a problem, because so <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> does not easyly indecates a deformation of the body<br />
+The rotation in <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> can be elininated by using the fact, that for a pur rotation tensor it is:</p>
+<p><span class="math notranslate nohighlight">\(\boldsymbol{R}\cdot\boldsymbol{R}^T=\boldsymbol{1}\)</span> or <span class="math notranslate nohighlight">\(R_{ik}\cdot R_{jk}=\delta_{ij}\)</span></p>
+<p>The deformationgradient F can be splitted in a pure rotation R and a Deformatoin U or V (depending on the order of the two operations).</p>
+<p><img alt="FRV" src="../_images/FRV.png" /></p>
+<hr class="docutils" />
+<p><strong>Example</strong></p>
+<p>The movement of a body is described by the vector-function</p>
+<p>A: <span class="math notranslate nohighlight">\(x^A_i(t)=\left(\begin{array}
+{c}X_1+2t \\
+X_2+t \\ 
+X_3\\
+\end{array}\right)\)</span></p>
+<p>B: <span class="math notranslate nohighlight">\(x^B_i(t)=\left(\begin{array}
+{c}X_1-X_2\cdot cos(t)\\
+X_2-X_1\cdot sin(t) \\ 
+X_3\\
+\end{array}\right)\)</span></p>
+<p>a: Sketch the resulting deformation for a simple body
+b: Calculate the deformation gradient <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span>
+c: Calculate <span class="math notranslate nohighlight">\(\boldsymbol{F}^T\cdot \)</span>\boldsymbol{F}$</p>
 </section>
-<section id="strain-tensor-infinitesimal-strein-tensor">
-<h2>strain tensor / infinitesimal strein tensor<a class="headerlink" href="#strain-tensor-infinitesimal-strein-tensor" title="Permalink to this heading">#</a></h2>
-<p>XXX</p>
+<hr class="docutils" />
+<section id="strain-tensor-finite-strain-theorie">
+<h2>strain tensor (finite strain theorie)<a class="headerlink" href="#strain-tensor-finite-strain-theorie" title="Permalink to this heading">#</a></h2>
+<p>So, one can do the following operation:
+<span class="math notranslate nohighlight">\(\boldsymbol{F}=\boldsymbol{R}\cdot\boldsymbol{U}=\boldsymbol{V}\cdot\boldsymbol{R}\)</span>=<span class="math notranslate nohighlight">\(F_{ik}=R_{in}\cdot U_{nk}=V_{im}\cdot R_{mk}\)</span></p>
+<p>and:
+<span class="math notranslate nohighlight">\(\boldsymbol{F}^T\cdot \boldsymbol{F}=F_{op}\cdot F_{oq}=\)</span>
+<span class="math notranslate nohighlight">\((R_{on}\cdot U_{np})\cdot (R_{om}\cdot U_{mq})=\)</span>
+<span class="math notranslate nohighlight">\(R_{on}\cdot R_{om}\,\,\cdot\,\, U_{np} \cdot U_{mq} =\)</span>
+<span class="math notranslate nohighlight">\(\delta_{nm}\cdot\,\, U_{np} \cdot U_{mq} =\)</span>
+<span class="math notranslate nohighlight">\(U_{mp} \cdot U_{mq}=C_{pq}\)</span></p>
+<p>After this operation a tensor <span class="math notranslate nohighlight">\(\boldsymbol{C}\)</span> is created, in which the rigit body rotation is eleminated. This deformation tensor is called:</p>
+<p><strong>CAUCHY-GREEN-deformation tensor</strong>: <span class="math notranslate nohighlight">\(\boldsymbol{C}=\boldsymbol{U}^T \cdot \boldsymbol{U}\)</span> or <span class="math notranslate nohighlight">\(C_{pq}=U_{mp} \cdot U_{mq}\)</span></p>
+<p>For an undeformed body <span class="math notranslate nohighlight">\(\boldsymbol{C}=\boldsymbol{1}\)</span>. A deformation tensor which is <span class="math notranslate nohighlight">\(\boldsymbol{0}\)</span> is the</p>
+<p><strong>GREEN-LAGRANGE-deformation tensor</strong>: <span class="math notranslate nohighlight">\(\boldsymbol{G}=1/2(\boldsymbol{C}-\boldsymbol{1})\)</span> or <span class="math notranslate nohighlight">\(G_{pq}=1/2(C_{pq} - \delta_{pq})\)</span></p>
+<p>The formulation of these equations is generally valid, i.e. for large deformatins (<a class="reference external" href="https://en.wikipedia.org/wiki/Finite_strain_theory">Finite-Strain-Theorie</a>).</p>
+</section>
+<section id="infinitesimal-strain-tensor-linear-theorie">
+<h2>infinitesimal strain tensor (linear theorie)<a class="headerlink" href="#infinitesimal-strain-tensor-linear-theorie" title="Permalink to this heading">#</a></h2>
+<p>To get a linear deformatoin tensor the tensor $\boldsymbol{G} must first be reformulated:</p>
+<p>The deformation gradient can be written as a function of the displacement <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(F_{ki}=\frac{\partial x_k}{\partial X_i}=\frac{\partial (X_k+u_k)}{\partial X_i}\)</span>
+<span class="math notranslate nohighlight">\(=\frac{\partial X_k+\partial u_k}{\partial X_i}=\frac{\partial X_k}{\partial X_i}+\frac{\partial u_k}{\partial X_i}\)</span>
+<span class="math notranslate nohighlight">\(=\delta_{ki}+\frac{\partial u_k}{\partial X_i}\)</span></p>
+<p>so:</p>
+<p><span class="math notranslate nohighlight">\(F_{ki}\cdot F_{kj}=(\delta_{ki}+\frac{\partial u_k}{\partial X_i})\cdot(\delta_{kj}+\frac{\partial u_k}{\partial X_j})\)</span>
+<span class="math notranslate nohighlight">\(=\delta_{ki}\delta_{kj}+\frac{\partial u_k}{\partial X_i}\delta_{kj}+\delta_{ki}\frac{\partial u_k}{\partial X_j}+\frac{\partial u_k}{\partial X_i}\frac{\partial u_k}{\partial X_j}\)</span>
+<span class="math notranslate nohighlight">\(=\delta_{ij}+\frac{\partial u_j}{\partial X_i}+\frac{\partial u_i}{\partial X_j}+\frac{\partial u_k}{\partial X_i}\frac{\partial u_k}{\partial X_j}\)</span></p>
+<p>For small deformations the following is approximately</p>
+<p><span class="math notranslate nohighlight">\(\partial X_i\approx \partial x_i\)</span> and <span class="math notranslate nohighlight">\(\frac{\partial u_k}{\partial X_i}\frac{\partial u_k}{\partial X_j}\approx 0\)</span></p>
+<p>so the <strong>infinitesimal strain tensor</strong> <span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span> is</p>
+<p><span class="math notranslate nohighlight">\(G_{ij}\approx \frac{1}{2}(\frac{\partial u_i}{x_j}+\frac{u_j}{x_i})=\epsilon_{ij}\)</span></p>
+<p>Interpretatino of <span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\epsilon_{11}=\frac{\partial u_1}{\partial x_1}\)</span>: classical normal strain</p>
+<p><span class="math notranslate nohighlight">\(\epsilon_{12}=\epsilon_{21}=\frac{1}{2}(\frac{\partial u_1}{x_2}+\frac{u_2}{x_1})=\frac{1}{2}\gamma_{12}\)</span>: half of the classical shear strain</p>
+<p><img alt="StrInt" src="../_images/StrInt.png" /></p>
+<p><span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}=\epsilon_{ik}=
+\begin{bmatrix}
+\epsilon_{11} &amp; \epsilon_{12} &amp; \epsilon_{13}\\
+\epsilon_{21} &amp; \epsilon_{22} &amp; \epsilon_{23}\\
+\epsilon_{31} &amp; \epsilon_{31} &amp; \epsilon_{33}\\
+\end{bmatrix} =
+\begin{bmatrix}
+\epsilon_{11} &amp; \frac{1}{2}\gamma_{12} &amp; \frac{1}{2}\gamma_{13}\\
+\frac{1}{2}\gamma_{21} &amp; \epsilon_{22} &amp; \frac{1}{2}\gamma_{23}\\
+\frac{1}{2}\gamma_{31} &amp; \frac{1}{2}\gamma_{32} &amp; \epsilon_{33}\\
+\end{bmatrix}\)</span></p>
+<hr class="docutils" />
+<p><strong>Example</strong></p>
+<p>The movement of a body is described by the vector-function</p>
+<p><span class="math notranslate nohighlight">\(x_i(t)=\left(\begin{array}
+{c}X_1 \\
+X_2-t\cdot X_3\\
+X_3+t\cdot X_2\\ 
+\end{array}\right)\)</span></p>
+<p>a: Sketch the resulting deformation for a simple body and <span class="math notranslate nohighlight">\(t=0,5\)</span>
+b: Calculate <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span>,  <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> and  <span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span></p>
+<hr class="docutils" />
 </section>
 </section>
 
@@ -455,7 +588,8 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strain-definition-in-one-dimension">strain definition in one dimension</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-dim-deformation-deformation-gradient">three dim. deformation / deformation gradient</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strain-tensor-infinitesimal-strein-tensor">strain tensor / infinitesimal strein tensor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strain-tensor-finite-strain-theorie">strain tensor (finite strain theorie)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-strain-tensor-linear-theorie">infinitesimal strain tensor (linear theorie)</a></li>
 </ul>
   </nav></div>
 

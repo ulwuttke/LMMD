@@ -431,7 +431,10 @@ the two basis systems <span class="math notranslate nohighlight">\(\boldsymbol{e
 <p><span class="math notranslate nohighlight">\(\boldsymbol{e}^1 \cdot \)</span>\boldsymbol{e}_1 =1<span class="math notranslate nohighlight">\(, \)</span>\boldsymbol{e}^2 \cdot <span class="math notranslate nohighlight">\(\boldsymbol{e}_2 =1\)</span>, <span class="math notranslate nohighlight">\(\boldsymbol{e}^1 \cdot \)</span>\boldsymbol{e}_2 =0<span class="math notranslate nohighlight">\(, \)</span>\boldsymbol{e}^2 \cdot <span class="math notranslate nohighlight">\(\boldsymbol{e}_1 =0\)</span></p>
 <p><img alt="DualBasis" src="../_images/DualBAsis.png" /></p>
 <p>Using the dual basis the scala product of two vectors (in two dim.) can be written:</p>
-<p><span class="math notranslate nohighlight">\(\boldsymbol{c}\cdot\boldsymbol{d}= [c_1 \boldsymbol{e}^1 + c_2 \boldsymbol{e}^2] \cdot [b_1 \boldsymbol{e}^1 + b_2 \boldsymbol{e}^2] = c_1 b^1 \boldsymbol{e}^1 \boldsymbol{e}_1 + c_1 b^2 \boldsymbol{e}^1 \boldsymbol{e}_2 + c_2 b^1 \boldsymbol{e}^2 \boldsymbol{e}_1 + c_2 b^2 \boldsymbol{e}^2 \boldsymbol{e}_2 = c_1 b^1+c_2 b^2=c_i b^i\)</span>.<br />
+<p><span class="math notranslate nohighlight">\(\boldsymbol{c}\cdot\boldsymbol{b}\)</span>
+<span class="math notranslate nohighlight">\(=[c_1 \boldsymbol{e}^1 + c_2 \boldsymbol{e}^2] \cdot [b^1 \boldsymbol{e}_1 + b^2 \boldsymbol{e}_2]\)</span>
+<span class="math notranslate nohighlight">\(= c_1 b^1 \boldsymbol{e}^1 \boldsymbol{e}_1 + c_1 b^2 \boldsymbol{e}^1 \boldsymbol{e}_2 + c_2 b^1 \boldsymbol{e}^2 \boldsymbol{e}_1 + c_2 b^2 \boldsymbol{e}^2 \boldsymbol{e}_2\)</span>
+<span class="math notranslate nohighlight">\(= c_1 b^1+c_2 b^2=c_i b^i\)</span>.<br />
 The length of a vector <span class="math notranslate nohighlight">\(\boldsymbol{c}\)</span> can be calculeted by using the co- and contravariant components of that same vector:<br />
 <span class="math notranslate nohighlight">\(|\boldsymbol{c}|=(c_i\cdot c^i)^{1/2}\)</span></p>
 <p>One can see, that using the dual basis by using one vector with the co- and the other vector with the contravariant components, the basis vectors are “disappearing” and a scalar ramains. This is important, if the basis vectors are not orthonormal.</p>
@@ -446,16 +449,19 @@ The length of a vector <span class="math notranslate nohighlight">\(\boldsymbol{
 0 &amp; 1
 \end{bmatrix} = \delta_i^j\)</span></p>
 <p><span class="math notranslate nohighlight">\(c_i b^j \boldsymbol{e}^i \boldsymbol{e}_j= c_i b^j \delta^i_j = c_i b^i \)</span></p>
-<p><em>EXAMPLES</em></p>
-<p><span class="math notranslate nohighlight">\(c_i\cdot b^i = \)</span><br />
+<hr class="docutils" />
+<p><strong>EXERCISE</strong></p>
+<p>Which index remains? What is the order of the resulting tensor and what is/are the remaining index character(s)?
+<span class="math notranslate nohighlight">\(c_i\cdot b^i = \)</span><br />
 <span class="math notranslate nohighlight">\(c_j\cdot b^i = \)</span><br />
 <span class="math notranslate nohighlight">\(A_{ji}\cdot B_{ck} = \)</span><br />
 <span class="math notranslate nohighlight">\(A_{ji}\cdot B_{ik} = \)</span><br />
 <span class="math notranslate nohighlight">\(A_{ji}\cdot B_{ij} = \)</span></p>
 </section>
+<hr class="docutils" />
 <section id="tensor-vector-transformation">
 <h2>tensor/vector transformation<a class="headerlink" href="#tensor-vector-transformation" title="Permalink to this heading">#</a></h2>
-<p>The vector <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span> is given in the “old” basis system <span class="math notranslate nohighlight">\(\boldsymbol{e}^i\)</span> (old basis indes lower case). The components should betransformed in the new basis system <span class="math notranslate nohighlight">\(\hat{\boldsymbol{e}}^J\)</span> (new basis indes upper case).
+<p>The vector <span class="math notranslate nohighlight">\(\boldsymbol{b}\)</span> is given in the “old” basis system <span class="math notranslate nohighlight">\(\boldsymbol{e}^i\)</span> (old basis index lower case). The components should betransformed in the new basis system <span class="math notranslate nohighlight">\(\hat{\boldsymbol{e}}^J\)</span> (new basis indes upper case).
 <img alt="vectordiffbase" src="03_vecten/VecDiffBase.png" /></p>
 <p><span class="math notranslate nohighlight">\(\boldsymbol{b}=b_i\cdot \boldsymbol{e}^i = \hat{b}_i\cdot \hat{\boldsymbol{e}}^J\)</span></p>
 <p><span class="math notranslate nohighlight">\(b_i\cdot \boldsymbol{e}^i = \hat{b}_i\cdot \hat{\boldsymbol{e}}^J \,| \cdot \hat{\boldsymbol{e}}_K\)</span><br />
@@ -483,8 +489,6 @@ The length of a vector <span class="math notranslate nohighlight">\(\boldsymbol{
 ... &amp; &amp;\\
 \end{bmatrix}\)</span></p>
 <p>Each row is a list of the components of each vector of the new basis referred to the old basis. This works even for non orthonormal basis systems.</p>
-<p>*EXAMPLE”
-Define <span class="math notranslate nohighlight">\(\boldsymbol{\alpha}\)</span> for a rotaion of a orthonormal basis</p>
 <p>The transformation of a tensor of higher grade works by “transforming each index”:</p>
 <p><span class="math notranslate nohighlight">\(\hat{\sigma}_{IK}=\alpha_I^{\;i}\;\alpha_K^{\;k}\;\sigma_{ik}\)</span><br />
 <span class="math notranslate nohighlight">\(\hat{E}_{IKLM}=\alpha_I^{\;i}\;\alpha_K^{\;k}\alpha_L^{\;l}\;\alpha_M^{\;m}\;E_{iklm}\)</span></p>
@@ -492,6 +496,25 @@ Define <span class="math notranslate nohighlight">\(\boldsymbol{\alpha}\)</span>
 <p><strong>NOTE</strong></p>
 <p>In the following we will use only orthonormal coordinate systems. Here is: <span class="math notranslate nohighlight">\(\boldsymbol{e}_i=\boldsymbol{e}^i\)</span>. For that reason there is no need to distinguish between co- and contravariant basis, and the upper index can be unsed for something else. So all tensor-indices will be written as al lower index:</p>
 <p><span class="math notranslate nohighlight">\(\hat{\sigma}_{IK}=\alpha_I^{\;i}\;\alpha_K^{\;k}\;\sigma_{ik}\;\Rightarrow\;\hat{\sigma}_{IK}=\alpha_{Ii}\;\alpha_{Kk}\;\sigma_{ik}\)</span></p>
+<hr class="docutils" />
+<hr class="docutils" />
+<p><strong>EXERCISE</strong></p>
+<ol class="arabic simple">
+<li><p>Define <span class="math notranslate nohighlight">\(\boldsymbol{\alpha}\)</span> for a rotation around the z-axis (rotation angle <span class="math notranslate nohighlight">\(\phi\)</span>) of a orthonormal basis.</p></li>
+<li><p>Use the transformation tensor <span class="math notranslate nohighlight">\(\boldsymbol{\alpha}\)</span> to transform the force <span class="math notranslate nohighlight">\(\vec{F}=\boldsymbol{F}=F_i\)</span> and the stress tensor <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}=\sigma_{ik}\)</span> for a rotation of <span class="math notranslate nohighlight">\(\phi=30°\)</span>. Carry out the transformation as a matrix product and using the EINSTEIN-summation rule.</p></li>
+</ol>
+<p><span class="math notranslate nohighlight">\(F_{i}=
+\begin{bmatrix}
+10 \\
+5 \\
+8 \\
+\end{bmatrix} \text{kN}\)</span><br />
+<span class="math notranslate nohighlight">\(\sigma_{ik}=
+\begin{bmatrix}
+50&amp;20&amp;0 \\
+20&amp;30&amp;0 \\
+0&amp;0&amp;0 \\
+\end{bmatrix} \text{MPa}\)</span></p>
 <hr class="docutils" />
 </section>
 </section>
