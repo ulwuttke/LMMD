@@ -4,7 +4,7 @@
 
 In hypermash (resp. hyperview) it is possible to create your own result color plot by combinig different results by using the "Expression Bulider".
 
-```{dropdown} The Expression builer and/or specific functinos are onliy availible, if the Result-Math-template "Advanced" is choosen when loading the model.
+```{dropdown} The Expression builer and/or specific functions are only availible, if the Result-Math-template "Advanced" is choosen when loading the model.
 screenshot for Hyperworks 2023: 
 ![ResMathtTemp](HyView2023ResMathTemp.jpg)
 ```

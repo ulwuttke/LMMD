@@ -25,25 +25,25 @@ In the figure, $\vec{t}=\boldsymbol{t}=t_{i}$ is the traction or stress vector. 
 
 $\vec{t}^1=\boldsymbol{t}^1=t_{i}^1=
 \sigma^1 \cdot \boldsymbol{e}^1+\tau^1 \cdot \boldsymbol{e}^2=
-\sigma^{11} \cdot \boldsymbol{e}^1+\sigma{21} \cdot \boldsymbol{e}^2$  
+\sigma_{11} \cdot \boldsymbol{e}^1+\sigma_{21} \cdot \boldsymbol{e}^2$  
 $\vec{t}^2=\boldsymbol{t}^2=t_{i}^2=
 \tau^2 \cdot \boldsymbol{e}^1+\sigma^2 \cdot \boldsymbol{e}^2=
-\sigma^{21} \cdot \boldsymbol{e}^1+\sigma{22} \cdot \boldsymbol{e}^2$
+\sigma_{21} \cdot \boldsymbol{e}^1+\sigma_{22} \cdot \boldsymbol{e}^2$
 
 stress tensor in two dimensions (plane stress):
 $\boldsymbol{\sigma}=\sigma_{ik}=
 \begin{bmatrix}
-\sigma^{11} & \sigma^{12} \\
-\sigma^{21} & \sigma^{22} \\
+\sigma_{11} & \sigma_{12} \\
+\sigma_{21} & \sigma_{22} \\
 \end{bmatrix}$
 
 ... or in three dimensions:
 
 $\boldsymbol{\sigma}=\sigma_{ik}=
 \begin{bmatrix}
-\sigma^{11} & \sigma^{12} & \sigma^{13}\\
-\sigma^{21} & \sigma^{22} & \sigma^{23}\\
-\sigma^{31} & \sigma^{31} & \sigma^{33}\\
+\sigma_{11} & \sigma_{12} & \sigma_{13}\\
+\sigma_{21} & \sigma_{22} & \sigma_{23}\\
+\sigma_{31} & \sigma_{32} & \sigma_{33}\\
 \end{bmatrix}$
 
 
@@ -55,14 +55,15 @@ The following therefore applies $\sigma_{ik}=\sigma_{ki}$ The stress tensor is s
 
 ---
 
-*EXAMPLE*
+---
+**EXERCISE**
 
 ![ex1](ex1.png)
 
-A: Write down the stress tensor for the given stresses!  
-B: Calculate the traction $\boldsymbol{t}$ (components in the $1$-$2$-system)  
-C: Calculate the traction $\hat{\boldsymbol{t}}$ (components in the $\hat{1}$-$\hat{2}$-system)  
-
+1. Write down the stress tensor for the given stresses!  
+2. Calculate the traction $\boldsymbol{t}$ (components in the $1$-$2$-system)  
+3. Calculate the traction $\hat{\boldsymbol{t}}$ (components in the $\hat{1}$-$\hat{2}$-system)  
+---
 
 ## cauchy formula
 
@@ -86,10 +87,12 @@ $0=t_3-\sigma_{13}\;n_1-\sigma_{23}\;n_2-\sigma_{33}\;n_3$
 
 $\Rightarrow\;t_k=\sigma_{ik}\;n_i=\boldsymbol{t}=\boldsymbol{\sigma^T}\cdot \boldsymbol{n}$ 
 
-*EXAMPLE*
+---
+**EXERCISE**
 
-Calculate $\boldsymbol{t}$ in the ex. above with the CAUCHY-formula
+Calculate $\boldsymbol{t}$ for the stress tensor in the previous exercise using the  CAUCHY-formula
 
+---
 
 ## principal stresses and invariants
 
@@ -120,7 +123,7 @@ $det
 
 (...)
 
-$\Rightarrow\;\;\lambda^3+I_1\lambda^2-I_2\Lambda+I_3=0$  
+$\Rightarrow\;\;\lambda^3+I_1\lambda^2-I_2\lambda+I_3=0$  
 $I_1=\sigma_{jj}=\sigma_{11}+\sigma_{22}+\sigma_{33}$  
 $I_2=-1/2(\sigma_{ik}\;\sigma_{ik}-\sigma_{ll}\;\sigma_{nn})$  
 $I_3=det(\sigma_{ik})$
@@ -139,7 +142,8 @@ $\boldsymbol{n}^3=\boldsymbol{n}^1 \times \boldsymbol{n}^2$
 
 With $|\boldsymbol{n}^i|=1$ the three normal vectors are a orthonormal basis; the principal coordinate system.  
 
-*EXAMPLE:*
+---
+**EXERCISE**
 
 Calculate the principal stesses and the prioncipal basis for the stress tensor
 
@@ -150,7 +154,5 @@ $\sigma_{ik}=
 15 & 0 & 25\\
 \end{bmatrix} \text{MPa}$ 
 
-
-
-[hand written script](https://campuas.frankfurt-university.de/pluginfile.php/459922/mod_folder/content/0/SS23_LMMD_skrip.pdf?forcedownload=1)
+---
 

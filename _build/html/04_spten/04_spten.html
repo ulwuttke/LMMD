@@ -66,7 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '04_spten/04_spten';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Using hyperworks imput file" href="../A1_hyper/A1_hyper.html" />
+    <link rel="next" title="deformatoin / infinitesimal strain tensor" href="../05_defstr/05_defstr.html" />
     <link rel="prev" title="vector/tensor rotation and transformation" href="../03_vecten/03_vecten.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -163,7 +163,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../02_rep/02_rep.html">repetition / basic knowledge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03_vecten/03_vecten.html">vector/tensor rotation and transformation</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">stress tensor, traction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05_defstr/05_defstr.html">deformatoin / infinitesimal strain tensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../A1_hyper/A1_hyper.html">Using hyperworks imput file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../A2_hyperDerRes/A2_hyperDerRes.html">Creating Results in Hyperworks</a></li>
 </ul>
 
     </div>
@@ -389,34 +391,38 @@ For small deformations (or strains; and this is what we are looking at here), th
 <p>In the figure, <span class="math notranslate nohighlight">\(\vec{t}=\boldsymbol{t}=t_{i}\)</span> is the traction or stress vector. The total stress state at one point is described by two (or in 3D three) traction vector for two (or in 3D three) perpendicular cuttting planes. The traction vectors occurring on each section plane can be written in components with respect to an orthonormal basis resulting from the normal vectors on each section plane. The components of each vector can be written in the rows of a tensor 2. grade: the stress tensor <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}=\sigma_{ik}\)</span>:</p>
 <p><span class="math notranslate nohighlight">\(\vec{t}^1=\boldsymbol{t}^1=t_{i}^1=
 \sigma^1 \cdot \boldsymbol{e}^1+\tau^1 \cdot \boldsymbol{e}^2=
-\sigma^{11} \cdot \boldsymbol{e}^1+\sigma{21} \cdot \boldsymbol{e}^2\)</span><br />
+\sigma_{11} \cdot \boldsymbol{e}^1+\sigma_{21} \cdot \boldsymbol{e}^2\)</span><br />
 <span class="math notranslate nohighlight">\(\vec{t}^2=\boldsymbol{t}^2=t_{i}^2=
 \tau^2 \cdot \boldsymbol{e}^1+\sigma^2 \cdot \boldsymbol{e}^2=
-\sigma^{21} \cdot \boldsymbol{e}^1+\sigma{22} \cdot \boldsymbol{e}^2\)</span></p>
+\sigma_{21} \cdot \boldsymbol{e}^1+\sigma_{22} \cdot \boldsymbol{e}^2\)</span></p>
 <p>stress tensor in two dimensions (plane stress):
 <span class="math notranslate nohighlight">\(\boldsymbol{\sigma}=\sigma_{ik}=
 \begin{bmatrix}
-\sigma^{11} &amp; \sigma^{12} \\
-\sigma^{21} &amp; \sigma^{22} \\
+\sigma_{11} &amp; \sigma_{12} \\
+\sigma_{21} &amp; \sigma_{22} \\
 \end{bmatrix}\)</span></p>
 <p>… or in three dimensions:</p>
 <p><span class="math notranslate nohighlight">\(\boldsymbol{\sigma}=\sigma_{ik}=
 \begin{bmatrix}
-\sigma^{11} &amp; \sigma^{12} &amp; \sigma^{13}\\
-\sigma^{21} &amp; \sigma^{22} &amp; \sigma^{23}\\
-\sigma^{31} &amp; \sigma^{31} &amp; \sigma^{33}\\
+\sigma_{11} &amp; \sigma_{12} &amp; \sigma_{13}\\
+\sigma_{21} &amp; \sigma_{22} &amp; \sigma_{23}\\
+\sigma_{31} &amp; \sigma_{32} &amp; \sigma_{33}\\
 \end{bmatrix}\)</span></p>
 <hr class="docutils" />
 <p><strong>NOTE</strong></p>
 <p>Due to the moment equilibrium, the assigned shear stresses must be equal.<br />
 The following therefore applies <span class="math notranslate nohighlight">\(\sigma_{ik}=\sigma_{ki}\)</span> The stress tensor is symmetric!</p>
 <hr class="docutils" />
-<p><em>EXAMPLE</em></p>
+<hr class="docutils" />
+<p><strong>EXERCISE</strong></p>
 <p><img alt="ex1" src="../_images/ex1.png" /></p>
-<p>A: Write down the stress tensor for the given stresses!<br />
-B: Calculate the traction <span class="math notranslate nohighlight">\(\boldsymbol{t}\)</span> (components in the <span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(2\)</span>-system)<br />
-C: Calculate the traction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{t}}\)</span> (components in the <span class="math notranslate nohighlight">\(\hat{1}\)</span>-<span class="math notranslate nohighlight">\(\hat{2}\)</span>-system)</p>
+<ol class="arabic simple">
+<li><p>Write down the stress tensor for the given stresses!</p></li>
+<li><p>Calculate the traction <span class="math notranslate nohighlight">\(\boldsymbol{t}\)</span> (components in the <span class="math notranslate nohighlight">\(1\)</span>-<span class="math notranslate nohighlight">\(2\)</span>-system)</p></li>
+<li><p>Calculate the traction <span class="math notranslate nohighlight">\(\hat{\boldsymbol{t}}\)</span> (components in the <span class="math notranslate nohighlight">\(\hat{1}\)</span>-<span class="math notranslate nohighlight">\(\hat{2}\)</span>-system)</p></li>
+</ol>
 </section>
+<hr class="docutils" />
 <section id="cauchy-formula">
 <h2>cauchy formula<a class="headerlink" href="#cauchy-formula" title="Permalink to this heading">#</a></h2>
 <p><img alt="cauchyform" src="../_images/cauchyform.png" /></p>
@@ -432,9 +438,11 @@ C: Calculate the traction <span class="math notranslate nohighlight">\(\hat{\bol
 <span class="math notranslate nohighlight">\(0=t_2-\sigma_{12}\;n_1-\sigma_{22}\;n_2-\sigma_{32}\;n_3\)</span><br />
 <span class="math notranslate nohighlight">\(0=t_3-\sigma_{13}\;n_1-\sigma_{23}\;n_2-\sigma_{33}\;n_3\)</span></p>
 <p><span class="math notranslate nohighlight">\(\Rightarrow\;t_k=\sigma_{ik}\;n_i=\boldsymbol{t}=\boldsymbol{\sigma^T}\cdot \boldsymbol{n}\)</span></p>
-<p><em>EXAMPLE</em></p>
-<p>Calculate <span class="math notranslate nohighlight">\(\boldsymbol{t}\)</span> in the ex. above with the CAUCHY-formula</p>
+<hr class="docutils" />
+<p><strong>EXERCISE</strong></p>
+<p>Calculate <span class="math notranslate nohighlight">\(\boldsymbol{t}\)</span> for the stress tensor in the previous exercise using the  CAUCHY-formula</p>
 </section>
+<hr class="docutils" />
 <section id="principal-stresses-and-invariants">
 <h2>principal stresses and invariants<a class="headerlink" href="#principal-stresses-and-invariants" title="Permalink to this heading">#</a></h2>
 <p>If the traction (or the stress vector) in one point is pointing exact in the normal direction of the plane, no shear stresses are existing for this cutting direction, and the only existing normal stress is one principal stress.<br />
@@ -455,7 +463,7 @@ because of: <span class="math notranslate nohighlight">\(n_k=\delta_{k_i} \; n_i
 -\sigma^{31} &amp; -\sigma^{31} &amp;  \lambda-\sigma^{33}\\
 \end{bmatrix}\)</span></p>
 <p>(…)</p>
-<p><span class="math notranslate nohighlight">\(\Rightarrow\;\;\lambda^3+I_1\lambda^2-I_2\Lambda+I_3=0\)</span><br />
+<p><span class="math notranslate nohighlight">\(\Rightarrow\;\;\lambda^3+I_1\lambda^2-I_2\lambda+I_3=0\)</span><br />
 <span class="math notranslate nohighlight">\(I_1=\sigma_{jj}=\sigma_{11}+\sigma_{22}+\sigma_{33}\)</span><br />
 <span class="math notranslate nohighlight">\(I_2=-1/2(\sigma_{ik}\;\sigma_{ik}-\sigma_{ll}\;\sigma_{nn})\)</span><br />
 <span class="math notranslate nohighlight">\(I_3=det(\sigma_{ik})\)</span></p>
@@ -469,7 +477,8 @@ because of: <span class="math notranslate nohighlight">\(n_k=\delta_{k_i} \; n_i
 To be sure, that the normal vectors are forming a right handed system, the third vector schold be calculeted with the vector product (and not via <span class="math notranslate nohighlight">\(n^3_i(\delta_{ik}\;\lambda^3-\sigma_{ik})=0\)</span>):<br />
 <span class="math notranslate nohighlight">\(\boldsymbol{n}^3=\boldsymbol{n}^1 \times \boldsymbol{n}^2\)</span></p>
 <p>With <span class="math notranslate nohighlight">\(|\boldsymbol{n}^i|=1\)</span> the three normal vectors are a orthonormal basis; the principal coordinate system.</p>
-<p><em>EXAMPLE:</em></p>
+<hr class="docutils" />
+<p><strong>EXERCISE</strong></p>
 <p>Calculate the principal stesses and the prioncipal basis for the stress tensor</p>
 <p><span class="math notranslate nohighlight">\(\sigma_{ik}=
 \begin{bmatrix}
@@ -477,7 +486,7 @@ To be sure, that the normal vectors are forming a right handed system, the third
 0 &amp; 30 &amp; 0\\
 15 &amp; 0 &amp; 25\\
 \end{bmatrix} \text{MPa}\)</span></p>
-<p><a class="reference external" href="https://campuas.frankfurt-university.de/pluginfile.php/459922/mod_folder/content/0/SS23_LMMD_skrip.pdf?forcedownload=1">hand written script</a></p>
+<hr class="docutils" />
 </section>
 </section>
 
@@ -522,11 +531,11 @@ To be sure, that the normal vectors are forming a right handed system, the third
       </div>
     </a>
     <a class="right-next"
-       href="../A1_hyper/A1_hyper.html"
+       href="../05_defstr/05_defstr.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Using hyperworks imput file</p>
+        <p class="prev-next-title">deformatoin / infinitesimal strain tensor</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
