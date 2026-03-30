@@ -1,4 +1,4 @@
-# Using hyperworks imput file
+# Using hyperworks input file
 
 ## input files and starting the calculation
 
@@ -11,16 +11,12 @@ All files must be in the same folder. The example files in the MOOLDE course are
 - 210503_Kerbscheibe_GridElement.inp
 - 210503_Kerbscheibe_SPC.inp
 
-
-
-Classically, three different processes are defined in the FEM calculation process:
-1. preprocessor (generating the .fem model): here, only the material and the Load has to be defined; this can be done with hymermesh or direct by editing the .fem-file
-2. solver (calculation process): here, hte solver optistruct is used. The calculation can be startet in two different ways:
-	- by clicking the analyse-button after the import of the .fem file in hyperworcs via *import, import solver deck*
-	- By starting the calculation with the [command line](https://2021.help.altair.com/2021/hwsolvers/os/topics/solvers/os/run_optistruct_intro_r.htm), for ex. *C:\"Program Files"\Altair\2021.2\hwsolvers\scripts\optistruct 210610_KerbscheibeKomplett_lin.fem*
+As previously described, three different processes are defined in the FEM calculation process:
+1. preprocessor (generating the .fem model): here, only the material and the Load has to be defined; this can be done with hymermesh (import of the .fem-file, find the right submenu, edit the field) or direct by editing the .fem-file in en editor (e.g. notepad ++)
+2. solver (calculation process): here, the solver optistruct is used. The calculation can be startet by clicking the analyse-button after the import of the .fem file in hyperworks via *import, import solver deck* or by starting the calculation with the [command line](https://help.altair.com/hwsolvers/os/topics/solvers/os/run_optistruct_intro_r.htm)
 3. postprocessor: here, the result files are loded in hyperview and funny pictures can be created
 
-Altair Hyperworks Online Help ([here the link to the 2021 version](https://2021.help.altair.com/2021/hwsolvers/os/topics/solvers/os/analysis_sub_r.htm) ), especially the reference guide $\rightarrow$ input data $\rightarrow$ bulk data seciont
+For information on using HyperWorks, see the [online help](https://help.altair.com/hwsolvers/altair_help/index.htm).
 
 ## input file structure
 
@@ -72,3 +68,16 @@ FORCE,11,9999,0,1.0,0.0,10000.,0.0
 $$=== constraint at the node for load application
 SPC,2,9999,1345,0.0
 ```
+
+## Exercise: 
+
+Assess the influence of the input parameters listed below on the maximum notch stress and the [stress concentration factor](https://en.wikipedia.org/wiki/Stress_concentration) for linearly elastic, homogeneous and isotropic material behaviour. 
+
+- load level
+- modulus of elasticity
+- Poissont-ratio
+
+Summarise your results in a table. 
+
+Change the isotropic material to an anisotropic material. What is different?
+
