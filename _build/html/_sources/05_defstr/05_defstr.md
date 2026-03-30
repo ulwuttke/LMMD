@@ -1,4 +1,4 @@
-# deformatoin / infinitesimal strain tensor
+# deformation / infinitesimal strain tensor
 
 ## strain definition in one dimension
 

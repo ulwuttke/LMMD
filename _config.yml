@@ -3,6 +3,7 @@
 
 title: LMMD Skript
 author: U. Wuttke
+copyright: "04/2025"  # Copyright year to be placed in the footer
 logo: logo.png
 
 # Force re-execution of notebooks on each build.

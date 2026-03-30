@@ -80,7 +80,8 @@ $A_{ji}\cdot B_{ij} = $
 
 ## tensor/vector transformation
 
-The vector $\boldsymbol{b}$ is given in the "old" basis system $\boldsymbol{e}^i$ (old basis index lower case). The components should betransformed in the new basis system $\hat{\boldsymbol{e}}^J$ (new basis indes upper case).
+The vector $\boldsymbol{b}$ is given in the "old" basis system $\boldsymbol{e}^i$ (old basis index lower case). The components should betransformed in the new basis system $\hat{\boldsymbol{e}}^J$ (new basis index upper case).
+
 ![vectordiffbase](VecDiffBase.png)
 
 $\boldsymbol{b}=b_i\cdot \boldsymbol{e}^i = \hat{b}_i\cdot \hat{\boldsymbol{e}}^J$  
@@ -115,8 +116,8 @@ $ \Rightarrow \hat{\boldsymbol{e}}_K \cdot \boldsymbol{e}^i = \hat{e}_K^{\,j}\cd
 
 $\alpha_K^{\;i}=
 \begin{bmatrix}
-\hat{\hat{e}}_1^{\,1} & \hat{\hat{e}}_1^{\,2}  & ...\\
-\hat{\hat{e}}_2^{\,1}  & \hat{\hat{e}}_2^{\,2}  & ...\\
+\hat{e}_1^{\,1} & \hat{e}_1^{\,2}  & ...\\
+\hat{e}_2^{\,1}  & \hat{e}_2^{\,2}  & ...\\
 ... & &\\
 \end{bmatrix}$
 
