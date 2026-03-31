@@ -17,4 +17,6 @@ parts:
     chapters:
     - file: E1_hyperBasic/E1_hyperSingleElement
     - file: E2_hyper/E2_hyper
+    - file: E3_PrSrTrans/E3_PrSrTrans
+    - file: E4_hyperPost/E4_hyperPost
     - file: E9_hyperDerRes/E9_hyperDerRes
