@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Hyperworcs basics &#8212; LMMD Skript</title>
+    <title>Hyperworks basics &#8212; LMMD Skript</title>
   
   
   
@@ -168,7 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">excercise</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hyperworcs basics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Hyperworks basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../E2_hyper/E2_hyper.html">Using hyperworks input file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../E3_PrSrTrans/E3_PrSrTrans.html">Stress tensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../E4_hyperPost/E4_hyperPost.html">HyperView Postprocessing</a></li>
@@ -356,7 +356,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Hyperworcs basics</h1>
+    <h1>Hyperworks basics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -382,8 +382,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="hyperworcs-basics">
-<h1>Hyperworcs basics<a class="headerlink" href="#hyperworcs-basics" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="hyperworks-basics">
+<h1>Hyperworks basics<a class="headerlink" href="#hyperworks-basics" title="Permalink to this heading">#</a></h1>
 <section id="finite-element-methode">
 <h2>Finite Element Methode<a class="headerlink" href="#finite-element-methode" title="Permalink to this heading">#</a></h2>
 <p>From a mathematical perspective, the <a class="reference external" href="https://en.wikipedia.org/wiki/Finite_element_method">finite element method</a> is a technique for solving differential equations. To put it more simply: If a structure or component cannot be analyzed “as a whole” under mechanical loading, the structure is broken down into many small “calculable” parts, the finite elements. This makes it possible to analyze the entire structure. Nevertheless, even for a very simple 2- or 3-dimensional element, the continuum mechanics differential equations cannot be solved exactly. Therefore, an approximation is used, whereby the more elements used, the better the solution for the whole structure.</p>
@@ -420,7 +420,7 @@ BEGIN BULK $ Initiation of the Bulk date section
 $
 </pre></div>
 </div>
-<p>The following defines a simple single-element geometry in the form of a flat shell (here a 4-node element of the type $
+<p>The following defines a simple single-element geometry in the form of a flat shell (here a 4-node element of the type
 [CQUAD4](<a class="reference external" href="https://help.altair.com/hwsolvers/os/topics/solvers/os/cquad4_bulk_r.htm">https://help.altair.com/hwsolvers/os/topics/solvers/os/cquad4_bulk_r.htm</a> is used):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ Definition of the nodes or grid points
 $
@@ -435,7 +435,7 @@ CQUAD4,1,9,1,2,3,4
 $
 </pre></div>
 </div>
-<p>Now the element properties via <a class="reference external" href="https://help.altair.com/hwsolvers/os/topics/solvers/os/pshell_bulk_r.htm">PSHELL</a>, with the shell thickness (here thickness =1.0) and material definition (here linear elastic, isotropic material <a class="reference external" href="https://help.altair.com/hwsolvers/os/topics/solvers/os/mat1_bulk_r.htm">MAT1</a> need to be defined:</p>
+<p>Now the element properties via <a class="reference external" href="https://help.altair.com/hwsolvers/os/topics/solvers/os/pshell_bulk_r.htm">PSHELL</a>, with the shell thickness (here thickness =1.0) and material definition (here linear elastic, isotropic material <a class="reference external" href="https://help.altair.com/hwsolvers/os/topics/solvers/os/mat1_bulk_r.htm">MAT1</a> ) need to be defined:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ 
 MAT1, 7, 210000, , 0.3 $ definition of a linear elastic material with the MID=7
 $
@@ -457,8 +457,9 @@ $
 </div>
 <p><strong>NOTE</strong></p>
 <p>There are several ways to separate the parameters or fields variabels in each bulk entry. One option is to use “,” as a separator; another is to define each field as exactly eight characters long. So, the following two lines define the same input:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SPC</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">123</span>
-<span class="n">SPC</span>            <span class="mi">4</span>       <span class="mi">1</span>     <span class="mi">123</span> <span class="p">(</span><span class="o">=&gt;</span> <span class="n">SPC</span><span class="o">-----*******</span><span class="mi">4</span><span class="o">-------</span><span class="mi">1</span><span class="o">*****</span><span class="mi">123</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span> SPC,4,1,123
+ SPC            4       1     123
+$12345678123456781234567812345678
 </pre></div>
 </div>
 <p>Attention: if you just miss one blank in the second line, the field variable might be different!</p>

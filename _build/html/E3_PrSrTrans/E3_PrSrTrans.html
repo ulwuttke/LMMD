@@ -61,6 +61,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'E3_PrSrTrans/E3_PrSrTrans';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -168,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">excercise</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../E1_hyperBasic/E1_hyperSingleElement.html">Hyperworcs basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../E1_hyperBasic/E1_hyperSingleElement.html">Hyperworks basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../E2_hyper/E2_hyper.html">Using hyperworks input file</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Stress tensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../E4_hyperPost/E4_hyperPost.html">HyperView Postprocessing</a></li>
@@ -383,7 +385,15 @@ document.write(`
 <h1>Stress tensor<a class="headerlink" href="#stress-tensor" title="Permalink to this heading">#</a></h1>
 <section id="exercise-pricipal-stresses-and-orientation">
 <h2>Exercise: pricipal stresses and orientation<a class="headerlink" href="#exercise-pricipal-stresses-and-orientation" title="Permalink to this heading">#</a></h2>
+<p>Calculate the principal stesses and the principal basis for the stress tensor</p>
+<p><span class="math notranslate nohighlight">\(\sigma_{ik}=
+\begin{bmatrix}
+20 &amp; 0 &amp; 15\\
+0 &amp; 30 &amp; 0\\
+15 &amp; 0 &amp; 25\\
+\end{bmatrix} \text{MPa}\)</span></p>
 </section>
+<hr class="docutils" />
 <section id="exercise-transformation">
 <h2>Exercise: transformation<a class="headerlink" href="#exercise-transformation" title="Permalink to this heading">#</a></h2>
 </section>

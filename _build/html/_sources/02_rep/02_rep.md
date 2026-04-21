@@ -59,6 +59,9 @@ $\epsilon_C=4,3\cdot10^{-4}$
 The Material is homogenous and isotropic with an YOUNGs modulus of  aprox. $E=200 \text{GPa}$ and a POISSON ratio of $\nu=0,2$.
 **Calculate the stresses (normal and shear stresses) according to the strain gauge directions A/B, and the principal stresses/ max shear stress!**  
 
+If you don't know how to start, have a look at [this file](260420-StrainGaugeExSolutioin.pdf). 
+
+
 %\ You can find an example in [this video](https://youtu.be/7ul8ST6RRUA?si=y-b_LYSKZI4dZjJc)
 
 ---
