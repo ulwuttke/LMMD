@@ -151,19 +151,3 @@ A very illustrative representation of the directional dependence of the componen
 
 
 
-
-
----
-**EXERCISE**
-
-Calculate the principal stesses and the prioncipal basis for the stress tensor
-
-$\sigma_{ik}=
-\begin{bmatrix}
-20 & 0 & 15\\
-0 & 30 & 0\\
-15 & 0 & 25\\
-\end{bmatrix} \text{MPa}$ 
-
----
-
