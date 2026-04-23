@@ -1,4 +1,4 @@
-# Hyperworks basics
+# Hyperworcs basics
 
 ## Finite Element Methode  
 
@@ -14,7 +14,7 @@ A finite element analysis is typically divided into three parts:
 All three parts are included in the HyperWorks package. The pre-processor is *HyperMesh*, and the post-processor is *HyperView*. Various programs can be used for the solver. For a linear static calculation, the [*OptiStruct*](https://help.altair.com/hwsolvers/os/index.htm) solver is typically used. 
 
 
-## Create a "one element static analysis" input file (preprocessing) 
+## Create a one element static analysis input file (preprocessing) 
 
 An optistruct fem-input-file is splittet in [three sections](https://help.altair.com/hwsolvers/os/topics/solvers/os/data_input_file_r.htm): the *I/O Options Section* the *Subcase Information Section* and the *Bulk Data Section*. For a
 
@@ -45,7 +45,7 @@ BEGIN BULK $ Initiation of the Bulk date section
 $
 ```
 
-The following defines a simple single-element geometry in the form of a flat shell (here a 4-node element of the type 
+The following defines a simple single-element geometry in the form of a flat shell (here a 4-node element of the type $
 [CQUAD4](https://help.altair.com/hwsolvers/os/topics/solvers/os/cquad4_bulk_r.htm is used):
 
 ```
@@ -62,7 +62,7 @@ CQUAD4,1,9,1,2,3,4
 $
 ```
 
-Now the element properties via [PSHELL](https://help.altair.com/hwsolvers/os/topics/solvers/os/pshell_bulk_r.htm), with the shell thickness (here thickness =1.0) and material definition (here linear elastic, isotropic material [MAT1](https://help.altair.com/hwsolvers/os/topics/solvers/os/mat1_bulk_r.htm) ) need to be defined:
+Now the element properties via [PSHELL](https://help.altair.com/hwsolvers/os/topics/solvers/os/pshell_bulk_r.htm), with the shell thickness (here thickness =1.0) and material definition (here linear elastic, isotropic material [MAT1](https://help.altair.com/hwsolvers/os/topics/solvers/os/mat1_bulk_r.htm) need to be defined:
 
 ```
 $ 
@@ -92,9 +92,8 @@ $
 
 There are several ways to separate the parameters or fields variabels in each bulk entry. One option is to use “,” as a separator; another is to define each field as exactly eight characters long. So, the following two lines define the same input:
 ```
- SPC,4,1,123
- SPC            4       1     123
-$12345678123456781234567812345678
+SPC,4,1,123
+SPC            4       1     123 (=> SPC-----*******4-------1*****123)
 ```
 Attention: if you just miss one blank in the second line, the field variable might be different!
 

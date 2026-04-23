@@ -1,4 +1,4 @@
-# Using hyperworks input file
+# Using hyperworks imput file
 
 ## input files and starting the calculation
 
@@ -68,16 +68,3 @@ FORCE,11,9999,0,1.0,0.0,10000.,0.0
 $$=== constraint at the node for load application
 SPC,2,9999,1345,0.0
 ```
-
-## Exercise: 
-
-Assess the influence of the input parameters listed below on the maximum notch stress and the [stress concentration factor](https://en.wikipedia.org/wiki/Stress_concentration) for linearly elastic, homogeneous and isotropic material behaviour. 
-
-- load level
-- modulus of elasticity
-- Poissont-ratio
-
-Summarise your results in a table. 
-
-Change the isotropic material to an anisotropic material. What is different?
-
