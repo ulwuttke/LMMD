@@ -21,7 +21,7 @@ The following explanations are written down for 2-dimensional problems (plane st
 ![traction](traction.png)
 
 
-In the figure, $\vec{t}=\boldsymbol{t}=t_{i}$ is the traction or stress vector. The total stress state at one point is described by two (or in 3D three) traction vector for two (or in 3D three) perpendicular cuttting planes. The traction vectors occurring on each section plane can be written in components with respect to an orthonormal basis resulting from the normal vectors on each section plane. The components of each vector can be written in the rows of a tensor 2. grade: the stress tensor $\boldsymbol{\sigma}=\sigma_{ik}$:
+In the figure, $\vec{t}=\boldsymbol{t}=t_{i}$ is the traction or stress vector. The total stress state at one point is described by two (or in 3D three) traction vector for two (or in 3D three) perpendicular cuttting planes. The traction vectors occurring on each section plane can be written in components with respect to an orthonormal basis resulting from the normal vectors on each section plane. The components of each vector can be written in the rows of a tensor 2. grade: the [stress tensor](https://en.wikipedia.org/wiki/Cauchy_stress_tensor) $\boldsymbol{\sigma}=\sigma_{ik}$:
 
 $\vec{t}^1=\boldsymbol{t}^1=t_{i}^1=
 \sigma^1 \cdot \boldsymbol{e}^1+\tau^1 \cdot \boldsymbol{e}^2=
@@ -142,17 +142,12 @@ $\boldsymbol{n}^3=\boldsymbol{n}^1 \times \boldsymbol{n}^2$
 
 With $|\boldsymbol{n}^i|=1$ the three normal vectors are a orthonormal basis; the principal coordinate system.  
 
----
-**EXERCISE**
 
-Calculate the principal stesses and the prioncipal basis for the stress tensor
+A very illustrative representation of the directional dependence of the components of the stress tensor is shown here: 
+|   |
+|---|
+|![StressComp](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/2D_stress.gif/500px-2D_stress.gif)| 
+|"[Stress components on a 2D rotating element. Example of how stress components vary on the faces (edges) of a rectangular element as the angle of its orientation is varied. Principal stresses occur when the shear stresses simultaneously disappear from all faces. The orientation at which this occurs gives the principal directions.](https://en.wikipedia.org/wiki/Cauchy_stress_tensor#Principal_stresses_and_stress_invariants)"|
 
-$\sigma_{ik}=
-\begin{bmatrix}
-20 & 0 & 15\\
-0 & 30 & 0\\
-15 & 0 & 25\\
-\end{bmatrix} \text{MPa}$ 
 
----
 
