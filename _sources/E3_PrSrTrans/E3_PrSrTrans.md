@@ -5,6 +5,12 @@
 
 Calculate the principal stesses and the principal stress direction for the given stress tensors:
 
+- calculate the invariants
+- formulate the characteristic polynomial
+- calculate the Eigenvalues (=Principal stresses)
+- sort the stresses by the numerical value and write down the principal stress tensor
+- calculate the eigenvectors (=principal stress directions)
+
 1. $\sigma_{ik}=
 \begin{bmatrix}
 20,00 & 0,00 & 15,00\\
@@ -21,5 +27,12 @@ Calculate the principal stesses and the principal stress direction for the given
 
 ## Exercise: transformation
 
-1. Use the principal stress directions to construct a transformation tensor, and transform the tensors in the initial coordinate system into the principal coordinate system.
-2. Create a transformatin tensor to retransform the stress tensor from the principal coordinate system back to the initial system.
+Transform the inital stress tensor into the principal system, and back
+
+- formulate the transformation tensor by using the principal stress directions
+
+- transfor the stress tensor in the principal stress system
+
+- create a transformatin tensor to retransform the principal stress tensor from the principal coordinate system back to the initial system
+
+- "retransform" the principal stress tensor
