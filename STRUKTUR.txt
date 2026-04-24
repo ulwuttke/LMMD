@@ -1,0 +1,16 @@
+Hauptspannungen
+
+Hyperworks: Elemetergebnisse auswerten; Transformieren Werkstoffgesetz anwenden
+
+Lineare Regression (kurz bekannt aus WuBV)
+
+Transformation/Messauswertung 0 90 45° messung
+
+Darstelung und auswertung in Gnuplot/Excel
+
+Hyperworks: Vergelichsspannung "selbst" ausrechnen Beispiel ebener Dehnungszustand
+
+Elastizitätsgesetz
+
+
+s
