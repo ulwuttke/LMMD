@@ -123,7 +123,7 @@ $det
 
 (...)
 
-$\Rightarrow\;\;-\lambda^3+I_1\lambda^2-I_2\lambda+I_3=0$  
+$\Rightarrow\;\;-\lambda^3+I_1\lambda^2-I_2\lambda+I_3=0$  (**characteristic polynomial**)
 $I_1=\sigma_{jj}=\sigma_{11}+\sigma_{22}+\sigma_{33}$  
 $I_2=-1/2(\sigma_{ik}\;\sigma_{ik}-\sigma_{ll}\;\sigma_{nn})$  
 $I_3=det(\sigma_{ik})$
