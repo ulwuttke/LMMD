@@ -21,7 +21,7 @@ The following explanations are written down for 2-dimensional problems (plane st
 ![traction](traction.png)
 
 
-In the figure, $\vec{t}=\boldsymbol{t}=t_{i}$ is the traction or stress vector. The total stress state at one point is described by two (or in 3D three) traction vector for two (or in 3D three) perpendicular cuttting planes. The traction vectors occurring on each section plane can be written in components with respect to an orthonormal basis resulting from the normal vectors on each section plane. The components of each vector can be written in the rows of a tensor 2. grade: the stress tensor $\boldsymbol{\sigma}=\sigma_{ik}$:
+In the figure, $\vec{t}=\boldsymbol{t}=t_{i}$ is the traction or stress vector. The total stress state at one point is described by two (or in 3D three) traction vector for two (or in 3D three) perpendicular cuttting planes. The traction vectors occurring on each section plane can be written in components with respect to an orthonormal basis resulting from the normal vectors on each section plane. The components of each vector can be written in the rows of a tensor 2. grade: the [stress tensor](https://en.wikipedia.org/wiki/Cauchy_stress_tensor) $\boldsymbol{\sigma}=\sigma_{ik}$:
 
 $\vec{t}^1=\boldsymbol{t}^1=t_{i}^1=
 \sigma^1 \cdot \boldsymbol{e}^1+\tau^1 \cdot \boldsymbol{e}^2=
@@ -112,18 +112,18 @@ $\lambda\;n_k-\sigma_{ik}\;n_i = n_i(\delta_{ik}\; \lambda-\sigma{ik})=0 $
 
 The equations has solutions (exept $\boldsymbol{n}=\boldsymbol{0}$), for:
 
-$det\delta_{ik}\; \lambda-\sigma{ik})=0$  (["eigenvalue-problem"](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors))  
+$det(\delta_{ik}\cdot \lambda-\sigma_{ik})=0$  (["eigenvalue-problem"](https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors))  
 
 $det
 \begin{bmatrix}
-\lambda-\sigma^{11} & -\sigma^{12} & -\sigma^{13}\\
--\sigma^{21} & \lambda-\sigma^{22} & -\sigma^{23}\\
--\sigma^{31} & -\sigma^{31} &  \lambda-\sigma^{33}\\
+\lambda-\sigma_{11} & -\sigma_{12} & -\sigma_{13}\\
+-\sigma_{21} & \lambda-\sigma_{22} & -\sigma_{23}\\
+-\sigma_{31} & -\sigma_{31} &  \lambda-\sigma_{33}\\
 \end{bmatrix}$  
 
 (...)
 
-$\Rightarrow\;\;-\lambda^3+I_1\lambda^2-I_2\lambda+I_3=0$  
+$\Rightarrow\;\;-\lambda^3+I_1\lambda^2-I_2\lambda+I_3=0$  (**characteristic polynomial**)
 $I_1=\sigma_{jj}=\sigma_{11}+\sigma_{22}+\sigma_{33}$  
 $I_2=-1/2(\sigma_{ik}\;\sigma_{ik}-\sigma_{ll}\;\sigma_{nn})$  
 $I_3=det(\sigma_{ik})$
@@ -142,17 +142,12 @@ $\boldsymbol{n}^3=\boldsymbol{n}^1 \times \boldsymbol{n}^2$
 
 With $|\boldsymbol{n}^i|=1$ the three normal vectors are a orthonormal basis; the principal coordinate system.  
 
----
-**EXERCISE**
 
-Calculate the principal stesses and the prioncipal basis for the stress tensor
+A very illustrative representation of the directional dependence of the components of the stress tensor is shown here: 
+|   |
+|---|
+|![StressComp](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/2D_stress.gif/500px-2D_stress.gif)| 
+|"[Stress components on a 2D rotating element. Example of how stress components vary on the faces (edges) of a rectangular element as the angle of its orientation is varied. Principal stresses occur when the shear stresses simultaneously disappear from all faces. The orientation at which this occurs gives the principal directions.](https://en.wikipedia.org/wiki/Cauchy_stress_tensor#Principal_stresses_and_stress_invariants)"|
 
-$\sigma_{ik}=
-\begin{bmatrix}
-20 & 0 & 15\\
-0 & 30 & 0\\
-15 & 0 & 25\\
-\end{bmatrix} \text{MPa}$ 
 
----
 

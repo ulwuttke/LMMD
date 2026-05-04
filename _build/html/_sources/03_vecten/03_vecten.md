@@ -84,19 +84,21 @@ The vector $\boldsymbol{b}$ is given in the "old" basis system $\boldsymbol{e}^i
 
 ![vectordiffbase](VecDiffBase.png)
 
-$\boldsymbol{b}=b_i\cdot \boldsymbol{e}^i = \hat{b}_i\cdot \hat{\boldsymbol{e}}^J$  
+$\boldsymbol{b}=b_i\cdot \boldsymbol{e}^i = \hat{b}_J\cdot \hat{\boldsymbol{e}}^J$  
 
 $b_i\cdot \boldsymbol{e}^i = \hat{b}_i\cdot \hat{\boldsymbol{e}}^J \,| \cdot \hat{\boldsymbol{e}}_K$  
-$b_i\cdot \hat{\boldsymbol{e}}_K \cdot \boldsymbol{e}^i = \hat{b}_i\cdot \hat{\boldsymbol{e}}^J  \cdot \hat{\boldsymbol{e}}_K$ 
+$b_i\cdot \hat{\boldsymbol{e}}_K \cdot \boldsymbol{e}^i = \hat{b}_i\cdot \hat{\boldsymbol{e}}^J  \cdot \hat{\boldsymbol{e}}_K$
 
-$\hat{\boldsymbol{e}}^J  \cdot \hat{\boldsymbol{e}}_K = \delta_K^J$
+with 
+
+$\hat{\boldsymbol{e}}^J  \cdot \hat{\boldsymbol{e}}_K = \delta_K^J$ and
 $\hat{\boldsymbol{e}}_K \cdot \boldsymbol{e}^i = \alpha_K^i$
 
-so
+follows
 
 $\alpha_K^i \cdot b_i=\hat{b}_K$
 
-with
+and
 
 $\alpha_K^i=
 \begin{bmatrix}
@@ -121,7 +123,7 @@ $\alpha_K^{\;i}=
 ... & &\\
 \end{bmatrix}$
 
-Each row is a list of the components of each vector of the new basis referred to the old basis. This works even for non orthonormal basis systems.
+Each row is a list of the components of each vector of the new basis referred to the old basis. This works even for non orthonormal basis systems. **But be careful: there is a difference between the co- and contravariant components, so you have to know both systems!**
 
 The transformation of a tensor of higher grade works by "transforming each index":
 
