@@ -1,6 +1,6 @@
-# Using hyperworks imput file
+# Using hyperworks input file
 
-## input files and starting the calculation
+## input files and starting the calculation 
 
 The FEM-model is here defined with tree text files:  
 - .fem: main file, in which the type of calculatoin, the geometry, the load and the boundary cnditions are definied
@@ -68,3 +68,16 @@ FORCE,11,9999,0,1.0,0.0,10000.,0.0
 $$=== constraint at the node for load application
 SPC,2,9999,1345,0.0
 ```
+
+## Exercise: 
+
+Assess the influence of the input parameters listed below on the maximum notch stress and the [stress concentration factor](https://en.wikipedia.org/wiki/Stress_concentration) for linearly elastic, homogeneous and isotropic material behaviour. 
+
+- load level
+- modulus of elasticity
+- Poissont-ratio
+
+Summarise your results in a table. 
+
+Change the isotropic material to an anisotropic material. What is different?
+

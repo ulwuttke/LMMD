@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>repetition / basic knowledge &#8212; LMMD Skript</title>
+    <title>Gnuplot Basics &#8212; LMMD Skript</title>
   
   
   
@@ -61,13 +61,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '02_rep/02_rep';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'E5_GPBasic/E5_GPBasic';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="vector/tensor rotation and transformation" href="../03_vecten/03_vecten.html" />
-    <link rel="prev" title="linear / non-ninear behaviour" href="../01_linear/01_linear.html" />
+    <link rel="next" title="Creating Results in Hyperworks" href="../E9_hyperDerRes/E9_hyperDerRes.html" />
+    <link rel="prev" title="HyperView Postprocessing" href="../E4_hyperPost/E4_hyperPost.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -159,9 +157,9 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">lecture</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01_linear/01_linear.html">linear / non-ninear behaviour</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">repetition / basic knowledge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_rep/02_rep.html">repetition / basic knowledge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03_vecten/03_vecten.html">vector/tensor rotation and transformation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_spten/04_spten.html">stress tensor, traction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_defstr/05_defstr.html">deformation / infinitesimal strain tensor</a></li>
@@ -169,12 +167,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../07_elast/07_elast.html">linear theory of elasticity</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">excercise</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../E1_hyperBasic/E1_hyperSingleElement.html">Hyperworks basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../E2_hyper/E2_hyper.html">Using hyperworks input file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../E3_PrSrTrans/E3_PrSrTrans.html">Principal stress, principal system and tensor transformation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../E4_hyperPost/E4_hyperPost.html">HyperView Postprocessing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../E5_GPBasic/E5_GPBasic.html">Gnuplot Basics</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Gnuplot Basics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../E9_hyperDerRes/E9_hyperDerRes.html">Creating Results in Hyperworks</a></li>
 </ul>
 
@@ -247,7 +245,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F02_rep/02_rep.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FE5_GPBasic/E5_GPBasic.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -277,7 +275,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/02_rep/02_rep.md" target="_blank"
+      <li><a href="../_sources/E5_GPBasic/E5_GPBasic.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -359,7 +357,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>repetition / basic knowledge</h1>
+    <h1>Gnuplot Basics</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -369,8 +367,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-hooke-s-law">generalized HOOKE’s law</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mohr-s-circle">MOHR’s circle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-small-gnuplot-script">First small Gnuplot script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-command-or-linear-regression-unsing-gnuplot"><em>fit</em>-command or linear regression unsing Gnuplot</a></li>
 </ul>
             </nav>
         </div>
@@ -382,53 +381,84 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="repetition-basic-knowledge">
-<h1>repetition / basic knowledge<a class="headerlink" href="#repetition-basic-knowledge" title="Permalink to this heading">#</a></h1>
-<section id="generalized-hooke-s-law">
-<h2>generalized HOOKE’s law<a class="headerlink" href="#generalized-hooke-s-law" title="Permalink to this heading">#</a></h2>
-<p>The “generalized HOOKE’s law” is an <a class="reference external" href="https://en.wikipedia.org/wiki/Isotropy">isotropic</a> linear-elastic material model for 3D continuum or with loads in any direction (see “Derivation of Hooke’s law in three dimensions” in <a class="reference external" href="https://en.wikipedia.org/wiki/Hooke's_law#Isotropic_materials">Linear elasticity theory for continuous media</a>.</p>
-<p>The law is typically derived (like in the previous link) “inductive”, which means drawing conclusions “from the particular to the general”. The opposite is “deductive, which means drawing conclusions “from the general to the particular”.</p>
-<p>For linear-elastic and isotropic materials the Law is written like:</p>
-<p><span class="math notranslate nohighlight">\(E\,\epsilon_x=\sigma_x-\nu\,(\sigma_y+\sigma_z)\)</span><br />
-<span class="math notranslate nohighlight">\(E\,\epsilon_y=\sigma_x-\nu\,(\sigma_x+\sigma_z)\)</span><br />
-<span class="math notranslate nohighlight">\(E\,\epsilon_z=\sigma_x-\nu\,(\sigma_x+\sigma_y)\)</span></p>
-<p><span class="math notranslate nohighlight">\(G\,\gamma_xy=\tau_{xy}\)</span><br />
-<span class="math notranslate nohighlight">\(G\,\gamma_xz=\tau_{xz}\)</span><br />
-<span class="math notranslate nohighlight">\(G\,\gamma_yz=\tau_{yz}\)</span></p>
-<p>with:<br />
-<span class="math notranslate nohighlight">\(E\)</span>: young’s modulus (elastic modulus)<br />
-<span class="math notranslate nohighlight">\(\nu\)</span>: poisson ratio<br />
-<span class="math notranslate nohighlight">\( \sigma_{...}\)</span>, <span class="math notranslate nohighlight">\(\tau_{...}\)</span>: normal and shear stress<br />
-<span class="math notranslate nohighlight">\( \epsilon_{...}\)</span>, <span class="math notranslate nohighlight">\(\gamma_{...}\)</span>: elongation and shearing (strains)</p>
-<p>Since the linear-elastic material behavior (for small strains and isotropic material) is described with two elastic constants, there must be a relationship between the three elastic constants mentioned above:</p>
-<p><span class="math notranslate nohighlight">\(G=\frac{E}{2\,(1+\nu)}\)</span></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="gnuplot-basics">
+<h1>Gnuplot Basics<a class="headerlink" href="#gnuplot-basics" title="Permalink to this heading">#</a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>Script-based programming languages like <a class="reference external" href="https://www.python.org/">python</a> or <a class="reference external" href="https://www.r-project.org/">R</a> are recommended for analysing large volumes of data. Compared to ‘proper’ programming languages, these have the advantage that their command sets are relatively easy to implement. Although such scripts are initially more difficult to understand than programmes such as EXCEL, they enable more efficient work when dealing with complex applications, numerous repetitions or simply very large volumes of data.</p>
+<p>Here, <a class="reference external" href="https://en.wikipedia.org/wiki/Gnuplot">Gnuplot</a> is used. Compared to Python or R, Gnuplot is very limited and focuses primarily on the graphical representation of datasets. However, it has the same scripting command character, is easy to install on all platforms, and offers a manageable set of commands.</p>
 </section>
-<section id="mohr-s-circle">
-<h2>MOHR’s circle<a class="headerlink" href="#mohr-s-circle" title="Permalink to this heading">#</a></h2>
-<p>The three dimensional stress state can be shown using <a class="reference external" href="https://en.wikipedia.org/wiki/Mohr's_circle">MOHR’s circle</a>.</p>
-<p><img alt="Mohr" src="../_images/Mohr.png" /></p>
-<p>As each circle always has two points of intersection with the horizontal stress axis (where the shear stress is zero), there is a special coordinate system (the principal system) in which the current stress state is only described by 3 normal stresses, the so-called <strong>principal stresses <span class="math notranslate nohighlight">\(\sigma^{(1)}\)</span>, <span class="math notranslate nohighlight">\(\sigma^{(2)}\)</span>, <span class="math notranslate nohighlight">\(\sigma^{(3)}\)</span></strong>.</p>
-<hr class="docutils" />
-<p><strong>EXERCISE</strong></p>
-<ol class="arabic simple">
-<li><p>As a result of a <a class="reference external" href="https://en.wikipedia.org/wiki/Strain_gauge">strain gauge measurement</a> at one point on a surface of a bicycle frame the followng strains are measured:<br />
-<span class="math notranslate nohighlight">\(\epsilon_A=1,0\cdot10^{-3}\)</span><br />
-<span class="math notranslate nohighlight">\(\epsilon_B=0,5\cdot10^{-3}\)</span></p></li>
-</ol>
-<p><img alt="StrainGauge1" src="../_images/StrainGauge1.png" /></p>
-<p>The Material is homogenous and isotropic with an YOUNGth modulus of aprox. <span class="math notranslate nohighlight">\(E=200 \text{GPa}\)</span> and a POISSON ratio of <span class="math notranslate nohighlight">\(\nu=0,2\)</span>.<br />
-<strong>Calculate the stresses! in the direction of the strain gauges</strong></p>
-<ol class="arabic simple" start="2">
-<li><p>To get the full plain stress state (in another point), three strain gauges are applied. The measured strains are:</p></li>
-</ol>
-<p><span class="math notranslate nohighlight">\(\epsilon_A=5,8\cdot10^{-4}\)</span><br />
-<span class="math notranslate nohighlight">\(\epsilon_B=-0,2\cdot10^{-4}\)</span><br />
-<span class="math notranslate nohighlight">\(\epsilon_C=4,3\cdot10^{-4}\)</span></p>
-<p><img alt="StrainGauge1" src="../_images/StrainGauge2.png" /></p>
-<p>The Material is homogenous and isotropic with an YOUNGs modulus of  aprox. <span class="math notranslate nohighlight">\(E=200 \text{GPa}\)</span> and a POISSON ratio of <span class="math notranslate nohighlight">\(\nu=0,2\)</span>.
-<strong>Calculate the stresses (normal and shear stresses) according to the strain gauge directions A/B, and the principal stresses/ max shear stress!</strong></p>
-<p>If you don’t know how to start, have a look at <a class="reference download internal" download="" href="../_downloads/8a3c731fb755f008fa04fc6bb123cf0c/260420-StrainGaugeExSolutioin.pdf"><span class="xref download myst">this file</span></a>.</p>
-<hr class="docutils" />
+<section id="first-small-gnuplot-script">
+<h2>First small Gnuplot script<a class="headerlink" href="#first-small-gnuplot-script" title="Permalink to this heading">#</a></h2>
+<p>Gnuplot can display the output directly on the screen or save it directly to a file in a variety of graphic formats. Therefore, the output need to be specified in the first line. Here, the “Windows terminal” (standard on Windows computers) is set. The second and third line begins with the comment symbol #, so these lines are ignored. If the #-symbol is erased,
+the output will be written in the file “test-plot.png”.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">set</span> <span class="n">terminal</span> <span class="n">windows</span> <span class="n">mono</span>
+<span class="c1">#set terminal png</span>
+<span class="c1">#set output &quot;test-plot.png&quot;</span>
+
+</pre></div>
+</div>
+<p>Data is plottet by the following command where</p>
+<ul class="simple">
+<li><p><em>using 1:2</em> means: the first column in the file are x-values, the 2nd column are the y-values.</p></li>
+<li><p><em>every 2</em> means: plot only every second data point</p></li>
+<li><p><em>title</em> (or short <em>t</em>) defines a title</p></li>
+<li><p><em>pt</em> and <em>ps</em> are modifiing the shape and size of the points</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="s1">&#39;testdaten.dat&#39;</span> <span class="n">using</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span> <span class="n">every</span> <span class="mi">2</span> <span class="n">title</span><span class="s1">&#39;Testdaten&#39;</span> <span class="n">pt</span> <span class="mi">6</span> <span class="n">ps</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>Copy these two code lines a new text file and saved as a <strong>.plt</strong> file.</p>
+<p>To have some plotting data copy the following “random” x-y-values in a new text file and save it as <em>testdaten.dat</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#testdata</span>
+<span class="c1"># x-values	y1-values	y2-values</span>
+<span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span>	<span class="mi">0</span><span class="p">,</span><span class="mi">39</span>	<span class="mi">10</span><span class="p">,</span><span class="mi">33</span>
+<span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span>	<span class="mi">4</span><span class="p">,</span><span class="mi">40</span>	<span class="mi">8</span><span class="p">,</span><span class="mi">18</span>
+<span class="mi">1</span><span class="p">,</span><span class="mi">32</span>	<span class="mi">9</span><span class="p">,</span><span class="mi">75</span>	<span class="mi">6</span><span class="p">,</span><span class="mi">27</span>
+<span class="mi">3</span><span class="p">,</span><span class="mi">72</span>	<span class="mi">12</span><span class="p">,</span><span class="mi">87</span>	<span class="mi">7</span><span class="p">,</span><span class="mi">34</span>
+<span class="mi">5</span><span class="p">,</span><span class="mi">87</span>	<span class="mi">6</span><span class="p">,</span><span class="mi">38</span>	<span class="mi">2</span><span class="p">,</span><span class="mi">64</span>
+<span class="mi">7</span><span class="p">,</span><span class="mi">95</span>	<span class="mi">24</span><span class="p">,</span><span class="mi">54</span>	<span class="o">-</span><span class="mi">0</span><span class="p">,</span><span class="mi">478</span>
+<span class="mi">9</span><span class="p">,</span><span class="mi">71</span>	<span class="mi">39</span><span class="p">,</span><span class="mi">36</span>	<span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">48</span>
+<span class="mi">11</span><span class="p">,</span><span class="mi">84</span>	<span class="mi">41</span><span class="p">,</span><span class="mi">36</span>	<span class="mi">6</span><span class="p">,</span><span class="mi">02</span>
+<span class="mi">13</span><span class="p">,</span><span class="mi">47</span>	<span class="mi">8</span><span class="p">,</span><span class="mi">16</span>	<span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mi">31</span>
+<span class="mi">15</span><span class="p">,</span><span class="mi">24</span>	<span class="mi">17</span><span class="p">,</span><span class="mi">78</span>	<span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">83</span>
+<span class="mi">17</span><span class="p">,</span><span class="mi">63</span>	<span class="mi">71</span><span class="p">,</span><span class="mi">72</span>	<span class="mi">4</span><span class="p">,</span><span class="mi">76</span>
+<span class="mi">19</span><span class="p">,</span><span class="mi">31</span>	<span class="mi">17</span><span class="p">,</span><span class="mi">12</span>	<span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">76</span>
+<span class="mi">21</span><span class="p">,</span><span class="mi">86</span>	<span class="mi">91</span><span class="p">,</span><span class="mi">64</span>	<span class="o">-</span><span class="mi">33</span><span class="p">,</span><span class="mi">38</span>
+</pre></div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+If you now run the gnuplot-script, the plot should look like this:<div class="sd-summary-down docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><img alt="Testdaten-plot" src="../_images/test-plot.png" /></p>
+</div>
+</details><p>To use the third column as y-values and every data point try</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="s1">&#39;testdaten.dat&#39;</span> <span class="n">using</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span> <span class="n">every</span> <span class="mi">1</span> <span class="n">title</span><span class="s1">&#39;Testdaten&#39;</span> <span class="n">pt</span> <span class="mi">6</span> <span class="n">ps</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>… or both data sets (with different pt and ps)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot</span> <span class="s1">&#39;testdaten.dat&#39;</span> <span class="n">using</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span> <span class="n">every</span> <span class="mi">1</span> <span class="n">title</span><span class="s1">&#39;y1-Testdaten&#39;</span> <span class="n">pt</span> <span class="mi">6</span> <span class="n">ps</span> <span class="mi">2</span><span class="p">,</span><span class="o">/</span>
+<span class="s1">&#39;testdaten.dat&#39;</span> <span class="n">using</span> <span class="mi">1</span><span class="p">:</span><span class="mi">3</span> <span class="n">every</span> <span class="mi">1</span> <span class="n">title</span><span class="s1">&#39;y2-Testdaten&#39;</span> <span class="n">pt</span> <span class="mi">2</span> <span class="n">ps</span> <span class="mi">4</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>… and with axis label and a defined range (to be inserted before the <em>plot</em>-command):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># axis label</span>
+<span class="nb">set</span> <span class="n">xlabel</span> <span class="s1">&#39;x-values&#39;</span>
+<span class="nb">set</span> <span class="n">ylabel</span> <span class="s1">&#39;y-values&#39;</span>
+<span class="c1">#</span>
+<span class="nb">set</span> <span class="n">xrange</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mi">25</span><span class="p">]</span>
+<span class="nb">set</span> <span class="n">yrange</span><span class="p">[</span><span class="o">-</span><span class="mi">50</span><span class="p">:</span><span class="mi">100</span><span class="p">]</span>
+<span class="nb">set</span> <span class="n">key</span> <span class="n">bottom</span> <span class="n">center</span>
+</pre></div>
+</div>
+<p><strong>NOTE</strong> You get greek letters (here sigma) or symbols via <em>set label ‘{/Symbol s}’</em></p>
+</section>
+<section id="fit-command-or-linear-regression-unsing-gnuplot">
+<h2><em>fit</em>-command or linear regression unsing Gnuplot<a class="headerlink" href="#fit-command-or-linear-regression-unsing-gnuplot" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
@@ -445,7 +475,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./02_rep"
+            path: "./E5_GPBasic"
         },
         predefinedOutput: true
     }
@@ -464,20 +494,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../01_linear/01_linear.html"
+       href="../E4_hyperPost/E4_hyperPost.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">linear / non-ninear behaviour</p>
+        <p class="prev-next-title">HyperView Postprocessing</p>
       </div>
     </a>
     <a class="right-next"
-       href="../03_vecten/03_vecten.html"
+       href="../E9_hyperDerRes/E9_hyperDerRes.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">vector/tensor rotation and transformation</p>
+        <p class="prev-next-title">Creating Results in Hyperworks</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -499,8 +529,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-hooke-s-law">generalized HOOKE’s law</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mohr-s-circle">MOHR’s circle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-small-gnuplot-script">First small Gnuplot script</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fit-command-or-linear-regression-unsing-gnuplot"><em>fit</em>-command or linear regression unsing Gnuplot</a></li>
 </ul>
   </nav></div>
 

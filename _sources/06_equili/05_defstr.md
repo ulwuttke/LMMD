@@ -13,16 +13,15 @@ In a one dimensional system the deformation of a infinitesimal line-element (end
 
 The new locatoin of the material poins is decribed by:  
 $P'=x_P=x(X_P,t)=X(P)+u(P,t)$ and  
-$Q'=x_Q=x(X_Q,t)=X(Q)+u(Q,t)=X(P)+dX+u(P,t)+du(t)$  
+$Q'=x_Q=x(X_Q,t)=X(Q)+u(Q,t)=x(P,t)+dx(t)=X(P)+dX+u(P,t)+du(t)$  
 
 By the way, the time $t$ only indicates, that there are different deformatoins possible. The time here is more a loadstep or load scale factor than a real time.
 
-A purely rigid-body translation does not result in any stress in the material. It is therefore the change in the distance $dX$ of interest.
-The new length of the line-element $dX$ is:  
-$dx=( x(Q,t)-x(P,t)=[X(P)+dX+u(P,t)+du(t)]-[X(P)+u(P,t)] )=dX+du$  
-and the relative change of the line element or the so called deformation gradiet $F$ is  
+The new length $dx$ of the line-element $dX$ is:  
+$dx=x(Q,t)-x(P,t)=[X(P)+dX+u(P,t)+du(t)]-[X(P)+u(P,t)]=dX+du$  
+and the relative change or the deformation gradiet $F$ of the line element is  
 $F=dx/dX=dX/dX+du/dX=1+du/dX$  
-$F=dx/dX=\lambda$ is defined as the stretch (not the strain; the reason for all this different variables will be clear after the next chapter). For a undeformed structure $\lambda=1$ (not $0$). A strain like deformation-quantity is  
+$F=dx/dX=\lambda$ is the stretch (not the strain; the reason for all this different variables will be clear after the next chapter). For a undeformed structure $\lambda=1$ (not $0$). A strain like deformation-quantity is  
 
 $G=1/2(F^2-1)=1/2[(1+du/dX)^2-1]=1/2[(1+2\cdot du/dX+d^2u/dX^2)-1]$
 $=du/dX+1/2 \cdot d^2u/dX^2 $ 

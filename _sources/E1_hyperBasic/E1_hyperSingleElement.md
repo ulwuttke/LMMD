@@ -1,4 +1,4 @@
-# Hyperworcs basics
+# Hyperworks basics
 
 ## Finite Element Methode  
 
@@ -45,7 +45,7 @@ BEGIN BULK $ Initiation of the Bulk date section
 $
 ```
 
-The following defines a simple single-element geometry in the form of a flat shell (here a 4-node element of the type $
+The following defines a simple single-element geometry in the form of a flat shell (here a 4-node element of the type 
 [CQUAD4](https://help.altair.com/hwsolvers/os/topics/solvers/os/cquad4_bulk_r.htm is used):
 
 ```
@@ -62,7 +62,7 @@ CQUAD4,1,9,1,2,3,4
 $
 ```
 
-Now the element properties via [PSHELL](https://help.altair.com/hwsolvers/os/topics/solvers/os/pshell_bulk_r.htm), with the shell thickness (here thickness =1.0) and material definition (here linear elastic, isotropic material [MAT1](https://help.altair.com/hwsolvers/os/topics/solvers/os/mat1_bulk_r.htm) need to be defined:
+Now the element properties via [PSHELL](https://help.altair.com/hwsolvers/os/topics/solvers/os/pshell_bulk_r.htm), with the shell thickness (here thickness =1.0) and material definition (here linear elastic, isotropic material [MAT1](https://help.altair.com/hwsolvers/os/topics/solvers/os/mat1_bulk_r.htm) ) need to be defined:
 
 ```
 $ 
@@ -92,8 +92,9 @@ $
 
 There are several ways to separate the parameters or fields variabels in each bulk entry. One option is to use “,” as a separator; another is to define each field as exactly eight characters long. So, the following two lines define the same input:
 ```
-SPC,4,1,123
-SPC            4       1     123 (=> SPC-----*******4-------1*****123)
+ SPC,4,1,123
+ SPC            4       1     123
+$12345678123456781234567812345678
 ```
 Attention: if you just miss one blank in the second line, the field variable might be different!
 
