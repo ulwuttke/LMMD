@@ -51,7 +51,7 @@ The vectors $\boldsymbol{X}=X_i$ are the material coordinates (the "nemes" of ea
 The vectors $\boldsymbol{x}(X)=x_i$ are the current coordinate(s) of each point and describe the deformed geometry.  
 The vectors $\boldsymbol{u}(X)=\boldsymbol{x}-\boldsymbol{X}=u_i$ are the displacement of each point.  
 
-The displacement is a vector field can change in every point. The variiation of $\boldsymbol{u}$ is decibed by the total derivate of eachvector componend:  
+The displacement is a vector field, which can change in every point. The variiation of $\boldsymbol{u}$ is decibed by the total derivate of eachvector componend:  
 $du_i=\frac{\partial u_i}{\partial X_j}dX_j=\left(\begin{array}
 {c} \frac{\partial u_1}{\partial X_1}dX_1+\frac{\partial u_1}{\partial X_2}dX_2+\frac{\partial u_1}{\partial X_3}dX_3 \\
  \frac{\partial u_1}{\partial X_1}dX_1+\frac{\partial u_1}{\partial X_2}dX_2+\frac{\partial u_1}{\partial X_3}dX_3 \\ 
@@ -75,18 +75,41 @@ so, the change of the infinitesimal line element $\boldsymbol{dX}$ to $\boldsymb
 $\boldsymbol{F}={\partial \boldsymbol{x}}/{\partial \boldsymbol{X}}=F_{ij}={\partial x_i}/{\partial X_j}$
 
 The tensor $\boldsymbol{F}$ decribes the stretch of the line elemnet $d\boldsymbol{X}$. For an undeformed body $\boldsymbol{X}=\boldsymbol{x}$ and $\boldsymbol{F}=\boldsymbol{1}=F_{ik}=\delta_{ik}$.  
-For a constant displacemant $x_i=X_i+k$ $F_{ik}=\delta_{ik}$ too.  
+
+For a constant displacemant $x_i=X_i+k_i$ is $\frac{\partial x_i}{\partial X_j}=1$ for $i=j$ and $\frac{\partial x_i}{\partial X_j}=0$ for $i\neq j$. So it is $F_{ik}=\delta_{ik}$, which means that a rigid body translation does noch affect $\boldsymbol{F}$, and $F_{ik}=\delta_{ik}$ still represents the undeformed structure.
 For a rigid body rotation, the line element $\boldsymbol{X}$ only changes the orientation, but not the length. But the componets of $\boldsymbol{X}$ are changing, and so $F_{ik}\neq \delta_{ik}$. This is a problem, because so $\boldsymbol{F}$ does not easyly indecates a deformation of the body  
 The rotation in $\boldsymbol{F}$ can be elininated by using the fact, that for a pur rotation tensor it is:  
 
 $\boldsymbol{R}\cdot\boldsymbol{R}^T=\boldsymbol{1}$ or $R_{ik}\cdot R_{jk}=\delta_{ij}$
 
-The deformationgradient F can be splitted in a pure rotation R and a Deformatoin U or V (depending on the order of the two operations).
+The deformationgradient $\boldsymbol{F}$ (or any unsymmetric tensor) can be splitted in a pure (rigid body) rotation $\boldsymbol{R}$ and a deflection $\boldsymbol{U}$ or $\boldsymbol{V}$ (depending on the order of the two operations).
 
 ![FRV](FRV.png)
 
+
+So, one can do the following operation: 
+$\boldsymbol{F}=\boldsymbol{R}\cdot\boldsymbol{U}=\boldsymbol{V}\cdot\boldsymbol{R}$=$F_{ik}=R_{in}\cdot U_{nk}=V_{im}\cdot R_{mk}$
+
+and: 
+$\boldsymbol{F}^T\cdot \boldsymbol{F}=F_{op}\cdot F_{oq}=$
+$(R_{on}\cdot U_{np})\cdot (R_{om}\cdot U_{mq})=$
+$R_{on}\cdot R_{om}\,\,\cdot\,\, U_{np} \cdot U_{mq} =$
+$\delta_{nm}\cdot\,\, U_{np} \cdot U_{mq} =$
+$U_{mp} \cdot U_{mq}=C_{pq}$
+
+So, a new tensor $\boldsymbol{C}$ is created, in which the rigit body rotation is eleminated. This deformation tensor is called:
+
+**CAUCHY-GREEN-deformation tensor**: $\boldsymbol{C}=\boldsymbol{U}^T \cdot \boldsymbol{U}$ or $C_{pq}=U_{mp} \cdot U_{mq}=\boldsymbol{F}^T\cdot \boldsymbol{F}$
+
+For an undeformed body $\boldsymbol{C}=\boldsymbol{1}$. A deformation tensor which is $\boldsymbol{0}$ is the
+
+**GREEN-LAGRANGE-deformation tensor**: $\boldsymbol{G}=1/2(\boldsymbol{C}-\boldsymbol{1})$ or $G_{pq}=1/2(C_{pq} - \delta_{pq})$
+
+The formulation of these equations is generally valid, i.e. for large deformatins ([Finite-Strain-Theorie](https://en.wikipedia.org/wiki/Finite_strain_theory)). 
+
+
 ---
-**Example**
+**Exercise**
 
 The movement of a body is described by the vector-function
 
@@ -102,33 +125,10 @@ X_2-X_1\cdot sin(t) \\
 X_3\\
 \end{array}\right)$
 
-a: Sketch the resulting deformation for a simple body
-b: Calculate the deformation gradient $\boldsymbol{F}$
-c: Calculate $\boldsymbol{F}^T\cdot $\boldsymbol{F}$
-
+1. Sketch the resulting deformation for a simple body
+2. Calculate the deformation gradient $\boldsymbol{F}$
+3. Calculate $\boldsymbol{F}^T\cdot \boldsymbol{F}$
 ---
-
-## strain tensor (finite strain theorie)
-
-So, one can do the following operation: 
-$\boldsymbol{F}=\boldsymbol{R}\cdot\boldsymbol{U}=\boldsymbol{V}\cdot\boldsymbol{R}$=$F_{ik}=R_{in}\cdot U_{nk}=V_{im}\cdot R_{mk}$
-
-and: 
-$\boldsymbol{F}^T\cdot \boldsymbol{F}=F_{op}\cdot F_{oq}=$
-$(R_{on}\cdot U_{np})\cdot (R_{om}\cdot U_{mq})=$
-$R_{on}\cdot R_{om}\,\,\cdot\,\, U_{np} \cdot U_{mq} =$
-$\delta_{nm}\cdot\,\, U_{np} \cdot U_{mq} =$
-$U_{mp} \cdot U_{mq}=C_{pq}$
-
-After this operation a tensor $\boldsymbol{C}$ is created, in which the rigit body rotation is eleminated. This deformation tensor is called:
-
-**CAUCHY-GREEN-deformation tensor**: $\boldsymbol{C}=\boldsymbol{U}^T \cdot \boldsymbol{U}$ or $C_{pq}=U_{mp} \cdot U_{mq}$
-
-For an undeformed body $\boldsymbol{C}=\boldsymbol{1}$. A deformation tensor which is $\boldsymbol{0}$ is the
-
-**GREEN-LAGRANGE-deformation tensor**: $\boldsymbol{G}=1/2(\boldsymbol{C}-\boldsymbol{1})$ or $G_{pq}=1/2(C_{pq} - \delta_{pq})$
-
-The formulation of these equations is generally valid, i.e. for large deformatins ([Finite-Strain-Theorie](https://en.wikipedia.org/wiki/Finite_strain_theory)). 
 
 
 ## infinitesimal strain tensor (linear theorie)
@@ -177,7 +177,7 @@ $\boldsymbol{\epsilon}=\epsilon_{ik}=
 \end{bmatrix}$
 
 ---
-**Example**
+**Exercise**
 
 The movement of a body is described by the vector-function
 
@@ -188,7 +188,7 @@ X_3+t\cdot X_2\\
 \end{array}\right)$
 
 
-a: Sketch the resulting deformation for a simple body and $t=0,5$
-b: Calculate $\boldsymbol{F}$,  $\boldsymbol{F}$ and  $\boldsymbol{\epsilon}$
+1. Sketch the resulting deformation for a simple body and $t=0,5$
+2. Calculate $\boldsymbol{F}$,  $\boldsymbol{G}$ and  $\boldsymbol{\epsilon}$
 
 ---

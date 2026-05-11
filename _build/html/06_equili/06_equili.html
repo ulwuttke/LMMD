@@ -414,7 +414,7 @@ document.write(`
 &amp;&amp;&amp; + f_1 \cdot dx_1 \cdot dx_2\cdot dx_3 \\
 &amp;&amp;&amp;&amp;\\
 \text{c.}&amp;\curvearrowright\,:&amp; 0 = &amp;(\sigma_{21} + \partial \sigma_{21})\cdot dx_1\cdot dx_3\cdot\frac{dx_2}{2} +\sigma_{21} \cdot dx_1\cdot dx_3\cdot\frac{dx_2}{2}\\
-&amp;&amp;&amp;(\sigma_{12} + \partial \sigma_{12})\cdot dx_2\cdot dx_3\cdot\frac{dx_1}{2} +\sigma_{12} \cdot dx_2\cdot dx_3\cdot\frac{dx_1}{2}\\
+&amp;&amp;&amp;-(\sigma_{12} + \partial \sigma_{12})\cdot dx_2\cdot dx_3\cdot\frac{dx_1}{2} +\sigma_{12} \cdot dx_2\cdot dx_3\cdot\frac{dx_1}{2}\\
 \end{matrix}\)</span></p>
 <p>Form equation <span class="math notranslate nohighlight">\(\text{c.}\)</span> is resulting that <span class="math notranslate nohighlight">\(\partial \sigma_{12}=\partial \sigma_{21}\)</span></p>
 <p>Equations <span class="math notranslate nohighlight">\(\text{a.}\)</span> and <span class="math notranslate nohighlight">\(\text{b.}\)</span> simlifies to</p>
@@ -435,6 +435,40 @@ document.write(`
 </section>
 <section id="basic-equations-of-the-linear-theory">
 <h2>basic equations of the linear theory<a class="headerlink" href="#basic-equations-of-the-linear-theory" title="Permalink to this heading">#</a></h2>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-left"><p></p></th>
+<th class="head text-center"><p>equation</p></th>
+<th class="head text-center"><p>number of equations</p></th>
+<th class="head text-center"><p>known quantities</p></th>
+<th class="head text-center"><p>unknown quantities</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-left"><p>equilibrium</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(0=\frac{\partial \sigma_{ik}}{\partial x_i}+ f_k\)</span></p></td>
+<td class="text-center"><p>3</p></td>
+<td class="text-center"><p>3 (<span class="math notranslate nohighlight">\(f_k\)</span>)</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(6\)</span> (<span class="math notranslate nohighlight">\(\sigma_{ik}\)</span>)</p></td>
+</tr>
+<tr class="row-odd"><td class="text-left"><p>kinematik</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(\epsilon_{lm}=\frac{1}{2}(\frac{\partial u_l}{\partial x_m}+\frac{1}{2}(\frac{\partial u_m}{\partial x_l})\)</span></p></td>
+<td class="text-center"><p>6</p></td>
+<td class="text-center"><p>0</p></td>
+<td class="text-center"><p><span class="math notranslate nohighlight">\(6+3=9\)</span> (<span class="math notranslate nohighlight">\(\epsilon_{ik}\)</span>, <span class="math notranslate nohighlight">\(u_l\)</span>)</p></td>
+</tr>
+<tr class="row-even"><td class="text-left"><p>sum</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>9</p></td>
+<td class="text-center"><p></p></td>
+<td class="text-center"><p>15</p></td>
+</tr>
+</tbody>
+</table>
+<p>The 9 equations derived so far contain 15 unknowns. Therefore, additional equations - exact <span class="math notranslate nohighlight">\(15-9=6\)</span> equations - are still needed, which are found by including the material (for theoretical background see <a class="reference external" href="https://en.wikipedia.org/wiki/Constitutive_equation">constitutive equations</a>).</p>
+<p>For the linear theorie a linear relation (linear map) between the stresses and strains is assumend:</p>
+<p><span class="math notranslate nohighlight">\(\sigma_{ik}=E_{iklm}\cdot\epsilon_{lm}\)</span></p>
+<p>If the material parameters are known (here all the <span class="math notranslate nohighlight">\(3\cdot 3\cdot 3\cdot3=81\)</span> components for the elasic 4th-order tensor <span class="math notranslate nohighlight">\(E_{iklm}\)</span>), the material equations has no additional unknown quantities but gives 6 - exact the 6 equations needet - additional equations.</p>
 </section>
 </section>
 

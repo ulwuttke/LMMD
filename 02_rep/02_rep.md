@@ -9,8 +9,8 @@ The law is typically derived (like in the previous link) "inductive", which mean
 For linear-elastic and isotropic materials the Law is written like:
 
 $E\,\epsilon_x=\sigma_x-\nu\,(\sigma_y+\sigma_z)$  
-$E\,\epsilon_y=\sigma_x-\nu\,(\sigma_x+\sigma_z)$  
-$E\,\epsilon_z=\sigma_x-\nu\,(\sigma_x+\sigma_y)$  
+$E\,\epsilon_y=\sigma_y-\nu\,(\sigma_x+\sigma_z)$  
+$E\,\epsilon_z=\sigma_z-\nu\,(\sigma_x+\sigma_y)$  
 
 $G\,\gamma_xy=\tau_{xy}$  
 $G\,\gamma_xz=\tau_{xz}$  
