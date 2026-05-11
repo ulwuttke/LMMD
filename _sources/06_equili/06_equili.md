@@ -82,7 +82,7 @@ For the linear theorie a linear relation (linear map) between the stresses and s
 
 $\sigma_{ik}=E_{iklm}\cdot\epsilon_{lm}$
 
-If the material parameters are known (here all the $3\cdot 3\cdot 3\cdot3=81$ components for the elasic 4th-order tensor $E_{iklm}$), the material equations has no additional unknown quantities but gives 6 - exact the 6 equations needet - additional equations. 
+If the material parameters are known (here all the $3\cdot 3\cdot 3\cdot3=81$ components for the elasic 4th-order tensor $E_{iklm}$), the material equations has no additional unknown quantities but gives 6 - exact the 6 equations needed - additional equations. 
 
 
 
