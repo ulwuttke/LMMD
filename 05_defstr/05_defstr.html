@@ -371,7 +371,6 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strain-definition-in-one-dimension">strain definition in one dimension</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-dim-deformation-deformation-gradient">three dim. deformation / deformation gradient</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strain-tensor-finite-strain-theorie">strain tensor (finite strain theorie)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-strain-tensor-linear-theorie">infinitesimal strain tensor (linear theorie)</a></li>
 </ul>
             </nav>
@@ -429,7 +428,7 @@ and the relative change of the line element or the so called deformation gradiet
 The vectors <span class="math notranslate nohighlight">\(\boldsymbol{X}=X_i\)</span> are the material coordinates (the “nemes” of each point)<br />
 The vectors <span class="math notranslate nohighlight">\(\boldsymbol{x}(X)=x_i\)</span> are the current coordinate(s) of each point and describe the deformed geometry.<br />
 The vectors <span class="math notranslate nohighlight">\(\boldsymbol{u}(X)=\boldsymbol{x}-\boldsymbol{X}=u_i\)</span> are the displacement of each point.</p>
-<p>The displacement is a vector field can change in every point. The variiation of <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> is decibed by the total derivate of eachvector componend:<br />
+<p>The displacement is a vector field, which can change in every point. The variiation of <span class="math notranslate nohighlight">\(\boldsymbol{u}\)</span> is decibed by the total derivate of eachvector componend:<br />
 <span class="math notranslate nohighlight">\(du_i=\frac{\partial u_i}{\partial X_j}dX_j=\left(\begin{array}
 {c} \frac{\partial u_1}{\partial X_1}dX_1+\frac{\partial u_1}{\partial X_2}dX_2+\frac{\partial u_1}{\partial X_3}dX_3 \\
  \frac{\partial u_1}{\partial X_1}dX_1+\frac{\partial u_1}{\partial X_2}dX_2+\frac{\partial u_1}{\partial X_3}dX_3 \\ 
@@ -445,15 +444,28 @@ The vectors <span class="math notranslate nohighlight">\(\boldsymbol{u}(X)=\bold
 <p><span class="math notranslate nohighlight">\(d\boldsymbol{u}=d\boldsymbol{x}-d\boldsymbol{X}=\frac{\partial \boldsymbol{x}}{\partial \boldsymbol{X}}d\boldsymbol{X}-d\boldsymbol{X}=\frac{\partial x_i}{\partial X_j}dX_j-dX_i\)</span></p>
 <p>so, the change of the infinitesimal line element <span class="math notranslate nohighlight">\(\boldsymbol{dX}\)</span> to <span class="math notranslate nohighlight">\(\boldsymbol{dx}\)</span> is described by <a class="reference external" href="https://www.continuummechanics.org/deformationgradient.html">deformation gradient <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span></a>:</p>
 <p><span class="math notranslate nohighlight">\(\boldsymbol{F}={\partial \boldsymbol{x}}/{\partial \boldsymbol{X}}=F_{ij}={\partial x_i}/{\partial X_j}\)</span></p>
-<p>The tensor <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> decribes the stretch of the line elemnet <span class="math notranslate nohighlight">\(d\boldsymbol{X}\)</span>. For an undeformed body <span class="math notranslate nohighlight">\(\boldsymbol{X}=\boldsymbol{x}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{F}=\boldsymbol{1}=F_{ik}=\delta_{ik}\)</span>.<br />
-For a constant displacemant <span class="math notranslate nohighlight">\(x_i=X_i+k\)</span> <span class="math notranslate nohighlight">\(F_{ik}=\delta_{ik}\)</span> too.<br />
+<p>The tensor <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> decribes the stretch of the line elemnet <span class="math notranslate nohighlight">\(d\boldsymbol{X}\)</span>. For an undeformed body <span class="math notranslate nohighlight">\(\boldsymbol{X}=\boldsymbol{x}\)</span> and <span class="math notranslate nohighlight">\(\boldsymbol{F}=\boldsymbol{1}=F_{ik}=\delta_{ik}\)</span>.</p>
+<p>For a constant displacemant <span class="math notranslate nohighlight">\(x_i=X_i+k_i\)</span> is <span class="math notranslate nohighlight">\(\frac{\partial x_i}{\partial X_j}=1\)</span> for <span class="math notranslate nohighlight">\(i=j\)</span> and <span class="math notranslate nohighlight">\(\frac{\partial x_i}{\partial X_j}=0\)</span> for <span class="math notranslate nohighlight">\(i\neq j\)</span>. So it is <span class="math notranslate nohighlight">\(F_{ik}=\delta_{ik}\)</span>, which means that a rigid body translation does noch affect <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span>, and <span class="math notranslate nohighlight">\(F_{ik}=\delta_{ik}\)</span> still represents the undeformed structure.
 For a rigid body rotation, the line element <span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span> only changes the orientation, but not the length. But the componets of <span class="math notranslate nohighlight">\(\boldsymbol{X}\)</span> are changing, and so <span class="math notranslate nohighlight">\(F_{ik}\neq \delta_{ik}\)</span>. This is a problem, because so <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> does not easyly indecates a deformation of the body<br />
 The rotation in <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> can be elininated by using the fact, that for a pur rotation tensor it is:</p>
 <p><span class="math notranslate nohighlight">\(\boldsymbol{R}\cdot\boldsymbol{R}^T=\boldsymbol{1}\)</span> or <span class="math notranslate nohighlight">\(R_{ik}\cdot R_{jk}=\delta_{ij}\)</span></p>
-<p>The deformationgradient F can be splitted in a pure rotation R and a Deformatoin U or V (depending on the order of the two operations).</p>
+<p>The deformationgradient <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> (or any unsymmetric tensor) can be splitted in a pure (rigid body) rotation <span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> and a deflection <span class="math notranslate nohighlight">\(\boldsymbol{U}\)</span> or <span class="math notranslate nohighlight">\(\boldsymbol{V}\)</span> (depending on the order of the two operations).</p>
 <p><img alt="FRV" src="../_images/FRV.png" /></p>
+<p>So, one can do the following operation:
+<span class="math notranslate nohighlight">\(\boldsymbol{F}=\boldsymbol{R}\cdot\boldsymbol{U}=\boldsymbol{V}\cdot\boldsymbol{R}\)</span>=<span class="math notranslate nohighlight">\(F_{ik}=R_{in}\cdot U_{nk}=V_{im}\cdot R_{mk}\)</span></p>
+<p>and:
+<span class="math notranslate nohighlight">\(\boldsymbol{F}^T\cdot \boldsymbol{F}=F_{op}\cdot F_{oq}=\)</span>
+<span class="math notranslate nohighlight">\((R_{on}\cdot U_{np})\cdot (R_{om}\cdot U_{mq})=\)</span>
+<span class="math notranslate nohighlight">\(R_{on}\cdot R_{om}\,\,\cdot\,\, U_{np} \cdot U_{mq} =\)</span>
+<span class="math notranslate nohighlight">\(\delta_{nm}\cdot\,\, U_{np} \cdot U_{mq} =\)</span>
+<span class="math notranslate nohighlight">\(U_{mp} \cdot U_{mq}=C_{pq}\)</span></p>
+<p>So, a new tensor <span class="math notranslate nohighlight">\(\boldsymbol{C}\)</span> is created, in which the rigit body rotation is eleminated. This deformation tensor is called:</p>
+<p><strong>CAUCHY-GREEN-deformation tensor</strong>: <span class="math notranslate nohighlight">\(\boldsymbol{C}=\boldsymbol{U}^T \cdot \boldsymbol{U}\)</span> or <span class="math notranslate nohighlight">\(C_{pq}=U_{mp} \cdot U_{mq}=\boldsymbol{F}^T\cdot \boldsymbol{F}\)</span></p>
+<p>For an undeformed body <span class="math notranslate nohighlight">\(\boldsymbol{C}=\boldsymbol{1}\)</span>. A deformation tensor which is <span class="math notranslate nohighlight">\(\boldsymbol{0}\)</span> is the</p>
+<p><strong>GREEN-LAGRANGE-deformation tensor</strong>: <span class="math notranslate nohighlight">\(\boldsymbol{G}=1/2(\boldsymbol{C}-\boldsymbol{1})\)</span> or <span class="math notranslate nohighlight">\(G_{pq}=1/2(C_{pq} - \delta_{pq})\)</span></p>
+<p>The formulation of these equations is generally valid, i.e. for large deformatins (<a class="reference external" href="https://en.wikipedia.org/wiki/Finite_strain_theory">Finite-Strain-Theorie</a>).</p>
 <hr class="docutils" />
-<p><strong>Example</strong></p>
+<p><strong>Exercise</strong></p>
 <p>The movement of a body is described by the vector-function</p>
 <p>A: <span class="math notranslate nohighlight">\(x^A_i(t)=\left(\begin{array}
 {c}X_1+2t \\
@@ -465,27 +477,13 @@ X_3\\
 X_2-X_1\cdot sin(t) \\ 
 X_3\\
 \end{array}\right)\)</span></p>
-<p>a: Sketch the resulting deformation for a simple body
-b: Calculate the deformation gradient <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span>
-c: Calculate <span class="math notranslate nohighlight">\(\boldsymbol{F}^T\cdot \)</span>\boldsymbol{F}$</p>
+<ol class="arabic simple">
+<li><p>Sketch the resulting deformation for a simple body</p></li>
+<li><p>Calculate the deformation gradient <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span></p></li>
+<li><p>Calculate <span class="math notranslate nohighlight">\(\boldsymbol{F}^T\cdot \boldsymbol{F}\)</span></p></li>
+</ol>
 </section>
 <hr class="docutils" />
-<section id="strain-tensor-finite-strain-theorie">
-<h2>strain tensor (finite strain theorie)<a class="headerlink" href="#strain-tensor-finite-strain-theorie" title="Permalink to this heading">#</a></h2>
-<p>So, one can do the following operation:
-<span class="math notranslate nohighlight">\(\boldsymbol{F}=\boldsymbol{R}\cdot\boldsymbol{U}=\boldsymbol{V}\cdot\boldsymbol{R}\)</span>=<span class="math notranslate nohighlight">\(F_{ik}=R_{in}\cdot U_{nk}=V_{im}\cdot R_{mk}\)</span></p>
-<p>and:
-<span class="math notranslate nohighlight">\(\boldsymbol{F}^T\cdot \boldsymbol{F}=F_{op}\cdot F_{oq}=\)</span>
-<span class="math notranslate nohighlight">\((R_{on}\cdot U_{np})\cdot (R_{om}\cdot U_{mq})=\)</span>
-<span class="math notranslate nohighlight">\(R_{on}\cdot R_{om}\,\,\cdot\,\, U_{np} \cdot U_{mq} =\)</span>
-<span class="math notranslate nohighlight">\(\delta_{nm}\cdot\,\, U_{np} \cdot U_{mq} =\)</span>
-<span class="math notranslate nohighlight">\(U_{mp} \cdot U_{mq}=C_{pq}\)</span></p>
-<p>After this operation a tensor <span class="math notranslate nohighlight">\(\boldsymbol{C}\)</span> is created, in which the rigit body rotation is eleminated. This deformation tensor is called:</p>
-<p><strong>CAUCHY-GREEN-deformation tensor</strong>: <span class="math notranslate nohighlight">\(\boldsymbol{C}=\boldsymbol{U}^T \cdot \boldsymbol{U}\)</span> or <span class="math notranslate nohighlight">\(C_{pq}=U_{mp} \cdot U_{mq}\)</span></p>
-<p>For an undeformed body <span class="math notranslate nohighlight">\(\boldsymbol{C}=\boldsymbol{1}\)</span>. A deformation tensor which is <span class="math notranslate nohighlight">\(\boldsymbol{0}\)</span> is the</p>
-<p><strong>GREEN-LAGRANGE-deformation tensor</strong>: <span class="math notranslate nohighlight">\(\boldsymbol{G}=1/2(\boldsymbol{C}-\boldsymbol{1})\)</span> or <span class="math notranslate nohighlight">\(G_{pq}=1/2(C_{pq} - \delta_{pq})\)</span></p>
-<p>The formulation of these equations is generally valid, i.e. for large deformatins (<a class="reference external" href="https://en.wikipedia.org/wiki/Finite_strain_theory">Finite-Strain-Theorie</a>).</p>
-</section>
 <section id="infinitesimal-strain-tensor-linear-theorie">
 <h2>infinitesimal strain tensor (linear theorie)<a class="headerlink" href="#infinitesimal-strain-tensor-linear-theorie" title="Permalink to this heading">#</a></h2>
 <p>To get a linear deformatoin tensor the tensor $\boldsymbol{G} must first be reformulated:</p>
@@ -517,15 +515,17 @@ c: Calculate <span class="math notranslate nohighlight">\(\boldsymbol{F}^T\cdot 
 \frac{1}{2}\gamma_{31} &amp; \frac{1}{2}\gamma_{32} &amp; \epsilon_{33}\\
 \end{bmatrix}\)</span></p>
 <hr class="docutils" />
-<p><strong>Example</strong></p>
+<p><strong>Exercise</strong></p>
 <p>The movement of a body is described by the vector-function</p>
 <p><span class="math notranslate nohighlight">\(x_i(t)=\left(\begin{array}
 {c}X_1 \\
 X_2-t\cdot X_3\\
 X_3+t\cdot X_2\\ 
 \end{array}\right)\)</span></p>
-<p>a: Sketch the resulting deformation for a simple body and <span class="math notranslate nohighlight">\(t=0,5\)</span>
-b: Calculate <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span>,  <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span> and  <span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span></p>
+<ol class="arabic simple">
+<li><p>Sketch the resulting deformation for a simple body and <span class="math notranslate nohighlight">\(t=0,5\)</span></p></li>
+<li><p>Calculate <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span>,  <span class="math notranslate nohighlight">\(\boldsymbol{G}\)</span> and  <span class="math notranslate nohighlight">\(\boldsymbol{\epsilon}\)</span></p></li>
+</ol>
 <hr class="docutils" />
 </section>
 </section>
@@ -599,7 +599,6 @@ b: Calculate <span class="math notranslate nohighlight">\(\boldsymbol{F}\)</span
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strain-definition-in-one-dimension">strain definition in one dimension</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-dim-deformation-deformation-gradient">three dim. deformation / deformation gradient</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strain-tensor-finite-strain-theorie">strain tensor (finite strain theorie)</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#infinitesimal-strain-tensor-linear-theorie">infinitesimal strain tensor (linear theorie)</a></li>
 </ul>
   </nav></div>

@@ -40,7 +40,7 @@ $\begin{matrix}
 &&& + f_1 \cdot dx_1 \cdot dx_2\cdot dx_3 \\
 &&&&\\
 \text{c.}&\curvearrowright\,:& 0 = &(\sigma_{21} + \partial \sigma_{21})\cdot dx_1\cdot dx_3\cdot\frac{dx_2}{2} +\sigma_{21} \cdot dx_1\cdot dx_3\cdot\frac{dx_2}{2}\\
-&&&(\sigma_{12} + \partial \sigma_{12})\cdot dx_2\cdot dx_3\cdot\frac{dx_1}{2} +\sigma_{12} \cdot dx_2\cdot dx_3\cdot\frac{dx_1}{2}\\
+&&&-(\sigma_{12} + \partial \sigma_{12})\cdot dx_2\cdot dx_3\cdot\frac{dx_1}{2} +\sigma_{12} \cdot dx_2\cdot dx_3\cdot\frac{dx_1}{2}\\
 \end{matrix}$
 
 Form equation $\text{c.}$ is resulting that $\partial \sigma_{12}=\partial \sigma_{21}$
@@ -69,3 +69,20 @@ $\begin{matrix}
 **Note:** Even it looks like one equation, it is a set of (in three dim.) three equations for six unkown stresses. So this set of equations is not sufficient to solve problems in kontinuum mechanics. 
 
 ## basic equations of the linear theory
+
+|    | equation    |  number of equations | known quantities | unknown quantities |
+| :------ | :-----: | :-------: |:-------: | :-------: |
+| equilibrium | $0=\frac{\partial \sigma_{ik}}{\partial x_i}+ f_k$ | 3 | 3 ($f_k$) | $6$ ($\sigma_{ik}$) |
+| kinematik | $\epsilon_{lm}=\frac{1}{2}(\frac{\partial u_l}{\partial x_m}+\frac{1}{2}(\frac{\partial u_m}{\partial x_l})$ | 6 | 0 | $6+3=9$ ($\epsilon_{ik}$, $u_l$)|
+| sum |  |  9  | | 15 |
+
+The 9 equations derived so far contain 15 unknowns. Therefore, additional equations - exact $15-9=6$ equations - are still needed, which are found by including the material (for theoretical background see [constitutive equations](https://en.wikipedia.org/wiki/Constitutive_equation)). 
+
+For the linear theorie a linear relation (linear map) between the stresses and strains is assumend:
+
+$\sigma_{ik}=E_{iklm}\cdot\epsilon_{lm}$
+
+If the material parameters are known (here all the $3\cdot 3\cdot 3\cdot3=81$ components for the elasic 4th-order tensor $E_{iklm}$), the material equations has no additional unknown quantities but gives 6 - exact the 6 equations needet - additional equations. 
+
+
+
