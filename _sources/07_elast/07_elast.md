@@ -4,7 +4,7 @@ The linear elastic tensor $\boldsymbol{E}=E_{iklm}$ has in three dimensions $3\c
 
 ## symmetrie in $\boldsymbol{E}$
 
-Because $\boldsymbol{\sigma}=\sigma_{ik}=\boldsymbol{\sigma}^T\sigma_{ki}$ and $\boldsymbol{\epsilon}=\epsilon_{lm}=\boldsymbol{\epsilon}^T\epsilon{ml}$ are symmetric tensors, there is a symmetrie in $\boldsymbol{E}$ as well:
+Because $\boldsymbol{\sigma}=\sigma_{ik}=\boldsymbol{\sigma}^T=\sigma_{ki}$ and $\boldsymbol{\epsilon}=\epsilon_{lm}=\boldsymbol{\epsilon}^T=\epsilon_{ml}$ are symmetric tensors, there is a symmetrie in $\boldsymbol{E}$ as well:
 
 $E_{iklm}=E_{kilm}=E_{kiml}=E_{ikml}$
 
