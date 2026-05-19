@@ -426,6 +426,42 @@ a_{61}&amp;a_{62}&amp;a_{63}&amp;a_{64}&amp;a_{65}&amp;a_{66}\\
 </section>
 <section id="existence-of-an-elastic-potential">
 <h2>existence of an elastic potential<a class="headerlink" href="#existence-of-an-elastic-potential" title="Permalink to this heading">#</a></h2>
+<p>For a linear spring element it is quiet obvious, that the energy (or work <span class="math notranslate nohighlight">\(W\)</span>) in the System is</p>
+<p><span class="math notranslate nohighlight">\(W = \frac{1}{2}F\cdot x\)</span></p>
+<p>The state of the spring is uniquely described by <span class="math notranslate nohighlight">\(W\)</span>. The forces can therefore be calculated unambiguously from this function by differentiating with respect to <span class="math notranslate nohighlight">\(x\)</span>. This makes <span class="math notranslate nohighlight">\(W\)</span> a potential function.</p>
+<p>Now we assume the existence of an elastic potential which is described in one direction by</p>
+<p><span class="math notranslate nohighlight">\(W=\frac{1}{2}\sigma\cdot\epsilon\)</span></p>
+<p>With <span class="math notranslate nohighlight">\(\sigma=E\cdot \epsilon\)</span> the stress can be calculated by differentiating <span class="math notranslate nohighlight">\(W\)</span> with respect to <span class="math notranslate nohighlight">\(\epsilon\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(\frac{dW}{d\epsilon}=\frac{d}{d\epsilon}(\frac{1}{2}E\cdot\epsilon\cdot\epsilon)=E\cdot \epsilon\)</span></p>
+<p>The assumption of an elastic potential is also valid in three dimensions (particularly for small deformations). So, if there is an elastic potential, the stress tensor is the result of differentiating the scalar function <span class="math notranslate nohighlight">\(W\)</span> with respect to the strain tensor</p>
+<p><span class="math notranslate nohighlight">\(\sigma_{ik}=\frac{\partial W}{\partial \epsilon_{ik}}\)</span></p>
+<p>Now we differate both sides with respect to <span class="math notranslate nohighlight">\(\epsilon_{ik}\)</span> and rewrite the equations:</p>
+<p><span class="math notranslate nohighlight">\(\begin{matrix}
+\sigma_{ik}&amp;=&amp;\frac{\partial W}{\partial \epsilon_{ik}} &amp;|\,\frac{\partial}{\partial \epsilon_{lm}}\\
+\sigma_{ik} \frac{\partial}{\partial \epsilon_{lm}}&amp;=&amp;\frac{\partial W}{\partial \epsilon_{ik}} \frac{\partial}{\partial \epsilon_{lm}}&amp;\\
+\frac{\partial \sigma_{ik}}{\partial \epsilon_{lm}}&amp;=&amp;\frac{\partial}{\partial \epsilon_{ik}} \frac{\partial W}{\partial \epsilon_{lm}}&amp;\\
+\frac{\partial \sigma_{ik}}{\partial \epsilon_{lm}}&amp;=&amp;\frac{\partial}{\partial \epsilon_{ik}} \sigma_{lm}&amp;\\
+\frac{\partial \sigma_{ik}}{\partial \epsilon_{lm}}&amp;=&amp;\frac{\partial \sigma_{lm}}{\partial \epsilon_{ik}}&amp;\\
+\frac{\partial (E_{iklm}\cdot \epsilon_{lm})}{\partial \epsilon_{lm}}&amp;=&amp;\frac{\partial (E_{lmik}\cdot \epsilon_{ik})}{\partial \epsilon_{ik}}\\ 
+E_{ik\,lm}&amp;=&amp;E_{lm\,ik}&amp;\\
+\end{matrix}\)</span></p>
+<p>So if <span class="math notranslate nohighlight">\(E_{ik\,lm}=E_{lm\,ik}\)</span> the index groups <span class="math notranslate nohighlight">\(ik\)</span> and <span class="math notranslate nohighlight">\(lm\)</span> can be swapped and so the indices of the components of the matrix:</p>
+<p><span class="math notranslate nohighlight">\(a_{pq}=a_{qp}\)</span></p>
+<p>and the 6x6 matrix representation of the elstic tensor is symmetric. So we have only <span class="math notranslate nohighlight">\((6\cdot 6 -6)/2+6\)</span> parameters left.</p>
+<p><span class="math notranslate nohighlight">\(\begin{bmatrix}
+\sigma_{11}\\ \sigma_{22}\\ \sigma_{33}\\  \sigma_{23}\\ \sigma_{13}\\ \sigma_{12}
+\end{bmatrix} = 
+\begin{bmatrix}
+a_{11}&amp;a_{12}&amp;a_{13}&amp;a_{14}&amp;a_{15}&amp;a_{16}\\
+a_{12}&amp;a_{22}&amp;a_{23}&amp;a_{24}&amp;a_{25}&amp;a_{26}\\
+a_{13}&amp;a_{23}&amp;a_{33}&amp;a_{34}&amp;a_{35}&amp;a_{36}\\
+a_{14}&amp;a_{24}&amp;a_{34}&amp;a_{44}&amp;a_{45}&amp;a_{46}\\
+a_{15}&amp;a_{25}&amp;a_{35}&amp;a_{45}&amp;a_{55}&amp;a_{56}\\
+a_{16}&amp;a_{26}&amp;a_{36}&amp;a_{46}&amp;a_{56}&amp;a_{66}\\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+\epsilon_{11}\\ \epsilon_{22}\\ \epsilon_{33}\\  \epsilon_{23}=\frac{1}{2}\gamma_{23}\\ \epsilon_{13}=\frac{1}{2}\gamma_{13}\\ \epsilon_{12}=\frac{1}{2}\gamma_{12}
+\end{bmatrix}\)</span></p>
 </section>
 <section id="assumptions-regarding-the-symmetry-of-the-material">
 <h2>Assumptions regarding the symmetry of the material<a class="headerlink" href="#assumptions-regarding-the-symmetry-of-the-material" title="Permalink to this heading">#</a></h2>
