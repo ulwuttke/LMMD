@@ -25,7 +25,7 @@ In the figure, $\vec{t}=\boldsymbol{t}=t_{i}$ is the traction or stress vector. 
 
 $\vec{t}^1=\boldsymbol{t}^1=t_{i}^1=
 \sigma^1 \cdot \boldsymbol{e}^1+\tau^1 \cdot \boldsymbol{e}^2=
-\sigma_{11} \cdot \boldsymbol{e}^1+\sigma_{21} \cdot \boldsymbol{e}^2$  
+\sigma_{11} \cdot \boldsymbol{e}^1+\sigma_{12} \cdot \boldsymbol{e}^2$  
 $\vec{t}^2=\boldsymbol{t}^2=t_{i}^2=
 \tau^2 \cdot \boldsymbol{e}^1+\sigma^2 \cdot \boldsymbol{e}^2=
 \sigma_{21} \cdot \boldsymbol{e}^1+\sigma_{22} \cdot \boldsymbol{e}^2$

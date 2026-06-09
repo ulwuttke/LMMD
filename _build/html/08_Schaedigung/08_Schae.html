@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>repetition / basic knowledge &#8212; LMMD Skript</title>
+    <title>Failure analysis &#8212; LMMD Skript</title>
   
   
   
@@ -63,11 +63,11 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = '02_rep/02_rep';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '08_Schaedigung/08_Schae';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="vector/tensor rotation and transformation" href="../03_vecten/03_vecten.html" />
-    <link rel="prev" title="linear / non-ninear behaviour" href="../01_linear/01_linear.html" />
+    <link rel="next" title="Hyperworks basics" href="../E1_hyperBasic/E1_hyperSingleElement.html" />
+    <link rel="prev" title="linear theory of elasticity" href="../07_elast/07_elast.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -161,13 +161,13 @@ const thebe_selector_output = ".output, .cell_output"
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">lecture</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01_linear/01_linear.html">linear / non-ninear behaviour</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">repetition / basic knowledge</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02_rep/02_rep.html">repetition / basic knowledge</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03_vecten/03_vecten.html">vector/tensor rotation and transformation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04_spten/04_spten.html">stress tensor, traction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../05_defstr/05_defstr.html">deformation / infinitesimal strain tensor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06_equili/06_equili.html">Equilibrium and basic equations of the linear theory</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07_elast/07_elast.html">linear theory of elasticity</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../08_Schaedigung/08_Schae.html">linear theory of elasticity</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Failure analysis</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">excercise</span></p>
 <ul class="nav bd-sidenav">
@@ -248,7 +248,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F02_rep/02_rep.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2F08_Schaedigung/08_Schae.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -278,7 +278,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/02_rep/02_rep.md" target="_blank"
+      <li><a href="../_sources/08_Schaedigung/08_Schae.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -360,7 +360,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>repetition / basic knowledge</h1>
+    <h1>Failure analysis</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -370,8 +370,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-hooke-s-law">generalized HOOKE’s law</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mohr-s-circle">MOHR’s circle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classic-material-failure-criteria-for-isotropic-materials">Classic material failure criteria for isotropic materials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-principal-stress-criterion-for-brittle-materials">Maximum principal stress criterion for brittle materials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#von-mises-yield-criterion-for-ductile-materials">von Mises yield criterion for ductile materials</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anisotropic-failiure-criterion-acc-to-vdi-2014-part-3">Anisotropic failiure criterion acc. to VDI 2014 part 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-fibre-fracture">in fibre fracture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inter-fibre-fracture">inter fibre fracture</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -383,53 +391,106 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="repetition-basic-knowledge">
-<h1>repetition / basic knowledge<a class="headerlink" href="#repetition-basic-knowledge" title="Permalink to this heading">#</a></h1>
-<section id="generalized-hooke-s-law">
-<h2>generalized HOOKE’s law<a class="headerlink" href="#generalized-hooke-s-law" title="Permalink to this heading">#</a></h2>
-<p>The “generalized HOOKE’s law” is an <a class="reference external" href="https://en.wikipedia.org/wiki/Isotropy">isotropic</a> linear-elastic material model for 3D continuum or with loads in any direction (see “Derivation of Hooke’s law in three dimensions” in <a class="reference external" href="https://en.wikipedia.org/wiki/Hooke's_law#Isotropic_materials">Linear elasticity theory for continuous media</a>.</p>
-<p>The law is typically derived (like in the previous link) “inductive”, which means drawing conclusions “from the particular to the general”. The opposite is “deductive, which means drawing conclusions “from the general to the particular”.</p>
-<p>For linear-elastic and isotropic materials the Law is written like:</p>
-<p><span class="math notranslate nohighlight">\(E\,\epsilon_x=\sigma_x-\nu\,(\sigma_y+\sigma_z)\)</span><br />
-<span class="math notranslate nohighlight">\(E\,\epsilon_y=\sigma_y-\nu\,(\sigma_x+\sigma_z)\)</span><br />
-<span class="math notranslate nohighlight">\(E\,\epsilon_z=\sigma_z-\nu\,(\sigma_x+\sigma_y)\)</span></p>
-<p><span class="math notranslate nohighlight">\(G\,\gamma_xy=\tau_{xy}\)</span><br />
-<span class="math notranslate nohighlight">\(G\,\gamma_xz=\tau_{xz}\)</span><br />
-<span class="math notranslate nohighlight">\(G\,\gamma_yz=\tau_{yz}\)</span></p>
-<p>with:<br />
-<span class="math notranslate nohighlight">\(E\)</span>: young’s modulus (elastic modulus)<br />
-<span class="math notranslate nohighlight">\(\nu\)</span>: poisson ratio<br />
-<span class="math notranslate nohighlight">\( \sigma_{...}\)</span>, <span class="math notranslate nohighlight">\(\tau_{...}\)</span>: normal and shear stress<br />
-<span class="math notranslate nohighlight">\( \epsilon_{...}\)</span>, <span class="math notranslate nohighlight">\(\gamma_{...}\)</span>: elongation and shearing (strains)</p>
-<p>Since the linear-elastic material behavior (for small strains and isotropic material) is described with two elastic constants, there must be a relationship between the three elastic constants mentioned above:</p>
-<p><span class="math notranslate nohighlight">\(G=\frac{E}{2\,(1+\nu)}\)</span></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="failure-analysis">
+<h1>Failure analysis<a class="headerlink" href="#failure-analysis" title="Permalink to this heading">#</a></h1>
+<section id="classic-material-failure-criteria-for-isotropic-materials">
+<h2>Classic material failure criteria for isotropic materials<a class="headerlink" href="#classic-material-failure-criteria-for-isotropic-materials" title="Permalink to this heading">#</a></h2>
+<section id="maximum-principal-stress-criterion-for-brittle-materials">
+<h3>Maximum principal stress criterion for brittle materials<a class="headerlink" href="#maximum-principal-stress-criterion-for-brittle-materials" title="Permalink to this heading">#</a></h3>
+<p>The idea of the <a class="reference external" href="https://en.wikipedia.org/wiki/Material_failure_theory#Phenomenological_failure_criteria">maximum principal stress criterion</a> is, that a material fails when the maximum principal stress <span class="math notranslate nohighlight">\(\sigma^1\)</span> exceeds the uniaxial tensile strength of the material:</p>
+<p><span class="math notranslate nohighlight">\(\sigma^1&lt;\sigma_T=R_m\)</span></p>
+<p>This criterion is used in the fracture analysis of brittle materials.</p>
 </section>
-<section id="mohr-s-circle">
-<h2>MOHR’s circle<a class="headerlink" href="#mohr-s-circle" title="Permalink to this heading">#</a></h2>
-<p>The three dimensional stress state can be shown using <a class="reference external" href="https://en.wikipedia.org/wiki/Mohr's_circle">MOHR’s circle</a>.</p>
-<p><img alt="Mohr" src="../_images/Mohr.png" /></p>
-<p>As each circle always has two points of intersection with the horizontal stress axis (where the shear stress is zero), there is a special coordinate system (the principal system) in which the current stress state is only described by 3 normal stresses, the so-called <strong>principal stresses <span class="math notranslate nohighlight">\(\sigma^{(1)}\)</span>, <span class="math notranslate nohighlight">\(\sigma^{(2)}\)</span>, <span class="math notranslate nohighlight">\(\sigma^{(3)}\)</span></strong>.</p>
-<hr class="docutils" />
-<p><strong>EXERCISE</strong></p>
-<ol class="arabic simple">
-<li><p>As a result of a <a class="reference external" href="https://en.wikipedia.org/wiki/Strain_gauge">strain gauge measurement</a> at one point on a surface of a bicycle frame the followng strains are measured:<br />
-<span class="math notranslate nohighlight">\(\epsilon_A=1,0\cdot10^{-3}\)</span><br />
-<span class="math notranslate nohighlight">\(\epsilon_B=0,5\cdot10^{-3}\)</span></p></li>
-</ol>
-<p><img alt="StrainGauge1" src="../_images/StrainGauge1.png" /></p>
-<p>The Material is homogenous and isotropic with an YOUNGth modulus of aprox. <span class="math notranslate nohighlight">\(E=200 \text{GPa}\)</span> and a POISSON ratio of <span class="math notranslate nohighlight">\(\nu=0,2\)</span>.<br />
-<strong>Calculate the stresses! in the direction of the strain gauges</strong></p>
-<ol class="arabic simple" start="2">
-<li><p>To get the full plain stress state (in another point), three strain gauges are applied. The measured strains are:</p></li>
-</ol>
-<p><span class="math notranslate nohighlight">\(\epsilon_A=5,8\cdot10^{-4}\)</span><br />
-<span class="math notranslate nohighlight">\(\epsilon_B=-0,2\cdot10^{-4}\)</span><br />
-<span class="math notranslate nohighlight">\(\epsilon_C=4,3\cdot10^{-4}\)</span></p>
-<p><img alt="StrainGauge1" src="../_images/StrainGauge2.png" /></p>
-<p>The Material is homogenous and isotropic with an YOUNGs modulus of  aprox. <span class="math notranslate nohighlight">\(E=200 \text{GPa}\)</span> and a POISSON ratio of <span class="math notranslate nohighlight">\(\nu=0,2\)</span>.
-<strong>Calculate the stresses (normal and shear stresses) according to the strain gauge directions A/B, and the principal stresses/ max shear stress!</strong></p>
-<p>If you don’t know how to start, have a look at <a class="reference download internal" download="" href="../_downloads/8a3c731fb755f008fa04fc6bb123cf0c/260420-StrainGaugeExSolutioin.pdf"><span class="xref download myst">this file</span></a>.</p>
-<hr class="docutils" />
+<section id="von-mises-yield-criterion-for-ductile-materials">
+<h3>von Mises yield criterion for ductile materials<a class="headerlink" href="#von-mises-yield-criterion-for-ductile-materials" title="Permalink to this heading">#</a></h3>
+<p>The von <a class="reference external" href="https://en.wikipedia.org/wiki/Von_Mises_yield_criterion">Mises yield-criterion</a> states that yielding begins as soon as the energy of distortion caused by the load reaches a threshold value in the material. The criterion in form of an equivalent stress <span class="math notranslate nohighlight">\(\sigma_{v Mises}\)</span> is the most commonly used yield criterion in engineering:</p>
+<p><span class="math notranslate nohighlight">\(\sigma_{v Mises}=f(\sigma_{ik})&lt;\sigma_F=R_e\)</span></p>
+<p>The elastic deformation energy, or, more precisely, the elastic strain energy denity <span class="math notranslate nohighlight">\(w\)</span> is described in a one dimensional case and a linear stress-strain ralation by:</p>
+<p><span class="math notranslate nohighlight">\(w= \int_{}^{} \sigma \, \mathrm{d}\epsilon=\frac{1}{2} \sigma \cdot \epsilon\)</span></p>
+<p>or in tree dimensions by:</p>
+<p><span class="math notranslate nohighlight">\(w= \int_{}^{} \sigma_{ik} \, \mathrm{d}\epsilon_{ik}=\frac{1}{2} \sigma_{ik} \cdot \epsilon_{ik}\)</span></p>
+<p>The strain energy density <span class="math notranslate nohighlight">\(w\)</span> consists of two components - volumetric and distortional. To seperate the distortional energy from the total energy the stress and strain tensor are devided in a hydrostatic (volume change) and a deviatoric (distortion) part:</p>
+<p><span class="math notranslate nohighlight">\(\sigma_{ik}=\frac{1}{3}\,\sigma_{ll}\,\delta_{ik}+s_{ik}\)</span><br />
+<span class="math notranslate nohighlight">\(\epsilon_{ik}=\frac{1}{3}\,\epsilon_{nn}\,\delta_{ik}+e_{ik}\)</span></p>
+<p>The first term is the hydrostatc stress resp. strain, the second term is the deviatoric stress tensor <span class="math notranslate nohighlight">\(s_{ik}\)</span> resp. <span class="math notranslate nohighlight">\(e_{ik}\)</span>.</p>
+<p>Now <span class="math notranslate nohighlight">\(w\)</span> can be written as:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{matrix}
+w &amp; = &amp; \frac{1}{2} \sigma_{ik} \cdot \epsilon_{ik}\,\,\,\,\,\\
+ &amp; = &amp; \frac{1}{2} (\frac{1}{3}\,\sigma_{ll}\,\delta_{ik}+s_{ik})(\frac{1}{3}\,\epsilon_{nn}\,\delta_{ik}+e_{ik})\\
+  &amp; = &amp; \frac{1}{2} ( \frac{1}{3}\,\sigma_{ll}\,\delta_{ik}\cdot\frac{1}{3}\,\epsilon_{nn}\,\delta_{ik} + \frac{1}{3}\,\sigma_{ll}\,\delta_{ik}\cdot e_{ik} +\\
+&amp;&amp;                    s_{ik}\cdot\frac{1}{3}\,\epsilon_{nn}\,\delta_{ik} + s_{ik}\cdot e_{ik})\\
+\end{matrix}
+\)</span></p>
+<p>The second and third term are equal to zero, because the product <span class="math notranslate nohighlight">\(s_{ik}\cdot\delta_{ik}\)</span> resp. <span class="math notranslate nohighlight">\(e_{ik}\cdot\delta_{ik}\)</span> is equal to zero because for exampe:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{matrix}
+s_{ik}\cdot\delta_{ik}&amp;=&amp;s_{11}+s_{22}+s_{33}\\
+&amp;=&amp;(\sigma_{11}-\frac{1}{3}(\sigma_{11}+\sigma_{22}+\sigma_{33}))\,+\\
+&amp;&amp;(\sigma_{22}-\frac{1}{3}(\sigma_{11}+\sigma_{22}+\sigma_{33}))\,+\\
+&amp;&amp;(\sigma_{33}-\frac{1}{3}(\sigma_{11}+\sigma_{22}+\sigma_{33}))\,\,\,\\
+&amp;=&amp;\sigma_{11}+\sigma_{22}+\sigma_{33}-3\cdot\frac{1}{3}(\sigma_{11}+\sigma_{22}+\sigma_{33})=0\\
+\end{matrix}
+\)</span></p>
+<p>So <span class="math notranslate nohighlight">\(w\)</span> can be written as:</p>
+<p><span class="math notranslate nohighlight">\(w=\frac{1}{6}\sigma_{ll}\,\epsilon_{nn}+\frac{1}{2}s_{ik}\,e_{ik}\)</span></p>
+<p>with the energy of distortion</p>
+<p><span class="math notranslate nohighlight">\(w_d=\frac{1}{2}s_{ik}\,e_{ik}\)</span></p>
+<p>The linear elastic material law can be written in a tensor equation:</p>
+<p><span class="math notranslate nohighlight">\(\epsilon_{ik}=\frac{1+\nu}{E}(\sigma_{ik}-\frac{\nu}{1+\nu}\delta_{ik}\,\sigma_{ll})\)</span></p>
+<p>If the stress tensor has only a deviatoric component, even the strain tensor has only a deviatoric component and the equation simplifies because of <span class="math notranslate nohighlight">\(s_{ll}=0\)</span> to</p>
+<p><span class="math notranslate nohighlight">\(e_{ik}=\frac{1+\nu}{E}s_{ik}\)</span></p>
+<p>and so the energy of distortion is</p>
+<p><span class="math notranslate nohighlight">\(w_d=\frac{1}{2}s_{ik}\,e_{ik}=\frac{1+\nu}{2\cdot E}s_{ik}\,s_{ik}\)</span></p>
+<p>and so only depending on the deviatoric part of the stress tensor.</p>
+<p>To get the von Mises equivalent stress <span class="math notranslate nohighlight">\(\sigma_{v Mises}=\sigma_{v}\)</span>, the energy of distortion of a uniaxial stress <span class="math notranslate nohighlight">\(w_d^{uni}\)</span> is set equal to the energy of distortion of a three dimensional stress state <span class="math notranslate nohighlight">\(w_d\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(
+\sigma^{uni}_{lm}=
+\begin{bmatrix}
+\sigma_{v}&amp;0&amp;0\\
+0&amp;0&amp;0\\
+0&amp;0&amp;0\\
+\end{bmatrix}=\frac{1}{3}\sigma_{v}
+\begin{bmatrix}
+1&amp;0&amp;0\\
+0&amp;1&amp;0\\
+0&amp;0&amp;1\\
+\end{bmatrix}+
+\begin{bmatrix}
+\sigma_{v}-\frac{1}{3}\sigma_{v}&amp;0&amp;0\\
+0&amp;-\frac{1}{3}\sigma_{v}&amp;0\\
+0&amp;0&amp;-\frac{1}{3}\sigma_{v}\\
+\end{bmatrix}
+\)</span></p>
+<p>and</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{matrix}
+w^{uni}_d&amp;=&amp;\frac{1+\nu}{2\, E}s_{ik}\,s_{ik}\\
+&amp;=&amp;\frac{1+\nu}{2\, E}((\sigma_{v}-\frac{1}{3}\sigma_{v})^2+(-\frac{1}{3}\sigma_{v})^2+(-\frac{1}{3}\sigma_{v})^2))\\
+&amp;=&amp;\frac{1+\nu}{2\, E}((\frac{2}{3})^2+(-\frac{1}{3})^2+(-\frac{1}{3})^2)\sigma_v^2\\
+&amp;=&amp;\frac{1+\nu}{2\, E}\cdot\frac{2}{3}\cdot\sigma_v^2\\
+\end{matrix}\)</span></p>
+<p>beause <span class="math notranslate nohighlight">\(w_d^{uni}\)</span> is set (or assumed) equal to <span class="math notranslate nohighlight">\(w_d\)</span> it is:</p>
+<p><span class="math notranslate nohighlight">\(
+\begin{matrix}
+w^{uni}_d&amp;=&amp;w_d\\
+\frac{1+\nu}{2\, E}\cdot\frac{2}{3}\cdot\sigma_v^2&amp;=&amp;\frac{1+\nu}{2\cdot E}s_{ik}\,s_{ik}\\
+\end{matrix}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\Rightarrow \sigma_v=\sqrt{\frac{3}{2}\,s_{ik}\,s_{ik}}\)</span></p>
+<p>This expression is equal to</p>
+<p><span class="math notranslate nohighlight">\(\sigma_v=\frac{1}{\sqrt{2}}\sqrt{(\sigma^1-\sigma^2)^2+(\sigma^2-\sigma^3)^2+(\sigma^3-\sigma^1)^2}\)</span></p>
+<p>with the principal stresses <span class="math notranslate nohighlight">\(\sigma^1\)</span>, <span class="math notranslate nohighlight">\(\sigma^2\)</span> and <span class="math notranslate nohighlight">\(\sigma^3\)</span> or in case of only one normal stress <span class="math notranslate nohighlight">\(\sigma\)</span> and one shear stress <span class="math notranslate nohighlight">\(\tau\)</span></p>
+<p><span class="math notranslate nohighlight">\(\sigma_v=\sqrt{\sigma^2+3\,\tau^2}\)</span></p>
+</section>
+</section>
+<section id="anisotropic-failiure-criterion-acc-to-vdi-2014-part-3">
+<h2>Anisotropic failiure criterion acc. to VDI 2014 part 3<a class="headerlink" href="#anisotropic-failiure-criterion-acc-to-vdi-2014-part-3" title="Permalink to this heading">#</a></h2>
+<section id="in-fibre-fracture">
+<h3>in fibre fracture<a class="headerlink" href="#in-fibre-fracture" title="Permalink to this heading">#</a></h3>
+</section>
+<section id="inter-fibre-fracture">
+<h3>inter fibre fracture<a class="headerlink" href="#inter-fibre-fracture" title="Permalink to this heading">#</a></h3>
+</section>
 </section>
 </section>
 
@@ -446,7 +507,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./02_rep"
+            path: "./08_Schaedigung"
         },
         predefinedOutput: true
     }
@@ -465,20 +526,20 @@ document.write(`
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../01_linear/01_linear.html"
+       href="../07_elast/07_elast.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">linear / non-ninear behaviour</p>
+        <p class="prev-next-title">linear theory of elasticity</p>
       </div>
     </a>
     <a class="right-next"
-       href="../03_vecten/03_vecten.html"
+       href="../E1_hyperBasic/E1_hyperSingleElement.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">vector/tensor rotation and transformation</p>
+        <p class="prev-next-title">Hyperworks basics</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -500,8 +561,16 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#generalized-hooke-s-law">generalized HOOKE’s law</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mohr-s-circle">MOHR’s circle</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classic-material-failure-criteria-for-isotropic-materials">Classic material failure criteria for isotropic materials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maximum-principal-stress-criterion-for-brittle-materials">Maximum principal stress criterion for brittle materials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#von-mises-yield-criterion-for-ductile-materials">von Mises yield criterion for ductile materials</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anisotropic-failiure-criterion-acc-to-vdi-2014-part-3">Anisotropic failiure criterion acc. to VDI 2014 part 3</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-fibre-fracture">in fibre fracture</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inter-fibre-fracture">inter fibre fracture</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 

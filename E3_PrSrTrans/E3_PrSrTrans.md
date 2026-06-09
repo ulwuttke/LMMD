@@ -20,7 +20,7 @@ Calculate the principal stesses and the principal stress direction for the given
 
 2. $\sigma_{ik}=
 \begin{bmatrix}
-50,00 & 37,74 & -49,49\\
+50,00 & 36,74 & -49,49\\
 36,74 & 15,00 & 25,98\\
 -49,49 & 25,98 & 85,00\\
 \end{bmatrix} \text{MPa}$ 
