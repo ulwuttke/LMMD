@@ -82,7 +82,7 @@ So if $E_{ik\,lm}=E_{lm\,ik}$ the index groups $ik$ and $lm$ can be swapped and 
 
 $a_{pq}=a_{qp}$
 
-and the 6x6 matrix representation of the elstic tensor is symmetric. So we have only $(6\cdot 6 -6)/2+6$ parameters left. 
+and the 6x6 matrix representation of the elstic tensor is symmetric. So we have only $(6\cdot 6 -6)/2+6=21$ parameters left: 
 
 $\begin{bmatrix}
 \sigma_{11}\\ \sigma_{22}\\ \sigma_{33}\\  \sigma_{23}\\ \sigma_{13}\\ \sigma_{12}

@@ -114,7 +114,7 @@ $\hat{\boldsymbol{e}}_1=\hat{e}_1^{\,1}\cdot \boldsymbol{e}_1 + \hat{e}_2^{\,1}\
 or in index-notation  
 
 $\hat{\boldsymbol{e}}_K=\hat{e}_K^{\,j}\cdot \boldsymbol{e}_j$  
-$ \Rightarrow \hat{\boldsymbol{e}}_K \cdot \boldsymbol{e}^i = \hat{e}_K^{\,j}\cdot \boldsymbol{e}_j \cdot \boldsymbol{e}^i = \hat{e}_K^{\,j} \cdot \delta_j^{\,i}= \hat{e}_K^{\,j} = \alpha_K^{\,j}$  
+$ \Rightarrow \hat{\boldsymbol{e}}_K \cdot \boldsymbol{e}^i = \hat{e}_K^{\,j}\cdot \boldsymbol{e}_j \cdot \boldsymbol{e}^i = \hat{e}_K^{\,j} \cdot \delta_j^{\,i}= \hat{e}_K^{\,i} = \alpha_K^{\,i}$  
 
 $\alpha_K^{\;i}=
 \begin{bmatrix}
